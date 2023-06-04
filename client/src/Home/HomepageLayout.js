@@ -43,7 +43,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '-1em' : '-10em'
+        marginLeft: mobile ? '0em' : '-10em'
       }}
     />
     <Header
@@ -53,11 +53,11 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
-        marginLeft: mobile ? '-3em' : '-40.1em'
+        marginTop: mobile ? '2em' : '1.5em',
+        marginLeft: mobile ? '0em' : '-40.1em'
       }}
     />
-    <Button primary size={mobile ? 'medium' : 'huge'}  style={{marginLeft: mobile ? '-5.9em' : '-59.4em'}}>
+    <Button primary size={mobile ? 'medium' : 'huge'}  style={{marginLeft: mobile ? '0em' : '-59.4em'}}>
       Learn More
       <Icon name='right arrow' />
     </Button>
