@@ -43,22 +43,22 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '-7.5em' : '-15em'
+        marginLeft: mobile ? '-5em' : '-10em'
       }}
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Declared extinct in 2013'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        marginLeft: mobile ? '-22em' : '-44.1em'
+        marginLeft: mobile ? '-20em' : '-40.1em'
       }}
     />
-    <Button primary size='huge' style={{marginLeft: mobile ? '-37.5em' : '-75em'}}>
-      Get Started
+    <Button primary size='huge' style={{marginLeft: mobile ? '-29.7em' : '-59.4em'}}>
+      Learn More
       <Icon name='right arrow' />
     </Button>
   </Container>
