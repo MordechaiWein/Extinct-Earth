@@ -59,7 +59,7 @@ export default function DrawerAppBar(props: Props) {
       <AppBar component="nav" style={{color: '#fff',backgroundColor: 'black', boxShadow: 'none', padding: '1rem'}}>
         <Toolbar>
           <IconButton
-            color="black"
+            color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}

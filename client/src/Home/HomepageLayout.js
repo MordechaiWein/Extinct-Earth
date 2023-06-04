@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { InView } from 'react-intersection-observer'
 import 'semantic-ui-css/semantic.min.css';
-import { Link } from 'react-router-dom';
+import UncontrolledExample from './ UncontrolledExample';
 import {
   Button,
   Container,
@@ -250,7 +250,11 @@ const HomepageLayout = () => (
         <Button as='a' size='large'>
           Read More
         </Button>
-
+        <br/>
+        <br/>
+        <Container text style={{display: 'flex'}}>
+          <UncontrolledExample />
+        </Container>
         <Divider
           as='h4'
           className='header'
@@ -309,7 +313,9 @@ const HomepageLayout = () => (
         </Grid>
       </Container>
     </Segment>
+   
   </ResponsiveContainer>
+
 )
 
 export default HomepageLayout
