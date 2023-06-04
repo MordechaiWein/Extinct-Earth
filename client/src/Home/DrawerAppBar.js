@@ -54,9 +54,9 @@ export default function DrawerAppBar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
-      <AppBar component="nav" style={{color: 'black', backgroundColor: 'white', boxShadow: 'none'}}>
+      <AppBar component="nav" style={{color: '#fff',backgroundColor: 'black', boxShadow: 'none', padding: '1rem'}}>
         <Toolbar>
           <IconButton
             color="black"
@@ -76,7 +76,7 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: 'black', fontFamily: 'Montserrat', fontSize: '1.7rem' }}>
+              <Button key={item} sx={{ color: '#fff', fontFamily: 'Montserrat sans-serif', fontSize: '1.7rem' }}>
                 {item}
               </Button>
             ))}

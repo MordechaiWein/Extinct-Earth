@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { InView } from 'react-intersection-observer'
 import 'semantic-ui-css/semantic.min.css';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Container,
@@ -43,7 +44,9 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '0em' : '-10em'
+        marginLeft: mobile ? '0em' : '-10em',
+        fontFamily: 'Montserrat',
+        fontWeight: 'bold'
       }}
     />
     <Header
@@ -54,12 +57,19 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '7em' : '1.5em',
-        marginLeft: mobile ? '0em' : '-40.1em'
+        marginLeft: mobile ? '0em' : '-43.9em',
+        fontFamily: 'Montserrat',
+        fontWeight: 'bold'
       }}
     />
-    <Button primary size={mobile ? 'medium' : 'huge'}  style={{marginLeft: mobile ? '0em' : '-59.4em'}}>
+    <Button 
+      primary 
+      size={mobile ? 'medium' : 'huge'}  
+      style={{marginLeft: mobile ? '0em' : '-67em'}} 
+      href="https://en.wikipedia.org/wiki/Formosan_clouded_leopard" 
+    >
       Learn More
-      <Icon name='right arrow' />
+     <Icon name='right arrow' />
     </Button>
   </Container>
 )
@@ -175,27 +185,29 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
+            Spix's Macaw
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+            The species inhabited riparian Caraibeira (Tabebuia aurea) woodland galleries in the drainage basin of the 
+            Rio São Francisco within the Caatinga dry forest climate of interior northeastern Brazil. 
+            It had a very restricted natural habitat due to its dependence on the tree for nesting, feeding and roosting.
             </p>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
+            The bird was already rare by the time of Spix's discovery of it in 1819
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+            100 years of intensive burning, logging and grazing of the Caatinga. Centuries of deforestation,
+             human encroachment and agricultural development along the Rio Sao Francisco corridor following 
+            European colonization of eastern Brazil preceded its precipitous decline in the latter part of the 20th century
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+            <Image bordered rounded size='large' src='https://www.science.org/do/10.1126/science.add3965/full/_20220610_nf_macaws.jpg' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button size='huge'>Check Them Out</Button>
+            <Button size='huge' href="https://en.wikipedia.org/wiki/Spix%27s_macaw" >See More</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -206,17 +218,17 @@ const HomepageLayout = () => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
+              "Fantastic Website"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+            <p style={{ fontSize: '1.33em' }}>That is what everyone is saying about it</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
+              "This website is really really awesome."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+              <Image avatar src='https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png' />
+              <b>Mordechai</b> Maker of Extinct Earth
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -226,12 +238,14 @@ const HomepageLayout = () => (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
+          Captivating the Imagination, Reviving Lost Wonders
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
+          Rather than conforming to conventional content creation, 
+          we have mastered the art of rekindling fascination by seamlessly merging vast
+          whitespace with captivating narratives. Our mission is to transport 
+          you to the awe-inspiring world of extinct animals, where their once 
+          magnificent presence is revived through engaging stories and immersive experiences.
         </p>
         <Button as='a' size='large'>
           Read More
@@ -243,16 +257,17 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>Case Studies</a>
+          <a href='#'>Exploring the Extinct</a>
         </Divider>
 
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
+          Unveiling the Marvels of Extinct Species
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          We understand if our earlier claims seemed unrelated or trivial,
+          but we assure you, our focus is solely on the captivating world of extinct animals. 
+          Through meticulous research and scientific endeavors, 
+          we have unearthed fascinating discoveries that will leave you in awe.
         </p>
         <Button as='a' size='large'>
           I'm Still Quite Interested
@@ -269,17 +284,17 @@ const HomepageLayout = () => (
               <List link inverted>
                 <List.Item as='a'>Sitemap</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
+                <List.Item as='a'>Explore</List.Item>
+                <List.Item as='a'>Discover</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as='h4' content='Services' />
               <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
+                <List.Item as='a'>Adopt an Extinct Species</List.Item>
                 <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
+                <List.Item as='a'>Extinct Animal Secrets</List.Item>
+                <List.Item as='a'>Preserve the Past</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
@@ -287,7 +302,7 @@ const HomepageLayout = () => (
                 Footer Header
               </Header>
               <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
+              Journey into the Depths of History: Explore the Enigmatic World of Extinct Animals.
               </p>
             </Grid.Column>
           </Grid.Row>
