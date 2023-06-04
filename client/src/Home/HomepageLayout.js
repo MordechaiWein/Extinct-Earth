@@ -53,7 +53,7 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '2em' : '1.5em',
+        marginTop: mobile ? '5em' : '1.5em',
         marginLeft: mobile ? '0em' : '-40.1em'
       }}
     />
