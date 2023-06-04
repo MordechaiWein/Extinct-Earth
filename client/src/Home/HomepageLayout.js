@@ -88,7 +88,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-          <HomepageHeading />
+            <HomepageHeading />
           </Segment>
         </InView>
 
@@ -102,6 +102,42 @@ DesktopContainer.propTypes = {
   children: PropTypes.node,
 }
 
+class MobileContainer extends Component {
+  state = {}
+
+  handleSidebarHide = () => this.setState({ sidebarOpened: false })
+
+  handleToggle = () => this.setState({ sidebarOpened: true })
+
+  render() {
+    const { children } = this.props
+    const { sidebarOpened } = this.state
+
+    return (
+      <Media as={Sidebar.Pushable} at='mobile'>
+        <Sidebar.Pushable>
+          
+          <Sidebar.Pusher dimmed={sidebarOpened}>
+            <Segment
+              inverted
+              textAlign='center'
+              style={{ minHeight: 350, padding: '1em 0em' }}
+              vertical
+            >
+              <HomepageHeading mobile />
+            </Segment>
+            {children}
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+      </Media>
+    )
+  }
+}
+
+MobileContainer.propTypes = {
+  children: PropTypes.node,
+}
+
 const ResponsiveContainer = ({ children }) => (
   /* Heads up!
    * For large applications it may not be best option to put all page into these containers at
@@ -109,6 +145,7 @@ const ResponsiveContainer = ({ children }) => (
    */
   <MediaContextProvider>
     <DesktopContainer>{children}</DesktopContainer>
+    <MobileContainer>{children}</MobileContainer>
   </MediaContextProvider>
 )
 
