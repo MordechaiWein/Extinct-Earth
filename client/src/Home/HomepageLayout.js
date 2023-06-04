@@ -43,7 +43,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '-5em' : '-10em'
+        marginLeft: mobile ? '-1em' : '-10em'
       }}
     />
     <Header
@@ -54,10 +54,10 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        marginLeft: mobile ? '-20em' : '-40.1em'
+        marginLeft: mobile ? '-4em' : '-40.1em'
       }}
     />
-    <Button primary size='huge' style={{marginLeft: mobile ? '-29.7em' : '-59.4em'}}>
+    <Button primary size='huge' style={{marginLeft: mobile ? '-5.9em' : '-59.4em'}}>
       Learn More
       <Icon name='right arrow' />
     </Button>
@@ -129,7 +129,13 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 350, padding: '1em 0em' }}
+              style={{ 
+                minHeight: 350, 
+                padding: '1em 0em',
+                backgroundImage: 'url(https://mymodernmet.com/wp/wp-content/uploads/2019/03/clouded-leopard-thumbnail.jpg)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover'
+              }}
               vertical
             >
               <HomepageHeading mobile />
