@@ -36,13 +36,14 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='Formosan clouded leopard'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
+        marginTop: mobile ? '0em' : '1em',
+        marginLeft: mobile ? '-7.5em' : '-15em'
       }}
     />
     <Header
@@ -53,9 +54,10 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
+        marginLeft: mobile ? '-22em' : '-44.1em'
       }}
     />
-    <Button primary size='huge'>
+    <Button primary size='huge' style={{marginLeft: mobile ? '-37.5em' : '-75em'}}>
       Get Started
       <Icon name='right arrow' />
     </Button>
@@ -85,7 +87,13 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ 
+              minHeight: 700, 
+              padding: '1em 0em',
+              backgroundImage: 'url(https://mymodernmet.com/wp/wp-content/uploads/2019/03/clouded-leopard-thumbnail.jpg)',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover'
+            }}
             vertical
           >
             <HomepageHeading />
