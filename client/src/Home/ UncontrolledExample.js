@@ -9,7 +9,7 @@ function UncontrolledExample() {
           className="d-block w-100"
           src="https://static.euronews.com/articles/stories/06/07/67/98/1000x563_cmsv2_03bc89fa-4248-5ad8-8140-3c07bcb9d73c-6076798.jpg"
           alt=" The Woolly Mammoth"
-          style={{ height: '400px' }}
+          style={{ height: '28.5rem' }}
         />
         <Carousel.Caption>
           <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Woolly Mammoth</h3>
@@ -20,7 +20,7 @@ function UncontrolledExample() {
           className="d-block w-100"
           src="https://images.newscientist.com/wp-content/uploads/2022/07/25151808/SEI_116388714.jpg?crop=4:3,smart&width=1200&height=900&upscale=true"
           alt="Tyrannosaurus rex "
-          style={{ height: '400px' }}
+          style={{ height: '28.5rem' }}
         />
 
         <Carousel.Caption>
@@ -32,7 +32,7 @@ function UncontrolledExample() {
           className="d-block w-100"
           src="https://www.telegraph.co.uk/multimedia/archive/01117/sabre-tooth-tiger-_1117360c.jpg"
           alt="Third slide"
-          style={{ height: '400px' }}
+          style={{ height: '28.5rem' }}
         />
 
         <Carousel.Caption>
