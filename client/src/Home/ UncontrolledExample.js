@@ -13,7 +13,7 @@ function UncontrolledExample() {
           alt=" Woolly Mammoth"
           style={{ 
             width: isMobile ? '100%' : 'auto',
-            height: isMobile ? 'auto' : '28.5rem',
+            height: isMobile ? '15rem' : '28.5rem',
           }}
         />
         <Carousel.Caption>
@@ -27,7 +27,7 @@ function UncontrolledExample() {
           alt="Tyrannosaurus rex "
           style={{ 
             width: isMobile ? '100%' : 'auto',
-            height: isMobile ? 'auto' : '28.5rem',
+            height: isMobile ? '15rem' : '28.5rem',
           }}
         />
 
@@ -42,7 +42,7 @@ function UncontrolledExample() {
           alt="Saber-toothed Tiger"
           style={{ 
             width: isMobile ? '100%' : 'auto',
-            height: isMobile ? 'auto' : '28.5rem',
+            height: isMobile ? '15rem' : '28.5rem',
           }}
         />
 
