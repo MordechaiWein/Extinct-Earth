@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useTheme } from '@mui/material/styles';
+import { Helmet } from 'react-helmet';
 
 
 function Copyright(props) {
@@ -55,6 +56,9 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+        <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </Helmet>
       <Box 
         sx={{
           backgroundImage: 'url(https://wallpaperaccess.com/full/4457087.jpg)',
@@ -62,6 +66,9 @@ export default function SignIn() {
           backgroundSize: 'cover',
           minHeight: '100vh',
           display: 'flex',
+          '@media (max-width: 600px)': { // Media query for screens up to 600px wide
+            backgroundSize: 'contain', // Adjusted value for smaller screens
+          },
         }}
       >
       <Container component="main" maxWidth="sm">
@@ -92,7 +99,6 @@ export default function SignIn() {
               placeholder='Username*'
               name="email"
               autoComplete="email"
-              autoFocus
               sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
             />
             <TextField
