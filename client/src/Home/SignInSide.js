@@ -66,8 +66,9 @@ export default function SignIn() {
           backgroundSize: 'cover',
           minHeight: '100vh',
           display: 'flex',
-          '@media (max-width: 600px)': { // Media query for screens up to 600px wide
-            backgroundSize: 'contain', // Adjusted value for smaller screens
+          '@media (max-width: 600px)': {
+            backgroundImage: 'url(https://wallpaperaccess.com/full/4457087.jpg)',
+            backgroundSize: '100% 100%',
           },
         }}
       >
