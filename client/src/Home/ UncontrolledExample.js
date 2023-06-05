@@ -50,6 +50,62 @@ function UncontrolledExample() {
           <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Saber-toothed Tiger</h3>
         </Carousel.Caption>
       </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://a-z-animals.com/media/2022/07/iStock-511649044.jpg"
+          alt="Gastornis"
+          style={{ 
+            width: isMobile ? '100%' : 'auto',
+            height: isMobile ? '15rem' : '28.5rem',
+          }}
+        />
+        <Carousel.Caption>
+          <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Gastornis</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://a-z-animals.com/media/2022/07/Shutterstock_1712872735.jpg"
+          alt="Quagga"
+          style={{ 
+            width: isMobile ? '100%' : 'auto',
+            height: isMobile ? '15rem' : '28.5rem',
+          }}
+        />
+        <Carousel.Caption>
+          <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Quagga</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://images.squarespace-cdn.com/content/v1/5571cdd6e4b0dd00b1d83c08/1630073549472-0NHVC1ZMA7RRYORXWTYC/Poison+Arrow+Frog+%28Dendrobatidae%29.jpeg?format=1000w"
+          alt="Splendid poison frog"
+          style={{ 
+            width: isMobile ? '100%' : 'auto',
+            height: isMobile ? '15rem' : '28.5rem',
+          }}
+        />
+        <Carousel.Caption>
+          <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Splendid poison frog</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://a-z-animals.com/media/2022/06/Archaeopteryx-header.jpg"
+          alt="Archaeopteryx"
+          style={{ 
+            width: isMobile ? '100%' : 'auto',
+            height: isMobile ? '15rem' : '28.5rem',
+          }}
+        />
+        <Carousel.Caption>
+          <h3 style={{fontWeight: 'bold', fontFamily: 'Montserrat', fontSize: '2rem'}}>Archaeopteryx</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
     </Carousel>
   );
 }
