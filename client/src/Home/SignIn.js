@@ -72,7 +72,7 @@ export default function SignIn() {
           },
         }}
       >
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{

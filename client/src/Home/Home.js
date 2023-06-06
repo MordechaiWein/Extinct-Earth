@@ -15,8 +15,8 @@ function Home() {
         <div>
             {user ? <DrawerUserBar/> : <DrawerAppBar/>}
             {/* <HomepageLayout/> */}
-            {/* <SignInSide/> */}
-            <SignIn/>
+            <SignInSide/>
+            {/* <SignIn/> */}
         </div>
     )
 }
