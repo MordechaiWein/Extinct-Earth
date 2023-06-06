@@ -45,7 +45,7 @@ export default function DrawerAppBar(props: Props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => setPage(item)}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
