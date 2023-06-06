@@ -9,7 +9,7 @@ function Entry() {
     const {page} = useContext(MyContext)
     
     if (page === "Home") return (<HomepageLayout/>)
-    else if (page === "Log In") return (<SignIn/>)
+    else if (page === "Sign In") return (<SignIn/>)
     else return (<SignUp/>)
 }
 

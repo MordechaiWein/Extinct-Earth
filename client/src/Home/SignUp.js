@@ -80,7 +80,12 @@ function SignUp() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: 'success.main' }}>
-         
+            <img 
+              width="38" 
+              height="38" 
+              src="https://img.icons8.com/glyph-neue/64/dinosaur.png"
+              alt="dinosaur"
+            />
             </Avatar>
             <Typography component="h1" variant="h4" sx={{color: 'white', fontWeight: 'bold'}}>
               Sign Up
