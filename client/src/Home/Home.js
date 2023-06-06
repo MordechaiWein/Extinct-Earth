@@ -5,6 +5,7 @@ import HomepageLayout from "./HomepageLayout";
 import { MyContext } from "../MyContext";
 
 import SignInSide from "./SignInSide";
+import SignIn from "./SignIn";
 
 function Home() {
     
@@ -15,6 +16,7 @@ function Home() {
             {user ? <DrawerUserBar/> : <DrawerAppBar/>}
             {/* <HomepageLayout/> */}
             <SignInSide/>
+            {/* <SignIn/> */}
         </div>
     )
 }
