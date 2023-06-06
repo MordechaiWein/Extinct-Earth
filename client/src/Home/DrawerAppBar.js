@@ -13,6 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useContext } from 'react';
+import { MyContext } from "../MyContext";
 
 interface Props {
   /**
@@ -23,11 +25,12 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Log In', 'Sign Up'];
+const navItems = ['Home','Log In', 'Sign Up'];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const {setPage} = useContext(MyContext)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -53,6 +56,7 @@ export default function DrawerAppBar(props: Props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+
   return (
     <Box sx={{ display: 'flex'}}>
       <CssBaseline />
@@ -76,7 +80,11 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', fontFamily: 'Montserrat sans-serif', fontSize: '1.7rem' }}>
+              <Button 
+                key={item} 
+                sx={{ color: '#fff', fontFamily: 'Montserrat sans-serif', fontSize: '1.7rem' }}
+                onClick={() => setPage(item)}
+              >
                 {item}
               </Button>
             ))}
