@@ -83,7 +83,7 @@ export default function SignInSide() {
          
             </Avatar>
             <Typography component="h1" variant="h4" sx={{color: 'white', fontWeight: 'bold'}}>
-              Sign in
+              Sign In
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
