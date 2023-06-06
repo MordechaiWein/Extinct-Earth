@@ -3,9 +3,10 @@ import DrawerAppBar from "./DrawerAppBar";
 import DrawerUserBar from "./DrawerUserBar";
 import HomepageLayout from "./HomepageLayout";
 import { MyContext } from "../MyContext";
-
-import SignInSide from "./SignInSide";
 import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+
+
 
 function Home() {
     
@@ -15,8 +16,9 @@ function Home() {
         <div>
             {user ? <DrawerUserBar/> : <DrawerAppBar/>}
             {/* <HomepageLayout/> */}
-            <SignInSide/>
             {/* <SignIn/> */}
+            <SignUp/>
+          
         </div>
     )
 }

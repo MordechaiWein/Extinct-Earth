@@ -15,7 +15,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="common.white" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="">
         Extinct Earth
       </Link>{' '}
       {new Date().getFullYear()}
@@ -32,13 +32,13 @@ const defaultTheme = createTheme({
       main: '#00000000', 
     },
     secondary: {
-      main: '#ff9800', 
+      main: '#2e7d32', 
     },
   },
 });
 
 
-export default function SignInSide() {
+function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,7 +61,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://wallpaperaccess.com/full/4457087.jpg)',
+            backgroundImage: 'url(https://i.pinimg.com/originals/36/2f/01/362f01a22d05ea64419f4d0391ce2e88.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -79,11 +79,11 @@ export default function SignInSide() {
               alignItems: 'center'
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'warning.light' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'success.main' }}>
          
             </Avatar>
             <Typography component="h1" variant="h4" sx={{color: 'white', fontWeight: 'bold'}}>
-              Sign In
+              Sign Up
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -97,6 +97,7 @@ export default function SignInSide() {
                 autoFocus
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
+              
               <TextField
                 margin="normal"
                 required
@@ -108,6 +109,30 @@ export default function SignInSide() {
                 autoComplete="current-password"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
+              <br/>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                placeholder='Password Confirmation*'
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
+              /> 
+             
+              <TextField
+                margin="normal"
+                required
+               fullWidth
+                name="password"
+                placeholder='Email Address*'
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
+              />       
            
               <Button
                 type="submit"
@@ -126,3 +151,5 @@ export default function SignInSide() {
     </ThemeProvider>
   );
 }
+
+export default SignUp
