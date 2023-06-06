@@ -9,8 +9,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Helmet } from 'react-helmet';
-import { useEffect } from 'react';
 
 function Copyright(props) {
   return (
@@ -49,20 +47,10 @@ function SignIn() {
     });
   };
 
-  useEffect(() => {
-    const rootElement = document.documentElement;
-    rootElement.style.touchAction = 'manipulation';
 
-    return () => {
-      rootElement.style.touchAction = '';
-    };
-  }, []);
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-      </Helmet> 
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
