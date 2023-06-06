@@ -49,7 +49,7 @@ function SignIn() {
 
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme} disablePinchZoom style={{"-webkit-user-zoom": "none", "-moz-user-zoom": "none", "user-zoom": "none"}} >
       <Grid container component="main" sx={{ height: '100vh'}}>
         <CssBaseline />
         <Grid
@@ -66,12 +66,7 @@ function SignIn() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square 
-            sx={{
-              backgroundColor: '#0f0f0f',
-              overflow: 'hidden',
-              touchAction: 'manipulation',
-            }}>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{backgroundColor: '#0f0f0f'}}>
           <Box
             sx={{
               my: 8,
