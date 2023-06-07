@@ -4,7 +4,7 @@ const MyContext =  React.createContext()
 
 function MyProvider({children}) {
     
-    const [user, setUser] = useState(true)
+    const [user, setUser] = useState(null)
     const [page, setPage] = useState('Home')
     
     return (
