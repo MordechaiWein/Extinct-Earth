@@ -185,20 +185,28 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-            Spix's Macaw
+            Extinct parrots make a flying comeback in Brazil
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-            The species inhabited riparian Caraibeira (Tabebuia aurea) woodland galleries in the drainage basin of the 
-            Rio São Francisco within the Caatinga dry forest climate of interior northeastern Brazil. 
-            It had a very restricted natural habitat due to its dependence on the tree for nesting, feeding and roosting.
+              The Spix macaw, a bird that had once vanished in the wild, 
+              is now thriving in its South American homeland after a successful breeding programme.
+              Twenty years ago, the future of the Spix's macaw could not have looked bleaker. 
+              The last member of this distinctive parrot species disappeared from the wild,
+              leaving only a few dozen birds in collectors' cages across the globe.
             </p>
             <Header as='h3' style={{ fontSize: '2em' }}>
-            The bird was already rare by the time of Spix's discovery of it in 1819
+              Thanks to a remarkable international rescue project, 
+              Spix's macaws - with their grey heads and vivid blue plumage - have made a stunning comeback.
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-            100 years of intensive burning, logging and grazing of the Caatinga. Centuries of deforestation,
-             human encroachment and agricultural development along the Rio Sao Francisco corridor following 
-            European colonization of eastern Brazil preceded its precipitous decline in the latter part of the 20th century
+               “The project is going extremely well,” said biologist Tom White, 
+               of the US Fish and Wildlife Service and a technical adviser to the rescue project. 
+               “It's almost a month since we released the birds and all of them have survived.
+               “They are acting as a flock; they are staying in the vicinity of their release and 
+               they are beginning to sample local vegetation. It's going as well as it possibly could.”
+            </p>
+            <p style={{fontStyle: 'italic'}}>
+              McKie, Robin. "Extinct parrots make a flying comeback in Brazil." The Guardian, 10 Jul 2022
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
@@ -207,7 +215,7 @@ const HomepageLayout = () => (
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button size='huge' href="https://en.wikipedia.org/wiki/Spix%27s_macaw" >See More</Button>
+            <Button size='huge' href="https://www.theguardian.com/environment/2022/jul/10/extinct-parrots-make-a-flying-comeback-in-brazil" >See More</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -23,7 +23,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['About','Extinct Animals', 'Extinction Events', 'Bookmark', 'Logout'];
+const navItems = ['About','Species', 'Extinction Events', 'Bookmark', 'Admin'];
 
 export default function DrawerUserBar(props: Props) {
   const { window } = props;
@@ -70,24 +70,30 @@ export default function DrawerUserBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Rubik Bubbles', fontSize: '2rem'} }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Montserrat', fontSize: '2rem'} }}
           >
-            <div style={{display:'flex'}}>
-          <img 
-            width="35"            
-            height="35"
-            src="https://img.icons8.com/external-flat-icons-maxicons/85/external-ancient-the-lost-world-flat-flat-icons-maxicons-9.png" 
-            alt="external-ancient-the-lost-world-flat-flat-icons-maxicons-9"
-          />
-           Extinct Earth
+          <div style={{display:'flex'}}>
+            Extinct Earth
           </div>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', fontFamily: 'Montserrat sans-serif', fontSize: '1.7rem' }}>
+              <Button key={item} sx={{ color: '#fff', fontFamily: 'Montserrat',fontWeight: 'bold', fontSize: '1rem' }}>
                 {item}
               </Button>
             ))}
+            <Button 
+              size='small'
+              sx={{ 
+                color: '#fff', 
+                fontFamily: 'Montserrat',
+                fontWeight: 'bold', 
+                fontSize: '1rem',
+                border: 'solid 1px white',
+              }}
+            >
+              Logout
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
