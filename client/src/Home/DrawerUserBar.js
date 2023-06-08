@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
 
 interface Props {
   /**
@@ -78,8 +79,19 @@ export default function DrawerUserBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', fontFamily: 'Montserrat',fontWeight: 'bold', fontSize: '1rem' }}>
-                {item}
+              <Button key={item}>
+                <NavLink 
+                  to={item}
+                  style={{ 
+                    color: '#fff', 
+                    fontFamily: 'Montserrat',
+                    fontWeight: 'bold', 
+                    fontSize: '1rem',
+                    textDecoration: 'none'
+                  }}
+                >
+                  {item}
+                </NavLink>
               </Button>
             ))}
             <Button 

@@ -10,7 +10,7 @@ function Home() {
     
     return (
         <div>
-            {user ? <DrawerUserBar/> : <DrawerAppBar/>}
+            {user ? "" : <DrawerAppBar/>}
             <Entry/>
         </div>
     )
