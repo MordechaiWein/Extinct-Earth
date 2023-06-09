@@ -37,14 +37,14 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Formosan clouded leopard'
+      content='Formosan Clouded Leopard'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '0em' : '-10em',
+        marginLeft: mobile ? '0em' : '-9.5em',
         fontFamily: 'Montserrat',
         fontWeight: 'bold'
       }}

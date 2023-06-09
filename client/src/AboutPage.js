@@ -87,6 +87,7 @@ function AboutPage() {
                 ...imageStyle,
                 marginLeft: isMobile ? 'auto' : '2rem',
                 marginRight: isMobile ? 'auto' : undefined,
+                marginTop: isMobile ? '2rem' : 0
               }}
           />
        </Box>   
