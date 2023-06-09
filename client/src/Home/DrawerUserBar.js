@@ -50,7 +50,7 @@ export default function DrawerUserBar(props: Props) {
                 justifyContent: 'center',
                 textDecoration: 'none', 
                 color: 'black',
-                fontSize: '1.4rem' 
+                fontSize: '1.5rem' 
                 }}>
               <ListItemText primary={item} />
             </NavLink>
