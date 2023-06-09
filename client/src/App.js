@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Home from './Home/Home';
-import Species from './Species';
+import AboutPage from './AboutPage';
 import DrawerUserBar from './Home/DrawerUserBar';
 import { Route, Switch } from 'react-router-dom';
 import { MyContext } from "./MyContext";
@@ -18,8 +18,8 @@ function App() {
         <Route exact path="/" >
           <Home />
         </Route>
-        <Route exact path="/species" >
-          <Species />
+        <Route exact path="/about" >
+          <AboutPage />
         </Route>
       </Switch>
     </div>
