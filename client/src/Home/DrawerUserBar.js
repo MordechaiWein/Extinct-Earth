@@ -58,7 +58,8 @@ export default function DrawerUserBar(props: Props) {
 
         {navItems.map((item) => (
           <ListItem key={item} disablePadding sx={{ justifyContent: 'center' }}>
-            <NavLink to={item} 
+            <NavLink 
+              to={item} 
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -104,12 +105,19 @@ export default function DrawerUserBar(props: Props) {
             <Button>
                 <NavLink 
                   to='/'
+                  exact 
                   style={{ 
                     color: '#fff', 
                     fontFamily: 'Montserrat',
                     fontWeight: 'bold', 
                     fontSize: '1rem',
                     textDecoration: 'none'
+                  }}
+                  activeStyle={{ 
+                    backgroundColor: "white", 
+                    color: 'black', 
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem' 
                   }}
                 >
                  Home
@@ -118,13 +126,20 @@ export default function DrawerUserBar(props: Props) {
               {navItems.map((item) => (
               <Button key={item}>
                 <NavLink 
-                  to={item}
+                  to={`/${item}`}
+                  exact 
                   style={{ 
                     color: '#fff', 
                     fontFamily: 'Montserrat',
                     fontWeight: 'bold', 
                     fontSize: '1rem',
                     textDecoration: 'none'
+                  }}
+                  activeStyle={{ 
+                    backgroundColor: "white", 
+                    color: 'black', 
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem' 
                   }}
                 >
                   {item}
