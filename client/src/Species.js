@@ -47,6 +47,7 @@ const AboutPage = () => {
         <Box
           sx={{
             display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
             marginBottom: '2rem',
@@ -63,7 +64,13 @@ const AboutPage = () => {
             </Typography>
             <Typography 
                 variant="body1" 
-                sx={{ marginBottom: '1rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)', fontSize: '1.1rem' }}>
+                sx={{ 
+                    marginBottom: '1rem',
+                    fontFamily: 'Montserrat', 
+                    color: 'rgba(0, 0, 0, 0.87)', 
+                    fontSize: '1.1rem',
+                    }}
+                >
                Did you know that 99.9% of animals that have ever lived are now extinct? 
                It's a staggering statistic that highlights the incredible diversity and evolution of life on our planet. 
                Throughout millions of years, countless species have emerged, thrived, and eventually disappeared, 
@@ -89,6 +96,7 @@ const AboutPage = () => {
               alignItems: 'center',
               justifyContent: 'space-between',
               marginBottom: '2rem',
+              flexDirection: isMobile ? 'column' : 'row',
             }}
           >
             <img
@@ -118,6 +126,7 @@ const AboutPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
+              flexDirection: isMobile ? 'column' : 'row',
               marginBottom: '2rem',
             }}
           >

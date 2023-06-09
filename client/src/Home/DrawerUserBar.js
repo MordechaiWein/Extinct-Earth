@@ -42,7 +42,7 @@ export default function DrawerUserBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item} disablePadding sx={{ justifyContent: 'center' }}>
             <NavLink to={item} 
               style={{
                 display: 'flex',
@@ -50,7 +50,7 @@ export default function DrawerUserBar(props: Props) {
                 justifyContent: 'center',
                 textDecoration: 'none', 
                 color: 'black',
-                fontSize: '1.2rem' 
+                fontSize: '1.4rem' 
                 }}>
               <ListItemText primary={item} />
             </NavLink>
