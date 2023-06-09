@@ -1,7 +1,20 @@
 import React from 'react';
 import { Typography, Container, Box } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
+
 
 const AboutPage = () => {
+
+    const isMobile = useMediaQuery('(max-width: 600px)');
+
+    const imageStyle = isMobile
+  ? { width: '40%', height: 'auto', marginLeft: '2rem' }
+  : { width: '40%', height: '25rem', marginLeft: '2rem' };
+
+  const imageStyleRight = isMobile
+  ? { width: '40%', height: 'auto', marginRight: '2rem' }
+  : { width: '40%', height: '25rem', marginRight: '2rem' };
+
   return (
     <div>
       {/* Header section */}
@@ -11,21 +24,24 @@ const AboutPage = () => {
         <img 
           src="https://images.pexels.com/photos/7176736/pexels-photo-7176736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Header Image"
-          style={{ width: '100rem', height: '40rem', display: 'block', margin: 'auto' }}
+          style={{ width: '91%', height: 'auto', display: 'block', margin: 'auto', maxHeight: '40rem' }}
         />
       </header>
        <Typography
             variant="h4" 
             align='center'
-            style={{marginBottom: '1rem', marginTop: '3rem', fontWeight: 'Montserrat', fontWeight: 'bold'}}>
+            style={{marginBottom: '1rem', marginTop: '3rem', fontFamily: 'Montserrat', fontWeight: 'bold'}}>
          Our Mission:
        </Typography>
-       <Typography style={{textAlign: 'center', fontSize: '1.1rem', margin: '0 20rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)'}}>
+       <Container>
+       <Typography 
+            style={{textAlign: 'center', fontSize: '1.1rem', margin: '0 2rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)'}}>
             At Extinct Animals, our mission is to celebrate and remember the incredible creatures that once roamed our planet. 
             Through storytelling and education, we bring their captivating stories back to life. Join us in exploring 
             the wonders of the past and discovering the rich diversity of extinct animals.
        </Typography>
-
+       </Container>
+      
       {/* Main content section */}
       <Container sx={{ marginTop: '6rem' }}>
         <Box
@@ -60,7 +76,7 @@ const AboutPage = () => {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Lonesome_George_in_profile.png"
             alt="Welcome Image"
-            style={{ width: '40%', height: '25rem', marginLeft: '2rem' }}
+            style={imageStyle}
           />
         </Box>
 
@@ -78,9 +94,8 @@ const AboutPage = () => {
             <img
               src="https://www.rainforesttrust.org/app/uploads/2021/09/GOldenToad-1000x667.jpeg"
               alt="Mission Image"
-              style={{ width: '40%', height: '25rem', marginRight: '2rem' }}
+              style={imageStyleRight}
             />
-        
             <Typography variant="body1"  sx={{ marginBottom: '1rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)', fontSize: '1.1rem' }}>
             <Typography variant="h4"  sx={{paddingBottom: '1rem',fontWeight: 'bold' }}>
               Discover the Wonders of Extinct Animals
@@ -109,7 +124,7 @@ const AboutPage = () => {
             <img
               src="https://images.csmonitor.com/csm/2015/10/938806_1_ibex_standard.jpg?alias=standard_900x600nc"
               alt="Contact Image"
-              style={{ width: '40%', height: '25rem', marginRight: '2rem' }}
+              style={imageStyleRight}
             />
             <Typography variant="body1" sx={{ marginBottom: '1rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)', fontSize: '1.1rem' }}>
             <Typography variant="h4" sx={{paddingBottom: '1rem',fontWeight: 'bold' }}>
@@ -128,7 +143,7 @@ const AboutPage = () => {
       </Container>
       
       {/* Footer section */}
-      <footer style={{ backgroundColor: '#1b232E', padding: '1rem', marginTop: '2rem', color: 'white' }}>
+      <footer style={{ backgroundColor: '#1b232E', padding: '1rem', marginTop: '2rem', color: 'white', textAlign: 'center' }}>
         <Typography variant="body2" align="center">
           &copy; 2023 Extinct Animals. All rights reserved.
         </Typography>

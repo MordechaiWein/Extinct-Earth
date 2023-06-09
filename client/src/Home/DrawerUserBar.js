@@ -43,7 +43,15 @@ export default function DrawerUserBar(props: Props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <NavLink to={item} style={{ textAlign: 'center', textDecoration: 'none', color: 'black' }}>
+            <NavLink to={item} 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none', 
+                color: 'black',
+                fontSize: '1.2rem' 
+                }}>
               <ListItemText primary={item} />
             </NavLink>
           </ListItem>
