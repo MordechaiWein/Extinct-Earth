@@ -96,7 +96,6 @@ function SignIn() {
                 placeholder='Username*'
                 name="email"
                 autoComplete="email"
-                autoFocus
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
               <TextField
