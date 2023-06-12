@@ -23,7 +23,7 @@ function EventsContainer() {
             backgroundPosition: 'center',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: isMobile ? '2rem' : '6rem',
+            fontSize: isMobile ? '1.5rem' : '6rem',
             }}
         >
         EXTINCTION EVENTS
