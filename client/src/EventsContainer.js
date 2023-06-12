@@ -6,6 +6,7 @@ import { Typography, Container} from '@mui/material';
 function EventsContainer() {
 
     const {events} = useContext(MyContext)
+    const isMobile = window.innerWidth <= 600;
     const eventList = events.map(event => <EventCard key={event.id} event={event}/>)
 
     return (
@@ -13,16 +14,16 @@ function EventsContainer() {
     <Typography 
         sx={{
             textAlign: 'center', 
-            padding: '12rem',
-            marginLeft: '5rem',
-            marginRight: '5rem',
+            padding: isMobile ? '6rem' : '12rem',
+            marginLeft: isMobile ? '1rem' : '5rem',
+            marginRight: isMobile ? '1rem' : '5rem',
             backgroundImage: 'url(https://cdn.mos.cms.futurecdn.net/FAdM9sLkkfPpEQu4m4dm8a.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: '6rem'
+            fontSize: isMobile ? '3rem' : '6rem',
             }}
         >
         EXTINCTION EVENTS
