@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface Props {
   /**
@@ -29,6 +30,7 @@ const navItems = ['About','Species', 'Extinction Events', 'Bookmark', 'Admin'];
 export default function DrawerUserBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const isMediumScreen = useMediaQuery('(max-width: 960px)');
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -97,11 +99,54 @@ export default function DrawerUserBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Montserrat', fontSize: '2rem'} }}
           >
-          <div style={{display:'flex'}}>
+
+  
+   
+           <div style={{display:'flex'}}>
             Extinct Earth
-          </div>
+          </div> 
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+          {isMediumScreen ? (
+
+                  <>
+                  <Button>
+                    <NavLink 
+                      to='/'
+                      exact 
+                      style={{ 
+                        color: '#fff', 
+                        fontFamily: 'Montserrat',
+                        fontWeight: 'bold', 
+                        fontSize: '1rem',
+                        textDecoration: 'none'
+                      }}
+                      activeStyle={{ 
+                        backgroundColor: "white", 
+                        color: 'black', 
+                        paddingLeft: '1rem',
+                        paddingRight: '1rem' 
+                      }}
+                    >
+                      Home
+                    </NavLink>
+                  </Button>
+                  <Button 
+                    size='small'
+                    sx={{ 
+                      color: '#fff', 
+                      fontFamily: 'Montserrat',
+                      fontWeight: 'bold', 
+                      fontSize: '1rem',
+                      border: 'solid 1px white',
+                    }}
+                  >
+                    Logout
+                  </Button>
+                  </>
+                 ) : (
+                  <>
             <Button>
                 <NavLink 
                   to='/'
@@ -158,6 +203,8 @@ export default function DrawerUserBar(props: Props) {
             >
               Logout
             </Button>
+            </>
+            )}
           </Box>
         </Toolbar>
       </AppBar>

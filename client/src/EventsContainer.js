@@ -23,13 +23,11 @@ function EventsContainer() {
             backgroundPosition: 'center',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: isMobile ? '1.8rem' : '6rem',
+            fontSize: isMobile ? '1.8rem' : '4.9vw'
             }}
         >
         EXTINCTION EVENTS
     </Typography>
-     
-
        <Container>
        <Typography 
             style={{
@@ -48,7 +46,7 @@ function EventsContainer() {
             Join us in exploring the mysteries of these global upheavals that have impacted the course of evolution.
        </Typography>
        </Container>
-       {/* {eventList} */}
+       {eventList}
     </div>
     )
 }
