@@ -14,7 +14,7 @@ function EventsContainer() {
     <Typography 
         sx={{
             textAlign: 'center', 
-            padding: isMobile ? '6rem' : '12rem',
+            padding: isMobile ? '1.5rem' : '12rem',
             marginLeft: isMobile ? '1rem' : '5rem',
             marginRight: isMobile ? '1rem' : '5rem',
             backgroundImage: 'url(https://cdn.mos.cms.futurecdn.net/FAdM9sLkkfPpEQu4m4dm8a.jpg)',
@@ -23,7 +23,7 @@ function EventsContainer() {
             backgroundPosition: 'center',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: isMobile ? '1.5rem' : '6rem',
+            fontSize: isMobile ? '3rem' : '6rem',
             }}
         >
         EXTINCTION EVENTS
