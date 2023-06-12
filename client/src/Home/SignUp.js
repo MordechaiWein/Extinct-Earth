@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useContext } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,7 +8,9 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { MyContext } from "../MyContext";
 
 function Copyright(props) {
   return (
@@ -38,14 +40,39 @@ const defaultTheme = createTheme({
 
 
 function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  const {setUser, setPage} = useContext(MyContext)
+  const [errors, setErrors] = useState([])
+  const [data, setData] = useState({
+    username: '',
+    password: '',
+    password_confirmation: '',
+    email_address: ''
+  })
+
+  function handleChange(event) {
+    setData({...data, [event.target.name] : event.target.value})
+  }
+ 
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/signup', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    })
+    .then((response) => {
+      if (response.ok) {
+        response.json().then(data => {
+          setUser(data)
+          setPage("Home")
+          alert('Welcome to Extinct Earth! 🦖')
+        })
+      } else {
+        response.json().then(data => setErrors(data.errors))
+      }
+    })
+  }
 
 
   return (
@@ -92,10 +119,11 @@ function SignUp() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="username"
                 placeholder='Username*'
-                name="email"
-                autoComplete="email"
+                name="username"
+                onChange={handleChange}
+                autoComplete="username"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
               
@@ -107,6 +135,7 @@ function SignUp() {
                 placeholder='Password*'
                 type="password"
                 id="password"
+                onChange={handleChange}
                 autoComplete="current-password"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
@@ -115,10 +144,11 @@ function SignUp() {
                 margin="normal"
                 required
                 fullWidth
-                name="password"
+                name="password_confirmation"
                 placeholder='Password Confirmation*'
                 type="password"
-                id="password"
+                id="password_confirmation"
+                onChange={handleChange}
                 autoComplete="current-password"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               /> 
@@ -126,15 +156,14 @@ function SignUp() {
               <TextField
                 margin="normal"
                 required
-               fullWidth
-                name="password"
+                fullWidth
+                name="email_address"
                 placeholder='Email Address*'
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                id="email_address"
+                onChange={handleChange}
+                autoComplete="email_address"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />       
-           
               <Button
                 type="submit"
                 fullWidth
@@ -142,8 +171,16 @@ function SignUp() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2, fontWeight: 'bold', height: '3rem', color: 'white' }}
               >
-                Sign In
+                Sign Up
               </Button>
+              {errors.map(error => 
+                <Alert 
+                  severity="error"
+                  sx={{color: 'red', marginBottom: '1rem'}}
+                >
+                  {error}
+                </Alert>
+              )}
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>

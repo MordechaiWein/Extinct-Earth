@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useContext  } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,7 +8,9 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { MyContext } from "../MyContext";
 
 function Copyright(props) {
   return (
@@ -38,15 +40,37 @@ const defaultTheme = createTheme({
 
 
 function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
 
+  const {setUser, user, setPage} = useContext(MyContext)
+  const [errors, setErrors] = useState([])
+  const [data, setData] = useState({
+    username: '',
+    password: ''
+  })
+  
+  function handleChange(event) {
+    setData({...data, [event.target.name] : event.target.value})
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/login', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    })
+    .then((response) => {
+      if (response.ok) {
+        response.json().then(data => {
+          setUser(data)
+          setPage("Home")
+          alert('Welcome you have successfully logged in')
+        })
+      } else {
+        response.json().then(data => setErrors(data.errors))
+      }
+    })
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -92,10 +116,11 @@ function SignIn() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="username"
                 placeholder='Username*'
-                name="email"
-                autoComplete="email"
+                name="username"
+                autoComplete="username"
+                onChange={handleChange}
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
               <TextField
@@ -107,6 +132,7 @@ function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChange}
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
            
@@ -119,6 +145,14 @@ function SignIn() {
               >
                 Sign In
               </Button>
+              {errors.map(error => 
+                <Alert 
+                  severity="error"
+                  sx={{color: 'red', marginBottom: '1rem'}}
+                >
+                  {error}
+                </Alert>
+              )}
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { MyContext } from "../MyContext";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   /**
@@ -32,9 +34,20 @@ export default function DrawerUserBar(props: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isMediumScreen = useMediaQuery('(max-width: 960px)');
 
+  const {setUser} = useContext(MyContext)
+  const history = useHistory()
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  function handleClick() {
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    .then(setUser(null), history.push('/'))
+    alert('Goodbye see you later')
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -74,6 +87,17 @@ export default function DrawerUserBar(props: Props) {
             </NavLink>
           </ListItem>
         ))}
+           <ListItem disablePadding>
+            <ListItemButton 
+              onClick={handleClick}
+              sx={{ 
+                textAlign: 'center', 
+                color: '#0288d1'
+                }}
+                >
+              <ListItemText primary="Logout"/>
+            </ListItemButton>
+          </ListItem>
       </List>
     </Box>
   );
@@ -134,6 +158,7 @@ export default function DrawerUserBar(props: Props) {
                   </Button>
                   <Button 
                     size='small'
+                    onClick={handleClick}
                     sx={{ 
                       color: '#fff', 
                       fontFamily: 'Montserrat',
@@ -193,6 +218,7 @@ export default function DrawerUserBar(props: Props) {
             ))}
             <Button 
               size='small'
+              onClick={handleClick}
               sx={{ 
                 color: '#fff', 
                 fontFamily: 'Montserrat',

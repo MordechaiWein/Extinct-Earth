@@ -4,10 +4,19 @@ const MyContext =  React.createContext()
 
 function MyProvider({children}) {
     
-    const [user, setUser] = useState(true)
+    const [user, setUser] = useState(null)
     const [page, setPage] = useState('Home')
     const [events, setEvents] = useState([])
 
+    useEffect(() => {
+        fetch('/me')
+        .then((response) => {
+            if (response.ok) {
+                response.json().then(data => setUser(data))
+            }
+        })
+    },[])
+    
     useEffect(() => {
         fetch('/events')
         .then(response => response.json())
@@ -15,7 +24,7 @@ function MyProvider({children}) {
     },[])
     
     return (
-        <MyContext.Provider value={{ user, page, setPage, events }}>
+        <MyContext.Provider value={{ user, setUser, page, setPage, events }}>
             {children}
         </MyContext.Provider>
     ) 
