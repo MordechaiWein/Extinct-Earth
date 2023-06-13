@@ -52,7 +52,6 @@ function BecomeAdmin() {
             <Typography 
             style={{
                 fontSize: '1.8rem',
-                margin: '0 2rem', 
                 fontFamily: 'Nunito Sans', 
                 padding: '2rem'
                 }}
