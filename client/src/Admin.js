@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Typography, Container, Box} from '@mui/material';
 import Alert from '@mui/material/Alert';
-
+import { useMediaQuery } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,8 +11,9 @@ import CloseIcon from '@mui/icons-material/Close';
 function Admin() {
 
     const [thanks, setThanks] = useState('')
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
     const [data, setData] = useState('')
+    const isMobile = useMediaQuery('(max-width: 600px)');
 
     function handleClick() {
         setThanks('Thank you, a member of our team will reach out to you') 
@@ -40,11 +41,10 @@ function Admin() {
             style={{
                 display: 'flex',
                 justifyContent: 'top',
-                alignItems: 'center',
-                height: '85vh',
+                alignItems: 'center'
               }}
             >
-                <div style={{backgroundColor: 'white', borderRadius: '1rem', paddingBottom: '7rem'}}>
+                <div style={{backgroundColor: 'white', borderRadius: '1rem', paddingBottom: '7rem', marginTop: '10rem'}}>
 
         
      
@@ -63,7 +63,7 @@ function Admin() {
        </Typography>
      
 
-       <Box  noValidate sx={{ mt: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+       <Box  noValidate sx={{ mt: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',  margin: '0 2rem',  }}>
               <TextField
                 margin="normal"
                 required
@@ -82,13 +82,13 @@ function Admin() {
                 color='success'
                 variant="contained"
                 onClick={handleClick}
-                sx={{ mt: 3, mb: 2, fontWeight: 'bold', height: '3rem', color: 'white', width: '30rem' }}
+                sx={{ mt: 3, mb: 2, fontWeight: 'bold', height: '3rem', color: 'white', width: '30rem'}}
               >
                 Submit Request
               </Button>
               
                             
-                <Box sx={{width: '49%'}}>
+                <Box sx={{width: isMobile ? '100%' : '52.9%'}}>
                 <Collapse in={open}>
                 <Alert
                     action={
