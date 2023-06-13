@@ -24,7 +24,7 @@ function MyProvider({children}) {
     },[])
     
     return (
-        <MyContext.Provider value={{ user, setUser, page, setPage, events }}>
+        <MyContext.Provider value={{ user, setUser, page, setPage, events, setEvents }}>
             {children}
         </MyContext.Provider>
     ) 
