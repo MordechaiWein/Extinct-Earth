@@ -45,7 +45,13 @@ function BecomeAdmin() {
                 alignItems: 'center'
               }}
             >
-                <div style={{backgroundColor: 'white', borderRadius: '1rem', paddingBottom: '7rem', marginTop: '10rem'}}>
+                <div style={{
+                        backgroundColor: 'white', 
+                        borderRadius: '1rem', 
+                        paddingBottom: '7rem', 
+                        marginTop: isMobile ? "" : '10rem'
+                        }}
+                >
 
         
      
