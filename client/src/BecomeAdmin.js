@@ -29,7 +29,8 @@ function BecomeAdmin() {
     return (
         <div
             style={{
-                backgroundImage: 'url(https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png)',
+                
+                backgroundImage: isMobile ? 'none' : 'url(https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png)',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -37,7 +38,7 @@ function BecomeAdmin() {
             }}
         >
             <Container 
-            maxWidth= {isMobile ? "xs" : "md"}
+            maxWidth=  "md"
             style={{
                 display: 'flex',
                 justifyContent: 'center',
