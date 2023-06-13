@@ -6,10 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'seeding'
-
+puts 'destroying everything'
 User.destroy_all
 Event.destroy_all
-
-User.create(username: 'mord', password: 'bella888', password_confirmation: 'bella888', email_address: 'mordwein77@gmail.com', admin: true)
-puts 'seeding completed'
+puts 'everything destroyed'
