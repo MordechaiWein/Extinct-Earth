@@ -24,8 +24,7 @@ function AnimalCard({ animal}) {
         image={animal.image}
         style={{
           height: isMobile ? '20rem' : '25rem', 
-          width: isMobile ? '31rem' : '26.4rem',
-          maxWidth: '100%'
+          width: isMobile ? '32.8rem' : '26.4rem'
         }}
       />
       <CardContent>

@@ -62,8 +62,8 @@ function AnimalContainer() {
     }
     
     return (
-            <Box ml={isMobile ? 2.5 : 11} mr={ isMobile? 1 : 8}>
-                <Box  mr={isMobile ? 0 : 3}>
+            <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>
+                <Box  mr={isMobile ? 1 : 3}>
             <Typography 
         sx={{
             textAlign: 'center', 
