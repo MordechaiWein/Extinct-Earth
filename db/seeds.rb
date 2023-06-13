@@ -9,4 +9,12 @@
 puts 'destroying everything'
 User.destroy_all
 Event.destroy_all
+Animal.destroy_all
+User.create(username: 'Josh', password: 'bee', password_confirmation: 'bee', email_address: 'mordwein77@gmail.com', admin: true)
 puts 'everything destroyed'
+
+
+
+
+
+

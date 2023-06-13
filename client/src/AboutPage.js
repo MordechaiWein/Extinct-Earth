@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Container, Box } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
+import IrishElk from './images/irish-elk.png'
 
 
 function AboutPage() {
@@ -22,7 +23,7 @@ function AboutPage() {
         <Typography variant="h4" align="center" sx={{ marginBottom: '1rem' }}>
         </Typography>
         <img 
-          src="https://images.pexels.com/photos/7176736/pexels-photo-7176736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src={IrishElk}
           alt="Header Image"
           style={{ width: '91%', height: 'auto', display: 'block', margin: 'auto', maxHeight: '40rem' }}
         />

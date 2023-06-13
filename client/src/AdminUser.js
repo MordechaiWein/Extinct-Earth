@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { MyContext } from "./MyContext";
+import AdminAnimal from "./AdminAnimal";
 
 
 function AdminUser() {
@@ -80,6 +81,9 @@ function AdminUser() {
                   {errors.map(error => <li key={error} style={{color: 'red'}}>{error}</li>)}
                 <input type="submit"/>
             </form>
+            <br/>
+            <h1>animals</h1>
+            <AdminAnimal/>
         </div>
     )
 }

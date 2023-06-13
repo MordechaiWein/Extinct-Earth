@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Species() {
 
-    const species = ['FISH', 'BIRDS', 'REPTILES', 'MAMMALS', 'INSECTS', 'AMPHIBIANS']
+    const species = ['FISH', 'BIRD', 'REPTILE', 'MAMMAL', 'INSECT', 'AMPHIBIAN']
     const speciesList = species.map(s => 
         <Link 
             className="specieshover"
