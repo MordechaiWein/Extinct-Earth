@@ -13,6 +13,7 @@ import SkyImage from './images/sky.png'
 import FishImage from './images/fish.png'
 import AmphibianImage from './images/amphibian.png'
 import ReptileImage from './images/reptile.png'
+import { useMediaQuery } from '@mui/material';
 
 
 
@@ -21,7 +22,10 @@ function AnimalContainer() {
 
     const {animals} = useContext(MyContext)
     const params = useParams()
-    const isMobile = window.innerWidth <= 600;
+
+    // const isMobile = window.innerWidth <= 600;
+    const isMobile = useMediaQuery('(max-width: 600px)');
+
     const [name, setName] = useState('')
     const classification = animals.filter(animal => animal.classification === params.classification)
     const animalList = classification
@@ -59,13 +63,13 @@ function AnimalContainer() {
     
     return (
             <Box ml={isMobile ? 2.5 : 11} mr={ isMobile? 1 : 8}>
-                <Box  mr={isMobile ? 1 : 3}>
+                <Box  mr={isMobile ? 0 : 3}>
             <Typography 
         sx={{
             textAlign: 'center', 
             padding: isMobile ? '6rem' : '6rem',
             marginLeft: isMobile ? '0rem' : '0rem',
-            marginRight: isMobile ? '1rem' : '0rem',
+            marginRight: isMobile ? '0rem' : '0rem',
             backgroundImage: `url(${image})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -90,7 +94,7 @@ function AnimalContainer() {
                     style={{
                         marginBottom: '2rem', 
                         marginTop: '4rem',
-                        width: isMobile ? "97%" : ""
+                        width: '100%'
                     }}
                     InputProps={{
                         startAdornment: (

@@ -7,10 +7,12 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotesIcon from '@mui/icons-material/Notes';
+import { useMediaQuery } from '@mui/material';
 
 function AnimalCard({ animal}) {
 
-  const isMobile = window.innerWidth <= 600;
+  // const isMobile = window.innerWidth <= 600;
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   return (
 
@@ -22,7 +24,8 @@ function AnimalCard({ animal}) {
         image={animal.image}
         style={{
           height: isMobile ? '20rem' : '25rem', 
-          width: isMobile ? '31rem' : '26.4rem'
+          width: isMobile ? '31rem' : '26.4rem',
+          maxWidth: '100%'
         }}
       />
       <CardContent>

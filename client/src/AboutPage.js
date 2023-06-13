@@ -25,7 +25,13 @@ function AboutPage() {
         <img 
           src={IrishElk}
           alt="Header Image"
-          style={{ width: '91%', height: 'auto', display: 'block', margin: 'auto', maxHeight: '40rem' }}
+          style={{
+             width: '91%', 
+             height: isMobile ? '30vh' : 'auto', 
+             display: 'block',
+              margin: 'auto', 
+              maxHeight: '40rem' 
+          }}
         />
       </header>
        <Typography
