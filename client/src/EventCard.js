@@ -41,7 +41,9 @@ function EventCard({ event }) {
       style={{
         backgroundColor: '#f5f5f5',
         padding: '3%',
-        marginBottom: '10px'
+        marginBottom: '10px',
+        marginLeft: '2%',
+        marginRight: '2%'
       }}
     >
       <h1
@@ -57,7 +59,7 @@ function EventCard({ event }) {
       <img
         src={event.image}
         style={{
-          width: '50%',
+          width: '45%',
           height: 'auto',
           objectFit: 'cover',
           paddingRight: '2%',
@@ -108,7 +110,7 @@ function EventCard({ event }) {
         style={{
           paddingTop: '3%',
           fontSize: '1.1vw',
-          fontFamily: 'Montserrat',
+          fontFamily: 'Noto Serif serif',
           color: '#333333',
         }}
       >

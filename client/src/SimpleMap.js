@@ -11,10 +11,10 @@ function SimpleMap({ being }) {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const defaultProps = {
     center: {
-    //   lat: parseFloat(being.latitude),
-    //   lng: parseFloat(being.longitude)
-    lat: 21.3891,
-     lng: 39.8579
+      lat: being.longitude ? parseFloat(being.latitude) : 0,
+      lng: being.longitude ? parseFloat(being.longitude) : 0
+    // lat: 21.3891,
+    //  lng: 39.8579
     },
     zoom: 8
   };
@@ -34,10 +34,10 @@ function SimpleMap({ being }) {
         defaultZoom={defaultProps.zoom}
       >
         <AnyReactComponent
-        //   lat={parseFloat(being.latitude)}
-        //   lng={parseFloat(being.longitude)}
-          lat={21.3891}
-          lng={39.8579}
+          lat={being.longitude ? parseFloat(being.latitude) : 0 }
+          lng={being.longitude ? parseFloat(being.longitude) : 0 }
+          // lat={21.3891}
+          // lng={39.8579}
           icon={<RoomIcon sx={{ fontSize: '60px', color: 'red', transform: 'translate(-50%, -100%)' }} />}
         />
       </GoogleMapReact>
