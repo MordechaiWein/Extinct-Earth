@@ -104,7 +104,7 @@ function AnimalContainer() {
                     )}}
                 />
                 </Box>
-                <Box ml={isMobile ? 0 : 0} mr={ isMobile? -1: 0}>
+                <Box ml={isMobile ? 0 : 0} mr={ isMobile? -1.4 : 0}>
                 <Grid container>
                    {animalList}
                 </Grid>
