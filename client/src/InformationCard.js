@@ -20,7 +20,7 @@ function InformationCard() {
     
     return (
         
-      <Container style={{marginTop: '2rem', maxWidth: '90%'}}>
+      <Container style={{marginTop: '2rem', maxWidth: isMobile ? '100%' : '90%'}}>
         
         {isMobile ? 
    
@@ -58,61 +58,121 @@ function InformationCard() {
      
         {being.history}
   
-           <Button 
-                sx={{fontWeight: 'bold', marginLeft: '-0.5rem', marginTop: '1rem'}}
-                href={being.link}
-                color="success"
-                >
-                See More Information
-             </Button>
+        <div style={{ paddingTop: '0.5rem'}}>
+                <a
+                    style={{
+                        fontWeight: 'bold', 
+                        textDecoration: 'none',
+                        color: '#2e7d32'
+                    }}
+                    href={being.link}
+                 
+                 
+                    >
+                    See More Information
+                </a>
+                </div>
              <SimpleMap being={being}/>
         </Typography>
      
       </div>  
-        : 
-        <Box style={{display: 'flex'}}>
-        <img style={{width: "40rem", height: '56rem'}} src={being.image}/>
-        <Typography style={{marginLeft: '2rem'}}>
-            <h1 
-                style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: '#2e7d32'}}>
-                {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
-            </h1>
-            <div style={{ display: 'flex'}}>
-            <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Period:</h4> 
-            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.time_period}</h4>
-            </div>
-            <div style={{ display: 'flex'}}>
-            <h4 style={{fontWeight: 'bold', color: '#2e7d32' }}>Diet:</h4> 
-            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.diet}</h4>
-           </div>
-           <div style={{ display: 'flex'}}>
-            <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Other Name:</h4> 
-            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.scientific_name}</h4>
-           </div>
-           <div style={{ display: 'flex'}}>
-            <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Classification:</h4> 
-            <h4 style={{marginBottom: '1rem'}}>&nbsp; {capitalizedWord}</h4>
-           </div>
-           <div style={{}}>
-            <h5 style={{fontWeight: 'bold', color: '#2e7d32'}}>Fun Fact:</h5> 
-            <h5 style={{marginBottom: '2rem'}}>{being.fun_fact}</h5>
-           </div>
-           <Typography variant="h7" style={{ fontFamily: 'Nunito Sans', fontStyle: 'italic'}}>
-            {being.history}
-           </Typography>
-            <Button 
-                sx={{fontWeight: 'bold', marginLeft: '-0.5rem'}}
-                href={being.link}
-                color="success"
-                variant="text"
+        : (
+        
+        <Box 
+            style={{
+                display: 'flex',
+                // border: 'solid 1px',
+                height: '56.1rem'
+                }}
+            >
+            <img style={{width: "40rem", height: '100%'}} src={being.image}/>
+
+
+            
+            <Typography 
+                style={{
+                    marginLeft: '2rem', 
+                    // border: 'solid 1px',
+                     width: '100%'
+                     }}
                 >
-                See More Information
-             </Button>
-             <SimpleMap being={being}/>
-           </Typography>
+
+
+                <h1 
+                    style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: '#2e7d32'}}>
+                    {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
+                </h1>
+
+                <div style={{ display: 'flex'}}>
+                    <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Period:</h4> 
+                    <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.time_period}</h4>
+                </div>
+
+                <div style={{ display: 'flex'}}>
+                    <h4 style={{fontWeight: 'bold', color: '#2e7d32' }}>Diet:</h4> 
+                    <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.diet}</h4>
+                </div>
+
+                <div style={{ display: 'flex'}}>
+                    <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Other Name:</h4> 
+                    <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.scientific_name}</h4>
+                </div>
+
+                <div style={{ display: 'flex'}}>
+                    <h4 style={{fontWeight: 'bold', color: '#2e7d32'}}>Classification:</h4> 
+                    <h4 style={{marginBottom: '1rem'}}>&nbsp; {capitalizedWord}</h4>
+                </div>
+
+                <div style={{}}>
+                    <h5 style={{fontWeight: 'bold', color: '#2e7d32'}}>Fun Fact:</h5> 
+                    <h5 style={{marginBottom: '2rem'}}>{being.fun_fact}</h5>
+                </div>
+
+                <Typography 
+                
+                    style={{ fontFamily: 'Nunito Sans', fontStyle: 'italic', fontSize: '100%'}}>
+                        <div 
+                            style={{
+                                // border: 'solid 1px',
+                                height: '14rem',
+                                width: '100%'
+                            
+
+
+                            }}
+                            >
+                        {being.history}
+                    </div>
+            
+                </Typography>
+            <div style={{ paddingTop: '0.5rem'}}>
+                <a
+                    style={{
+                        fontWeight: 'bold', 
+                        textDecoration: 'none',
+                        color: '#2e7d32'
+                    }}
+                    href={being.link}
+                 
+                 
+                    >
+                    See More Information
+                </a>
+                </div>
+                <div 
+                style={{
+                    // border: 'solid 1px',
+                    marginTop: '0.5rem'
+                    }}
+                    >
+                   <SimpleMap being={being}/>
+                </div>
+                
+                
+            </Typography>
            
         </Box>
-           
+        )
         
         }
         </Container>  

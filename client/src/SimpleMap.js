@@ -22,9 +22,10 @@ function SimpleMap({ being }) {
   return (
     // Important! Always set the container height explicitly
     <div style={{
-        marginTop: '1rem',
-        height: '14.9rem',
-        width: isMobile ? "100%" : '50%'
+        marginTop: isMobile ? '1rem' : '0rem',
+        height: '16.9rem',
+        width: isMobile ? "100%" : '50%',
+        paddingBottom: isMobile ? '2rem' : '0rem'
          }}
     >
       <GoogleMapReact
