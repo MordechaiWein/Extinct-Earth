@@ -4,6 +4,8 @@ import AboutPage from './AboutPage';
 import Species from './Species';
 import Admin from './Admin';
 import Bookmark from './Bookmark';
+import InformationCard from './InformationCard';
+import CommentCard from './CommentCard';
 import AnimalContainer from './AnimalContainer';
 import EventsContainer from './EventsContainer';
 import DrawerUserBar from './Home/DrawerUserBar';
@@ -40,6 +42,12 @@ function App() {
         </Route>
         <Route exact path="/:classification" >
           <AnimalContainer />
+        </Route>
+        <Route exact path="/creature/:id" >
+          <InformationCard />
+        </Route>
+        <Route exact path="/comment/:id" >
+          <CommentCard />
         </Route>
       </Switch>
     </div>

@@ -46,11 +46,15 @@ function AnimalCard({ animal}) {
       }}
       >
      
-        <Link style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
+        <Link 
+          to={`/creature/${animal.id}`}
+          style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
          &nbsp; <MenuIcon/>
         &nbsp; LEARN MORE
         </Link>
-        <Link style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
+        <Link 
+         to={`/comment/${animal.id}`}
+        style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
         <NotesIcon/>
         &nbsp; COMMENT
         </Link>
