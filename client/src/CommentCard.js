@@ -16,7 +16,8 @@ function CommentCard({ comment, letter }) {
     const [errors, setErrors] = useState([])
     const [data, setData] = useState({
         text: comment.text,
-        likes: comment.likes
+        likes: comment.likes,
+        user_id: comment.user_id
     })
 
     const updatedLikes = data.likes + 1;
