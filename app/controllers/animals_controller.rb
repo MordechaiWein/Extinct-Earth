@@ -1,7 +1,8 @@
 class AnimalsController < ApplicationController
 
     def index
-        render json: Animal.all
+        animals = Animal.all
+        render json: animals, include: ['comments', 'comments.user']
     end
 
     def create

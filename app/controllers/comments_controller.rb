@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
     
+    def index
+        render json: Comment.all
+    end
+
     def create
        user = User.find(session[:user_id])
        comment = user.comments.create!(comment_params)
@@ -8,7 +12,7 @@ class CommentsController < ApplicationController
 
     def update
         user = User.find_by(id: session[:user_id])
-        if user
+        if user && user.id == params[:user_id]
             comment = user.comments.find(params[:id])
             comment.update!(comment_params)
             render json: comment

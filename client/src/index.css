@@ -16,3 +16,18 @@ code {
   color: #FFB81C !important;
   transition: color 0.7s ease;
 }
+
+.likehover:hover {
+  color: #FFB81C ;
+}
+
+.edithover:hover {
+  color: #1565c0;
+}
+
+.deletehover:hover {
+  color: #1565c0 ;
+}
+
+
+

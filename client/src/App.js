@@ -5,7 +5,7 @@ import Species from './Species';
 import Admin from './Admin';
 import Bookmark from './Bookmark';
 import InformationCard from './InformationCard';
-import CommentCard from './CommentCard';
+import CommentPage from './CommentPage';
 import AnimalContainer from './AnimalContainer';
 import EventsContainer from './EventsContainer';
 import DrawerUserBar from './Home/DrawerUserBar';
@@ -47,7 +47,7 @@ function App() {
           <InformationCard />
         </Route>
         <Route exact path="/comment/:id" >
-          <CommentCard />
+          <CommentPage />
         </Route>
       </Switch>
     </div>

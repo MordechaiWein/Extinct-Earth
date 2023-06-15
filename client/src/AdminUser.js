@@ -18,7 +18,6 @@ function AdminUser() {
 
     function handleChange(event) {
         setData({...data,[event.target.name]: event.target.value})
-        console.log(data)
     }
 
     function handleSubmit(e) {
