@@ -69,6 +69,7 @@ function CommentCard({ comment, letter }) {
 
 
     function handleChange(event) {
+        setErrors([])
         setData({...data,[event.target.name]: event.target.value})
     }
 

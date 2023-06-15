@@ -29,6 +29,7 @@ function CommentPage() {
 
 
     function handleChange(event) {
+        setErrors([])
         setData({...data,[event.target.name]: event.target.value})
     }
 
@@ -122,7 +123,7 @@ function CommentPage() {
                     </Button> 
                     {
                         errors.map(error => 
-                        <Alert severity="error" sx={{color: 'red', width: "85%", marginLeft: '3.9rem'}}>
+                        <Alert severity="error" sx={{color: 'red', width: "47.5%", marginLeft: '3.9rem'}}>
                             {error}
                         </Alert>
                     )}
