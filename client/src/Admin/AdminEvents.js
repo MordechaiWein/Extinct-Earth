@@ -14,7 +14,7 @@ const defaultTheme = createTheme();
 
 function AdminEvents() {
 
-    const {setEvents, events} = useContext(MyContext)
+    const {setEvents, events, user} = useContext(MyContext)
     const history = useHistory()
     const [errors, setErrors] = useState([])
     const [data, setData] = useState({
@@ -54,6 +54,9 @@ function AdminEvents() {
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="md">
         <CssBaseline />
+        <Typography variant="h4" sx={{textAlign:'center'}}>
+                Welcome To The Admins Page {user.username}
+          </Typography> 
         <Box
           sx={{
             marginTop: 8,
