@@ -27,7 +27,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['About','Species', 'Extinction Events', 'Bookmark', 'Admin'];
+const navItems = ['About','Species', 'Extinction Events', 'Favorites', 'Admin'];
 
 export default function DrawerUserBar(props: Props) {
   const { window } = props;

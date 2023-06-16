@@ -1,88 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { MyContext } from "./MyContext";
-import AdminAnimal from "./AdminAnimal";
-
+import { Typography} from '@mui/material';
+import AdminEvents from "./Admin/AdminEvents";
+import AdminAnimals from "./Admin/AdminAnimals";
+import AdminAnimalDashboard from "./Admin/AdminAnimalDashboard";
+import AdminEventDashboard from "./Admin/AdminEventDashboard";
 
 function AdminUser() {
-
-    const {setEvents, events} = useContext(MyContext)
-    const [errors, setErrors] = useState([])
-    const [data, setData] = useState({
-        name: '',
-        image: '',
-        description: '', 
-        start_date: '',
-        end_date: '', 
-        cause: ''
-    })
-
-    function handleChange(event) {
-        setData({...data,[event.target.name]: event.target.value})
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        fetch("/events", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data)
-        })
-        .then((response) => {
-            if (response.ok) {
-                response.json().then(data => {
-                    setEvents([...events, data])
-                })
-            } else {
-                response.json().then(data => setErrors(data.errors))
-            }
-        })
-    }
-
+    
+    const {user} = useContext(MyContext)
+    
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                  style={{display: "block", margin: '5px', width: '500px'}}
-                  placeholder="name"
-                  onChange={handleChange}
-                  name= "name"
-                  />
-                <input 
-                  style={{display: "block", margin: '5px', width: '500px'}}
-                  placeholder="image"
-                  onChange={handleChange}
-                  name= "image"
-                />
-                <textarea 
-                    style={{display: "block", margin: '5px', width: '500px'}}
-                    placeholder="description"
-                    onChange={handleChange}
-                    name="description"
-                    />
-                <input  
-                    style={{display: "block", margin: '5px', width: '500px'}}
-                    placeholder="start date"
-                    onChange={handleChange}
-                    name="start_date"
-                    />
-                <input 
-                    style={{display: "block", margin: '5px', width: '500px'}}
-                    placeholder="end date"
-                    onChange={handleChange}
-                    name="end_date"
-                    />
-                <input 
-                    style={{display: "block", margin: '5px', width: '500px'}}
-                    placeholder="cause"
-                    onChange={handleChange}
-                    name="cause"
-                />
-                  {errors.map(error => <li key={error} style={{color: 'red'}}>{error}</li>)}
-                <input type="submit"/>
-            </form>
-            <br/>
-            <h1>animals</h1>
-            <AdminAnimal/>
+            <Typography variant="h4" sx={{textAlign:'center'}}>
+                Welcome To The Admins Page {user.username}
+            </Typography>
+            <AdminEvents/>
+            <AdminAnimals/>
+            <AdminAnimalDashboard/>
+            <AdminEventDashboard/>
         </div>
     )
 }

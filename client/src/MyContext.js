@@ -39,6 +39,7 @@ function MyProvider({children}) {
       })
       setAnimals(nestedAnimal)
     }
+
     function deleteComment(data) {
         const minusErasedComment = animals.map(animal => { 
             if (animal.id === data.animal_id) {
@@ -49,6 +50,7 @@ function MyProvider({children}) {
         })
         setAnimals(minusErasedComment)
     }
+    
     function editComment(data) {
         const switchedComments = animals.map(animal => {
             if (animal.id === data.animal_id) {
@@ -72,16 +74,49 @@ function MyProvider({children}) {
       
 
 
+    function editAnimals(data) {
+        const updatedAnimals = animals.map((animal) => {
+            if (animal.id === data.id) {
+            return data
+            } else {
+            return animal
+            }
+        })
+        setAnimals(updatedAnimals)
+    }
+
+
+    function editEvents(data) {
+        const updatedEvents = events.map((event) => {
+            if (event.id === data.id) {
+            return data
+            } else {
+            return event
+            }
+        })
+        setEvents(updatedEvents)
+    }
     
-
-
-
-
-
-
+    
     
     return (
-        <MyContext.Provider value={{ user, setUser, page, setPage, events, setEvents, animals, setAnimals, postComment, deleteComment, editComment}}>
+        <MyContext.Provider 
+            value={{
+                 user, 
+                 setUser, 
+                 page, 
+                 setPage, 
+                 events, 
+                 setEvents, 
+                 animals,
+                 setAnimals, 
+                 postComment, 
+                 deleteComment, 
+                 editComment,
+                 editAnimals,
+                 editEvents
+                }}
+            >
             {children}                                                                                     
         </MyContext.Provider>
     ) 

@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
     
-    def index
-        render json: Comment.all
-    end
-
     def create
        user = User.find(session[:user_id])
        comment = user.comments.create!(comment_params)

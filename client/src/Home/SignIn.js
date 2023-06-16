@@ -12,6 +12,7 @@ import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { MyContext } from "../MyContext";
 
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="common.white" align="center" {...props}>

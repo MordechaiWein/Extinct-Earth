@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/admin" >
           <Admin />
         </Route>
-        <Route exact path="/bookmark" >
+        <Route exact path="/favorites" >
           <Bookmark />
         </Route>
         <Route exact path="/:classification" >
