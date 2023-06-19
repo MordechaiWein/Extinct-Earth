@@ -87,12 +87,12 @@ function CommentPage() {
 
     return (
         <Container>
-               <div style={{height: isMobile ? '9rem' : '45rem'}}> 
+               <div style={{height: isMobile ? '0rem' : '45rem'}}> 
                 <img 
                 style={{
                     display: 'block', 
                     margin: 'auto', 
-                    height: isMobile ?  'auto' :'100%', 
+                    height: isMobile ?  '24.6rem' :'100%', 
                     width: '100%'
                 }} 
                     src={being.image} />
@@ -115,6 +115,7 @@ function CommentPage() {
                     
                     }}>
                {being.summary}...
+             
             </Typography>
              <Typography variant="h6" style={{marginLeft: '0.5rem', marginTop: '1rem'}}>
                  {animals.length > 0 ? being.comments.length : ''}

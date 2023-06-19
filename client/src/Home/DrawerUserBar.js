@@ -76,7 +76,7 @@ export default function DrawerUserBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding sx={{ justifyContent: 'center' }}>
             <NavLink 
-              to={item} 
+              to={`/${item}`} 
               style={{
                 display: 'flex',
                 alignItems: 'center',
