@@ -58,7 +58,12 @@ function InformationCard() {
                             See More Information
                             </a>
                         </div>
-                        <SimpleMap being={being}/>
+                        { being.latitude && being.longitude ? 
+
+                          <SimpleMap being={being}/>
+                            : 
+                          "Loading..."
+                        }
                     </Typography>
                 </div>  
           ) : (
@@ -102,7 +107,13 @@ function InformationCard() {
                             </a>
                         </div>
                         <div style={{ marginTop: '0.5rem'}}>
+                            {being.latitude && being.longitude ? 
+
                             <SimpleMap being={being}/>
+                                : 
+                            "Loading..."
+                            }
+                       
                         </div>
                     </Typography>
                 </Box>

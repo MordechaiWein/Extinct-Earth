@@ -34,8 +34,8 @@ function SimpleMap({ being }) {
         defaultZoom={defaultProps.zoom}
       >
         <AnyReactComponent
-          lat={being.longitude ? parseFloat(being.latitude) : 0 }
-          lng={being.longitude ? parseFloat(being.longitude) : 0 }
+          lat={being.longitude ? being.latitude : 0 }
+          lng={being.longitude ? being.longitude : 0 }
           // lat={21.3891}
           // lng={39.8579}
           icon={<RoomIcon sx={{ fontSize: '60px', color: 'red', transform: 'translate(-50%, -100%)' }} />}
