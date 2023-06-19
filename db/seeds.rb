@@ -11,7 +11,7 @@ User.destroy_all
 Event.destroy_all
 Animal.destroy_all
 Comment.destroy_all
-User.create(username: 'Mordechai', password: 'this', password_confirmation: 'bee', email_address: 'mordwein77@gmail.com', admin: true)
+User.create(username: 'Mordechai', password: 'bella', password_confirmation: 'bella', email_address: 'mordwein77@gmail.com', admin: true)
 puts 'everything destroyed'
 
 
