@@ -29,18 +29,25 @@ function MyProvider({children}) {
         .then(response => response.json())
         .then(data => setAnimals(data))
     },[])
-
+    
     function postComment(data) {
-      const nestedAnimal = animals.map(animal => {
-        if (animal.id === data.animal_id) {
-            return {...animal, comments: [...animal.comments, data]}
+        const animalExists = user.animals.some(animal => animal.id === data.animal.id)
+        const nestedAnimal = animals.map(animal => {
+            if (animal.id === data.animal_id) {
+                return {...animal, comments: [...animal.comments, data]}
+            }
+            return animal
+        })
+        if (!animalExists) {
+            setUser({ ...user, animals: [...user.animals, data.animal], comments: [...user.comments, data] })
+        } else if (animalExists) {
+            setUser({...user, comments: [...user.comments, data]})
         }
-        return animal
-      })
-      setAnimals(nestedAnimal)
+        setAnimals(nestedAnimal)
     }
-
+    
     function deleteComment(data) {
+        const remarks = user.comments.filter(comment => comment.animal_id === data.animal_id)
         const minusErasedComment = animals.map(animal => { 
             if (animal.id === data.animal_id) {
                 return {...animal, comments: animal.comments.filter(comment => comment.id !== data.id)}
@@ -48,6 +55,11 @@ function MyProvider({children}) {
                 return animal
             }
         })
+        if (remarks.length === 1) {
+            setUser({ ...user, animals: user.animals.filter(animal => animal.id !== data.animal.id), comments: user.comments.filter(comment => comment.id !== data.id) });
+        } else if (remarks.length !== 0) {
+            setUser({...user, comments: user.comments.filter(comment => comment.id !== data.id) })
+        }
         setAnimals(minusErasedComment)
     }
     
@@ -62,42 +74,42 @@ function MyProvider({children}) {
                     }
                 }
                 )}
-
-
-
             } else {
                 return animal
             }
         })
         setAnimals(switchedComments)
     }
-      
-
-
+    
     function editAnimals(data) {
         const updatedAnimals = animals.map((animal) => {
             if (animal.id === data.id) {
-            return data
+                return data
             } else {
-            return animal
+                return animal
             }
         })
+        const usersCurrentAnimals = user.animals.map((animal) => {
+            if (animal.id === data.id) {
+                return data
+            } else {
+                return animal
+            }
+        })
+        setUser({...user, animals: usersCurrentAnimals})
         setAnimals(updatedAnimals)
     }
-
-
+ 
     function editEvents(data) {
         const updatedEvents = events.map((event) => {
             if (event.id === data.id) {
-            return data
+                return data
             } else {
-            return event
+                return event
             }
         })
         setEvents(updatedEvents)
     }
-    
-    
     
     return (
         <MyContext.Provider 
@@ -114,14 +126,13 @@ function MyProvider({children}) {
                  deleteComment, 
                  editComment,
                  editAnimals,
-                 editEvents
+                 editEvents,
                 }}
             >
             {children}                                                                                     
         </MyContext.Provider>
     ) 
 }
-
 export { MyProvider, MyContext}
 
 

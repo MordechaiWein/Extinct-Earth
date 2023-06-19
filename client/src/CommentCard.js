@@ -11,7 +11,7 @@ import Alert from '@mui/material/Alert';
 
 function CommentCard({ comment, letter }) {
 
-    const {deleteComment, editComment, user } = useContext(MyContext)
+    const {deleteComment, editComment, user} = useContext(MyContext)
     const [formFlag, setFormFlag] = useState(true)
     const [errors, setErrors] = useState([])
     const [data, setData] = useState({
@@ -22,6 +22,7 @@ function CommentCard({ comment, letter }) {
 
     const updatedLikes = data.likes + 1;
 
+  
     function addLikes() {
         fetch(`/comments/${comment.id}`, {
             method: 'PATCH',
@@ -41,7 +42,9 @@ function CommentCard({ comment, letter }) {
             method: "DELETE" 
         })
         .then(response => response.json())
-        .then(data => deleteComment(data))
+        .then(data => { 
+            deleteComment(data)
+        })
     }
 
     function handleSubmit(e) {

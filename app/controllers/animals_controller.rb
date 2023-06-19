@@ -13,7 +13,7 @@ class AnimalsController < ApplicationController
     def update
         animal = Animal.find(params[:id])
         animal.update!(animal_params)
-        render json: animal
+        render json: animal, include: ['comments', 'comments.user']
     end
 
     def destroy

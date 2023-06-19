@@ -31,6 +31,7 @@ function AdminEditAnimals({ animal }) {
         link: animal.link
     })
 
+
     function handleSubmit(e) {
         e.preventDefault()
         fetch(`/animals/${animal.id}`, {

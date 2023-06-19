@@ -61,6 +61,7 @@ function AnimalContainer() {
         animalType = `${params.classification}s`.toUpperCase()
     }
     
+
     return (
             <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>
                 <Box  mr={isMobile ? 1 : 3}>

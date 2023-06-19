@@ -17,6 +17,7 @@ import { NavLink } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { MyContext } from "../MyContext";
 import { useHistory } from "react-router-dom";
+import Badge from '@mui/material/Badge';
 
 interface Props {
   /**
@@ -26,15 +27,16 @@ interface Props {
   window?: () => Window;
 }
 
+
 const drawerWidth = 240;
-const navItems = ['About','Species', 'Extinction Events', 'Favorites', 'Admin'];
+const navItems = ['About','Species', 'Extinction Events'];
 
 export default function DrawerUserBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isMediumScreen = useMediaQuery('(max-width: 960px)');
 
-  const {setUser} = useContext(MyContext)
+  const {setUser, user} = useContext(MyContext)
   const history = useHistory()
 
   const handleDrawerToggle = () => {
@@ -87,7 +89,41 @@ export default function DrawerUserBar(props: Props) {
             </NavLink>
           </ListItem>
         ))}
-           <ListItem disablePadding>
+
+    <ListItem  disablePadding sx={{ justifyContent: 'center' }}>
+            <NavLink 
+              to={'/Favorites'} 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none', 
+                color: 'black',
+                fontSize: '1.5rem' 
+                }}>
+              <ListItemText primary=' Favorites' />
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ justifyContent: 'center' }}>
+            <NavLink 
+              to={'/Admin'} 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none', 
+                color: 'black',
+                fontSize: '1.5rem' 
+                }}>
+              <ListItemText primary='Admin' />
+            </NavLink>
+          </ListItem>
+         
+
+    
+
+          <ListItem disablePadding>
             <ListItemButton 
               onClick={handleClick}
               sx={{ 
@@ -98,6 +134,7 @@ export default function DrawerUserBar(props: Props) {
               <ListItemText primary="Logout"/>
             </ListItemButton>
           </ListItem>
+
       </List>
     </Box>
   );
@@ -213,9 +250,57 @@ export default function DrawerUserBar(props: Props) {
                   }}
                 >
                   {item}
+                  
                 </NavLink>
               </Button>
             ))}
+             <Button >
+                <NavLink 
+                  to={'/Favorites'}
+                  exact 
+                  style={{ 
+                    color: '#fff', 
+                    fontFamily: 'Montserrat',
+                    fontWeight: 'bold', 
+                    fontSize: '1rem',
+                    textDecoration: 'none'
+                  }}
+                  activeStyle={{ 
+                    backgroundColor: "white", 
+                    color: 'black', 
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem' 
+                  }}
+                >
+                  <Badge badgeContent={user.animals.length}  color="error" >
+                  Favorites
+                </Badge>
+                  
+                  
+                </NavLink>
+              </Button>
+              <Button >
+                <NavLink 
+                  to={'/Admin'}
+                  exact 
+                  style={{ 
+                    color: '#fff', 
+                    fontFamily: 'Montserrat',
+                    fontWeight: 'bold', 
+                    fontSize: '1rem',
+                    textDecoration: 'none'
+                  }}
+                  activeStyle={{ 
+                    backgroundColor: "white", 
+                    color: 'black', 
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem' 
+                  }}
+                >
+                 Admin
+                  
+                </NavLink>
+              </Button>
             <Button 
               size='small'
               onClick={handleClick}

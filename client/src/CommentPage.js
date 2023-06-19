@@ -11,7 +11,7 @@ import { useMediaQuery } from '@mui/material';
 
 
 function CommentPage() {
-
+   
     const params = useParams()
     const isMobile = useMediaQuery('(max-width: 600px)');
     const {animals, postComment, user} = useContext(MyContext)
@@ -26,7 +26,6 @@ function CommentPage() {
     })
 
     const replies = animals.length > 0 ? being.comments.map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
-
 
     function handleChange(event) {
         setErrors([])

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Species() {
 
-    const species = ['FISH', 'BIRD', 'REPTILE', 'MAMMAL', 'INSECT', 'AMPHIBIAN']
+    const species = ['BIRD', 'REPTILE', 'MAMMAL', 'INSECT', 'AMPHIBIAN']
     const speciesList = species.map(s => 
         <Link 
             className="specieshover"
@@ -16,7 +16,7 @@ function Species() {
                 padding: '1.5rem'
             }}
         >
-        {s}
+        {`${s}S`}
         </Link>
     )
 
@@ -35,8 +35,21 @@ function Species() {
                     fontSize: '1.3rem'
                 }}
             >
-                ANIMALS  &nbsp; ⎯ 
+                SPECIES  &nbsp; ⎯ 
             </h1>
+            <Link 
+                className="specieshover"
+                to={'fish'}
+                style={{
+                    fontWeight: 'bold',
+                    fontSize: '3.5rem',
+                    color: 'white',
+                    textDecoration: 'none', 
+                    padding: '1.5rem'
+                }}
+                >
+                FISH
+            </Link>
             {speciesList}
         </div>
     )

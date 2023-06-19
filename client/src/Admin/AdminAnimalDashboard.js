@@ -8,7 +8,6 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AdminEditAnimals from "./AdminEditAnimals";
-import { Divider } from "@mui/material";
 import Typography from '@mui/material/Typography';
 
 
@@ -91,7 +90,6 @@ function AdminAnimalDashboard() {
 
                 ""
             }
-            <Divider style={{marginTop: "30rem"}}/>
         </ThemeProvider>
     )
 }

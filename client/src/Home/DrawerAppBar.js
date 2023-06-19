@@ -84,7 +84,7 @@ export default function DrawerAppBar(props: Props) {
             {navItems.map((item) => (
               <Button 
                 key={item} 
-                sx={{ color: '#fff', fontFamily: 'Montserrat sans-serif', fontSize: '1.7rem' }}
+                sx={{ color: '#fff', fontSize: '1.2rem', fontFamily: 'Montserrat' }}
                 onClick={() => setPage(item)}
               >
                 {item}
