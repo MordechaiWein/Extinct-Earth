@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
 import { Typography, Container, Box, Divider } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
@@ -9,7 +9,7 @@ import { MyContext } from "./MyContext";
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
 
-function CommentCard({ comment, letter }) {
+function CommentCard({ comment, letter, avatarColor  }) {
 
     const {deleteComment, editComment, user} = useContext(MyContext)
     const [formFlag, setFormFlag] = useState(true)
@@ -19,10 +19,10 @@ function CommentCard({ comment, letter }) {
         likes: comment.likes,
         user_id: comment.user_id
     })
-
     const updatedLikes = data.likes + 1;
 
-  
+   
+      
     function addLikes() {
         fetch(`/comments/${comment.id}`, {
             method: 'PATCH',
@@ -76,6 +76,33 @@ function CommentCard({ comment, letter }) {
         setData({...data,[event.target.name]: event.target.value})
     }
 
+    function stringToColor(string) {
+        if (typeof string !== 'string') {
+          return '#000000'; // Return a default color if the input is not a string
+        }
+      
+        const colors = [
+          '#9c27b0',
+          '#ed6c02',
+          '#d32f2f',
+          '#9c27b0',
+          '#1976d2',
+          '#2e7d32',
+          // Add more colors here
+        ];
+      
+        let hash = 0;
+        let i;
+      
+        for (i = 0; i < string.length; i += 1) {
+          hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        }
+      
+        const index = Math.abs(hash) % colors.length;
+        return colors[index];
+    }
+
+
 
     return (
         <div>
@@ -86,7 +113,7 @@ function CommentCard({ comment, letter }) {
                       sx={{
                           marginTop: '1rem', 
                           marginLeft: '0rem',
-                          bgcolor: 'secondary.main',
+                          bgcolor: stringToColor(comment.user.username.slice(0, 1).toUpperCase()),
                           fontWeight: 'bold'
                       }}>
                       {comment.user.username.slice(0, 1).toUpperCase()}

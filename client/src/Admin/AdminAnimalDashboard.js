@@ -15,7 +15,7 @@ const defaultTheme = createTheme();
 
 function AdminAnimalDashboard() {
 
-    const {animals, setAnimals} = useContext(MyContext)
+    const {animals, deleteAnimals} = useContext(MyContext)
     const [animalFlag, setAnimalFlag] = useState(false)
     const [creature, setCreature] = useState(null)
 
@@ -46,7 +46,7 @@ function AdminAnimalDashboard() {
                         method: "DELETE"
                     })
                     .then(response => response.json())
-                    .then(data => setAnimals(animals.filter(animal => animal.id !== data.id)))
+                    .then(data => deleteAnimals(data))
                 }
                 return (
                     <div style={{display: 'flex'}}>

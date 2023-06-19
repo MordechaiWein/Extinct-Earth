@@ -12,7 +12,6 @@ import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { MyContext } from "../MyContext";
 
-
 function Copyright(props) {
   return (
     <Typography variant="body2" color="common.white" align="center" {...props}>
@@ -49,7 +48,11 @@ function SignIn() {
     password: ''
   })
   
+  const [open, setOpen] = React.useState(false);
+
+
   function handleChange(event) {
+    setErrors([])
     setData({...data, [event.target.name] : event.target.value})
   }
 
@@ -65,7 +68,7 @@ function SignIn() {
         response.json().then(data => {
           setUser(data)
           setPage("Home")
-          alert('Welcome you have successfully logged in')
+          alert('Welcome back!')
         })
       } else {
         response.json().then(data => setErrors(data.errors))

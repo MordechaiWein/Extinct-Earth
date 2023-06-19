@@ -10,7 +10,7 @@ import FavoritesCard from "./FavoritesCard";
 
 const defaultTheme = createTheme();
 
-function Bookmark() {
+function Favorites() {
 
     const {user} = useContext(MyContext)
     const usersAnimals = user.animals.map(animal => <FavoritesCard key={animal.id} animal={animal}/>)
@@ -57,4 +57,4 @@ function Bookmark() {
         </div>
     )
 }
-export default Bookmark
+export default Favorites

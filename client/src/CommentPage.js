@@ -10,6 +10,7 @@ import Alert from '@mui/material/Alert';
 import { useMediaQuery } from '@mui/material';
 
 
+
 function CommentPage() {
    
     const params = useParams()
@@ -56,9 +57,37 @@ function CommentPage() {
         })
     }
 
+    function stringToColor(string) {
+        if (typeof string !== 'string') {
+          return '#000000'; // Return a default color if the input is not a string
+        }
+      
+        const colors = [
+          '#9c27b0',
+          '#ed6c02',
+          '#d32f2f',
+          '#9c27b0',
+          '#1976d2',
+          '#2e7d32',
+          // Add more colors here
+        ];
+      
+        let hash = 0;
+        let i;
+      
+        for (i = 0; i < string.length; i += 1) {
+          hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        }
+      
+        const index = Math.abs(hash) % colors.length;
+        return colors[index];
+      }
+
+    
+
     return (
         <Container>
-               <div style={{height: isMobile ? '0rem' : '45rem'}}> 
+               <div style={{height: isMobile ? '9rem' : '45rem'}}> 
                 <img 
                 style={{
                     display: 'block', 
@@ -95,9 +124,11 @@ function CommentPage() {
              </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{my: 8, mx: -1, marginTop: '2rem'}}>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main', fontWeight: 'bold'}}>
+                    <Avatar sx={{ m: 1, bgcolor: stringToColor(user.username.slice(0, 1).toUpperCase()), fontWeight: 'bold'}}>
                       {animals.length > 0 ? letter.toUpperCase() : ''}
+                      
                     </Avatar>
+                    
                     <TextField
                         required
                         fullWidth

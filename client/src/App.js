@@ -3,7 +3,7 @@ import Home from './Home/Home';
 import AboutPage from './AboutPage';
 import Species from './Species';
 import Admin from './Admin';
-import Bookmark from './Bookmark';
+import Favorites from './Favorites';
 import InformationCard from './InformationCard';
 import CommentPage from './CommentPage';
 import AnimalContainer from './AnimalContainer';
@@ -38,7 +38,7 @@ function App() {
           <Admin />
         </Route>
         <Route exact path="/favorites" >
-          <Bookmark />
+          <Favorites />
         </Route>
         <Route exact path="/:classification" >
           <AnimalContainer />

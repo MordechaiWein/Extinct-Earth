@@ -48,7 +48,7 @@ export default function DrawerUserBar(props: Props) {
       method: 'DELETE'
     })
     .then(setUser(null), history.push('/'))
-    alert('Goodbye see you later')
+    alert('Goodbye')
   }
 
   const drawer = (

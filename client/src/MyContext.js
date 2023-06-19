@@ -99,6 +99,11 @@ function MyProvider({children}) {
         setUser({...user, animals: usersCurrentAnimals})
         setAnimals(updatedAnimals)
     }
+
+    function deleteAnimals(data) {
+        setAnimals(animals.filter(animal => animal.id !== data.id))
+        setUser({...user, animals: user.animals.filter(animal => animal.id  !== data.id)})
+    }
  
     function editEvents(data) {
         const updatedEvents = events.map((event) => {
@@ -127,6 +132,7 @@ function MyProvider({children}) {
                  editComment,
                  editAnimals,
                  editEvents,
+                 deleteAnimals
                 }}
             >
             {children}                                                                                     

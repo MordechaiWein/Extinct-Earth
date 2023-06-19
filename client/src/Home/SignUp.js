@@ -51,6 +51,7 @@ function SignUp() {
   })
 
   function handleChange(event) {
+    setErrors([])
     setData({...data, [event.target.name] : event.target.value})
   }
  
@@ -66,7 +67,7 @@ function SignUp() {
         response.json().then(data => {
           setUser(data)
           setPage("Home")
-          alert('Welcome to Extinct Earth! 🦖')
+          alert('🦖 Welcome!')
         })
       } else {
         response.json().then(data => setErrors(data.errors))
