@@ -132,7 +132,6 @@ function CommentPage() {
                     
                     <TextField
                         required
-                        fullWidth
                         name="text"
                         placeholder='Add a comment...'
                         type="text"
@@ -141,6 +140,7 @@ function CommentPage() {
                         value={data.text}
                         onChange={handleChange}
                         autoComplete="current-password"
+                        style={{width: isMobile ? "86%" : '100%'}}
                     />
                 </div>
                 <div>
@@ -148,7 +148,7 @@ function CommentPage() {
                         type="submit" 
                         color='primary' 
                         variant="contained"
-                        sx={{ mt: 0, mb: 0, fontWeight: 'bold', height: '2.7rem', color: 'white', borderRadius: '1.5rem', float: 'right'}}
+                        sx={{ mt: 0, mb: 0, fontWeight: 'bold', height: '2.7rem', color: 'white', borderRadius: '1.5rem', float: 'right', marginRight: isMobile ? "0.3rem" : ""}}
                     >
                     Comment
                     </Button> 
