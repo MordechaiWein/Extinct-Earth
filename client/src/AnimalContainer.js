@@ -14,21 +14,31 @@ import FishImage from './images/fish.png'
 import AmphibianImage from './images/amphibian.png'
 import ReptileImage from './images/reptile.png'
 import { useMediaQuery } from '@mui/material';
-
-
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 function AnimalContainer() {
 
     const {animals} = useContext(MyContext)
     const params = useParams()
-
-    // const isMobile = window.innerWidth <= 600;
+    const [dropdown, setDropdown] = useState("none")
     const isMobile = useMediaQuery('(max-width: 600px)');
 
     const [name, setName] = useState('')
     const classification = animals.filter(animal => animal.classification === params.classification)
-    const animalList = classification
+
+
+    const sortedAnimals = classification.sort((a, b) => {
+		if (dropdown === "none") {return true}
+		if (dropdown === "a-z") {return a.name.localeCompare(b.name)}
+		else if (dropdown === "z-a") {return b.name.localeCompare(a.name)}
+	})
+	
+
+    const animalList = sortedAnimals
         .filter((animal) => (
             animal.name.toLowerCase().includes(name.toLowerCase())
         ))
@@ -60,7 +70,7 @@ function AnimalContainer() {
     } else {
         animalType = `${params.classification}s`.toUpperCase()
     }
-    
+
 
     return (
             <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>
@@ -106,6 +116,16 @@ function AnimalContainer() {
                 />
                 </Box>
                 <Box ml={isMobile ? 0 : 0} mr={ isMobile ? -1.4 : 0}>
+                    <FormControl variant="standard" sx={{ marginBottom: '2rem', marginTop: "-2rem", minWidth: 90, float: 'right', marginRight: "2.2rem"}}>
+                        <InputLabel shrink={false} >SORT BY</InputLabel>
+                        <Select>
+                        <MenuItem value="">
+                          <em onClick={() => setDropdown('none')}>None</em>
+                        </MenuItem>
+                            <MenuItem onClick={() => setDropdown("a-z")}>Name (A to Z)</MenuItem>
+                            <MenuItem onClick={() => setDropdown("z-a")}>Name (Z to A)</MenuItem>
+                        </Select>
+                    </FormControl>
                 <Grid container>
                    {animalList}
                 </Grid>

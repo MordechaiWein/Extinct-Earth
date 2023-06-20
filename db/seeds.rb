@@ -8,6 +8,8 @@
 
 puts 'destroying everything'
 User.destroy_all
+Event.destroy_all
+Comment.destroy_all
 User.create(username: 'Mordechai', password: 'bella', password_confirmation: 'bella', email_address: 'mordwein77@gmail.com', admin: true)
 puts 'everything destroyed'
 
