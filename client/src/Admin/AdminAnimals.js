@@ -139,7 +139,7 @@ function AdminAnimals() {
               onChange={handleChange}
               type="text"
               id="password"
-              autoComplete="current-password"
+              autoComplete="email"
             />
               <TextField
               margin="normal"
