@@ -68,8 +68,8 @@ function InformationCard() {
                 </div>  
           ) : (
                 <Box style={{display: 'flex', height: '56.1rem'}}>
-                    <img style={{width: "40rem", height: '100%'}} src={being.image}/>
-                    <Typography style={{marginLeft: '2rem', width: '100%'}}>
+                   <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
+                   <Typography style={{marginLeft: '2rem', width: '100%'}}>
                         <h1 
                             style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: ''}}>
                             {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
