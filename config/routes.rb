@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :animals, only: [:index, :create, :update, :destroy]
   resources :events, only: [:index, :create, :update, :destroy]
   resources :comments, only: [:create, :update, :destroy]
+  resources :likes, only: [:create, :destroy]
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

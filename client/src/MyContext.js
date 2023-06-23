@@ -81,6 +81,44 @@ function MyProvider({children}) {
         setAnimals(switchedComments)
     }
     
+
+    function addLikeToComment(data, comment) {
+        const findAnimal = animals.map((animal) => {
+            if (animal.id === comment.animal_id) {
+                return {...animal, comments: animal.comments.map(comment => {
+                    if (comment.id === data.comment_id) {
+                        return {...comment, likes: [...comment.likes, data]}
+                    } else {
+                        return comment
+                    }
+                }
+                )}
+            } else {
+                return animal
+            }
+        })
+        setAnimals(findAnimal)
+    }
+
+
+    function deleteLikeFromComment(data, comment) {
+        const searchForAnimal = animals.map((animal) => {
+            if (animal.id === comment.animal_id) {
+                return {...animal, comments: animal.comments.map(comment => {
+                    if (comment.id === data.comment_id) {
+                        return {...comment, likes: comment.likes.filter(like => like.id !== data.id)}
+                    } else {
+                        return comment
+                    }
+                }
+                )}
+            } else {
+                return animal
+            }
+        })
+        setAnimals(searchForAnimal)
+    }
+
     function editAnimals(data) {
         const updatedAnimals = animals.map((animal) => {
             if (animal.id === data.id) {
@@ -115,6 +153,14 @@ function MyProvider({children}) {
         })
         setEvents(updatedEvents)
     }
+
+
+
+   
+
+
+
+
     
     return (
         <MyContext.Provider 
@@ -132,7 +178,9 @@ function MyProvider({children}) {
                  editComment,
                  editAnimals,
                  editEvents,
-                 deleteAnimals
+                 deleteAnimals,
+                 addLikeToComment,
+                 deleteLikeFromComment
                 }}
             >
             {children}                                                                                     

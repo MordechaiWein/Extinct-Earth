@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    
+
     def create
        user = User.find(session[:user_id])
        comment = user.comments.create!(comment_params)
@@ -7,16 +7,10 @@ class CommentsController < ApplicationController
     end
 
     def update
-        user = User.find_by(id: session[:user_id])
-        if user && user.id == params[:user_id]
-            comment = user.comments.find(params[:id])
-            comment.update!(comment_params)
-            render json: comment
-        else
-            comment = Comment.find(params[:id])
-            comment.update!(like_params)
-            render json: comment
-        end
+        user = User.find(session[:user_id])
+        comment = user.comments.find(params[:id])
+        comment.update!(comment_params)
+        render json: comment
     end
 
     def destroy
@@ -29,11 +23,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.permit(:animal_id, :text, :likes)
-    end
-
-    def like_params
-        params.permit(:likes)
+        params.permit(:animal_id, :text)
     end
 
 end

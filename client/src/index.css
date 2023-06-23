@@ -17,10 +17,6 @@ code {
   transition: color 0.7s ease;
 }
 
-.likehover:hover {
-  color: #FFB81C ;
-}
-
 .edithover:hover {
   color: #1565c0;
 }

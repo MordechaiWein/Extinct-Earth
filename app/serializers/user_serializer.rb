@@ -6,5 +6,6 @@ class UserSerializer < ActiveModel::Serializer
   end
   
   has_many :comments
+  has_many :likes
 end
 

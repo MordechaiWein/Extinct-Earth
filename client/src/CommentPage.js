@@ -25,7 +25,7 @@ function CommentPage() {
         likes: 0,
         animal_id: parseInt(params.id)
     })
-
+// console.log(being)
     const replies = animals.length > 0 ? being.comments.map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
 
     function handleChange(event) {

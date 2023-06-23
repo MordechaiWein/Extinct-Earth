@@ -8,9 +8,11 @@ import TextField from "@mui/material/TextField";
 import { MyContext } from "./MyContext";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
-function CommentCard({ comment, letter, avatarColor }) {
-  const { deleteComment, editComment, user } = useContext(MyContext);
+function CommentCard({ comment }) {
+  const { deleteComment, editComment, user, addLikeToComment, deleteLikeFromComment } = useContext(MyContext);
   const [formFlag, setFormFlag] = useState(true);
   const [errors, setErrors] = useState([]);
   const [data, setData] = useState({
@@ -18,19 +20,36 @@ function CommentCard({ comment, letter, avatarColor }) {
     likes: comment.likes,
     user_id: comment.user_id,
   });
-  const updatedLikes = data.likes + 1;
 
-  function addLikes() {
-    fetch(`/comments/${comment.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ likes: updatedLikes }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setData({ ...data, likes: updatedLikes });
-        editComment(data);
-      });
+
+  const [heart, setHeart] = useState()
+  const [yourLike, setYourLike] = useState({
+    comment_id: comment.id,
+    user_id: user.id
+  })
+
+  const findUsersLike = comment.likes.filter(like => like.user_id === user.id)
+
+  function likeComment() {
+    if (findUsersLike.length === 0 ) {
+      fetch('/likes', {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(yourLike)
+      })
+      .then(response => response.json())
+      .then(data => { 
+        addLikeToComment(data, comment)
+      })
+    } else if (findUsersLike.length === 1 ) {
+      fetch(`/likes/${comment.id}`, {
+        method: 'DELETE',
+      })
+      .then(repsonse => repsonse.json())
+      .then(data => {
+        deleteLikeFromComment(data, comment)
+      })
+    }
   }
 
   function handleClick() {
@@ -168,19 +187,32 @@ function CommentCard({ comment, letter, avatarColor }) {
       )}
 
       <div style={{ display: "flex", alignItems: "center" }}>
-        <ThumbUpIcon
-          onClick={addLikes}
-          className="likehover"
-          sx={{ marginLeft: "4rem", marginTop: "1rem", marginBottom: "1rem" }}
-        />
+       { findUsersLike.length === 1 ? 
+          <FavoriteIcon
+            onClick={likeComment}
+            sx={{ marginLeft: "4rem", marginTop: "1rem", marginBottom: "1rem", color: 'red' }}
+          />
+          : 
+          <FavoriteBorderIcon
+            onClick={likeComment}
+            sx={{ marginLeft: "4rem", marginTop: "1rem", marginBottom: "1rem"}}
+          />
+        } 
         <Typography
           style={{
-            marginLeft: "2rem",
+            marginLeft: "1rem",
             fontWeight: "bold",
             marginTop: "0.3rem",
           }}
         >
-          {comment.likes} likes
+           {comment.likes.length} 
+           &nbsp;
+           {comment.likes.length === 1 ? 
+              'like'
+              : 
+              'likes'
+            }
+          
         </Typography>
 
         {comment.user_id === user.id ? (
@@ -194,7 +226,7 @@ function CommentCard({ comment, letter, avatarColor }) {
                 style={{
                   marginLeft: "2rem",
                   marginRight: "0.8rem",
-                  marginTop: "0.1rem",
+                  marginTop: "0.2rem",
                 }}
               />
               <p style={{ marginTop: "0.4rem" }}>Edit</p>
@@ -208,7 +240,7 @@ function CommentCard({ comment, letter, avatarColor }) {
                 style={{
                   marginLeft: "2rem",
                   marginRight: "0.5rem",
-                  marginTop: "0.1rem",
+                  marginTop: "0.3rem",
                 }}
               />
               <p style={{ marginTop: "0.4rem" }}>Delete</p>
