@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NotesIcon from '@mui/icons-material/Notes';
 import { useMediaQuery } from '@mui/material';
 
-function AnimalCard({ animal}) {
+function AnimalCard({ animal }) {
 
   // const isMobile = window.innerWidth <= 600;
   const isMobile = useMediaQuery('(max-width: 600px)');

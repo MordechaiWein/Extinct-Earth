@@ -93,7 +93,8 @@ function CommentPage() {
                     display: 'block', 
                     margin: 'auto', 
                     height: isMobile ?  '24.6rem' :'100%', 
-                    width: '100%'
+                    width: '100%',
+                    objectFit: 'cover'
                 }} 
                     src={being.image} />
             </div>
