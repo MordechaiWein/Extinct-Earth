@@ -74,32 +74,34 @@ function InformationCard() {
                             style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: ''}}>
                             {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
                         </h1>
-                        <div style={{ display: 'flex'}}>
-                            <h4 style={{fontWeight: 'bold', color: ''}}>Period:</h4> 
-                            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.time_period}</h4>
-                        </div>
-                        <div style={{ display: 'flex'}}>
-                            <h4 style={{fontWeight: 'bold', color: '' }}>Diet:</h4> 
-                            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.diet}</h4>
-                        </div>
-                        <div style={{ display: 'flex'}}>
-                            <h4 style={{fontWeight: 'bold', color: ''}}>Other Name:</h4> 
-                            <h4 style={{marginBottom: '1rem'}}>&nbsp; {being.scientific_name}</h4>
-                        </div>
-                        <div style={{ display: 'flex'}}>
+                        <div style={{ display: 'flex', alignItems: 'baseline'}}>
                             <h4 style={{fontWeight: 'bold', color: ''}}>Classification:</h4> 
-                            <h4 style={{marginBottom: '1rem'}}>&nbsp; {capitalizedWord}</h4>
+                            <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {capitalizedWord}</h5>
                         </div>
+                        <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            <h4 style={{fontWeight: 'bold', color: ''}}>Other Name:</h4> 
+                            <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.scientific_name}</h5>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            <h4 style={{fontWeight: 'bold', color: ''}}>Period:</h4> 
+                            <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.time_period}</h5>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            <h4 style={{fontWeight: 'bold', color: '' }}>Diet:</h4> 
+                            <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.diet}</h5>
+                        </div>
+                   
+                   
                         <div style={{}}>
-                            <h5 style={{fontWeight: 'bold', color: ''}}>Fun Fact:</h5> 
-                            <h5 style={{marginBottom: '2rem'}}>{being.fun_fact}</h5>
+                            <h5 style={{fontWeight: 'bold', fontStyle: 'italic'}}>Fun Fact:</h5> 
+                            <h5 style={{marginBottom: '2rem', fontStyle: 'italic'}}>{being.fun_fact}</h5>
                         </div>
                         <Typography style={{ fontFamily: '', fontSize: '100%'}}>
                             <div style={{height: '14rem', width: '100%'}}>
                                 {being.history}
                             </div>
                         </Typography>
-                        <div style={{ paddingTop: '0.5rem'}}>
+                        <div style={{ paddingTop: '0.5rem', paddingBottom: '0.44rem'}}>
                             <a style={{fontWeight: 'bold', textDecoration: 'none', color: '#0288d1'}}
                                href={being.link}
                             >
