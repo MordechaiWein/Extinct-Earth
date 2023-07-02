@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import SimpleMap from "./SimpleMap";
-import { Typography, Container, Box, Button } from '@mui/material';
+import { Typography, Container, Box} from '@mui/material';
 import { useParams } from "react-router-dom";
 import { useMediaQuery } from '@mui/material';
 import { MyContext } from "./MyContext";
@@ -8,13 +8,23 @@ import { MyContext } from "./MyContext";
 function InformationCard() {
 
     const params = useParams()
-    const {animals} = useContext(MyContext)
+    const {animals, setAnimals, setUser} = useContext(MyContext)
     const isMobile = useMediaQuery('(max-width: 600px)');
     const being =  animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
     const capitalizedWord = being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
     const imageStyleRight = isMobile
     ? { width: '100%', height: 'auto', marginRight: '2rem' }
     : { width: '40%', height: '25rem', marginRight: '2rem' };
+
+    function handleClick() {
+        fetch('/me')
+        .then(response => response.json())
+        .then(data => setUser(data))
+
+        fetch('/animals')
+        .then(response => response.json())
+        .then(data => setAnimals(data))
+    }
  
     
     return (
@@ -54,6 +64,7 @@ function InformationCard() {
                             <a 
                                 style={{fontWeight: 'bold', textDecoration: 'none', color: '#2e7d32'}}
                                 href={being.link}
+                                onClick={handleClick}
                             >
                             See More Information
                             </a>
@@ -104,6 +115,7 @@ function InformationCard() {
                         <div style={{ paddingTop: '0.5rem', paddingBottom: '0.44rem'}}>
                             <a style={{fontWeight: 'bold', textDecoration: 'none', color: '#0288d1'}}
                                href={being.link}
+                               onClick={handleClick}
                             >
                             See More Information
                             </a>
