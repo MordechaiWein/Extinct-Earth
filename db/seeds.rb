@@ -1,5 +1,5 @@
 
-puts '🦖 Seeding deployed database...'
+puts '🦖 Meteorite destroying all users comments and likes... ☄️'
 
 User.destroy_all
 Comment.destroy_all
