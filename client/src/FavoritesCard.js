@@ -69,7 +69,7 @@ function FavoritesCard({ animal }) {
             style={{ color: '#2e7d32', textDecoration: 'none', fontSize: '1.1rem', marginTop: '1rem' }}
           >
             VIEW COMPLETE DETAILS
-            <ArrowCircleRightIcon style={{ marginLeft: '0.5rem', fontSize: '2rem', verticalAlign: 'middle' }} />
+            <ArrowCircleRightIcon style={{ marginLeft: '0.5rem', fontSize: '2rem', marginBottom: '0.3rem' }} />
           </Link>
         </Box>
       </Box>
@@ -129,7 +129,7 @@ function FavoritesCard({ animal }) {
               style={{ color: '#2e7d32', textDecoration: 'none', fontSize: '1.1rem', marginTop: '1rem' }}
             >
               VIEW COMPLETE DETAILS
-              <ArrowCircleRightIcon style={{ marginLeft: '0.5rem', fontSize: '2rem', verticalAlign: 'middle' }} />
+              <ArrowCircleRightIcon style={{ marginLeft: '0.5rem', fontSize: '2rem', marginBottom: '0.3rem' }} />
             </Link>
           </Box>
         </Box>
