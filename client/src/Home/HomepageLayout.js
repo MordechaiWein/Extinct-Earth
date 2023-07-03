@@ -232,11 +232,11 @@ const HomepageLayout = () => (
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "This website is really really awesome."
+               "This website is exceptionally impressive and commendable."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png' />
-              <b>Mordechai</b> Maker of Extinct Earth
+              <Image avatar src='https://cdn2.iconfinder.com/data/icons/professional-avatar-13/140/professor__teacher__oldman__professional__avatar-512.png' />
+              <b>Edward Horner</b> American paleontologist, Chapman University (age 77)
             </p>
           </Grid.Column>
         </Grid.Row>
