@@ -123,7 +123,7 @@ function SignIn() {
                 id="username"
                 placeholder='Username*'
                 name="username"
-                autoComplete="off"
+                autoComplete="username"
                 onChange={handleChange}
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
