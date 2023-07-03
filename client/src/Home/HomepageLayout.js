@@ -3,10 +3,11 @@
 
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { InView } from 'react-intersection-observer'
 import 'semantic-ui-css/semantic.min.css';
 import UncontrolledExample from './ UncontrolledExample';
+import { MyContext } from "../MyContext";
 import {
   Button,
   Container,
@@ -29,11 +30,26 @@ const { MediaContextProvider, Media } = createMedia({
   },
 })
 
+
 /* Heads up!
  * HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled
  * components for such things.
  */
-const HomepageHeading = ({ mobile }) => (
+const HomepageHeading = ({ mobile }) => {
+
+  const {setUser, setAnimals} = useContext(MyContext)
+
+  function handleClick() {
+    fetch('/me')
+    .then(response => response.json())
+    .then(data => setUser(data))
+    
+    fetch('/animals')
+    .then(response => response.json())
+    .then(data => setAnimals(data))
+  }
+
+ return (
   <Container text>
     <Header
       as='h1'
@@ -67,12 +83,14 @@ const HomepageHeading = ({ mobile }) => (
       size={mobile ? 'medium' : 'huge'}  
       style={{marginLeft: mobile ? '0em' : '-67em'}} 
       href="https://en.wikipedia.org/wiki/Formosan_clouded_leopard" 
+      onClick={handleClick}
     >
       Learn More
      <Icon name='right arrow' />
     </Button>
   </Container>
-)
+ )
+}
 
 HomepageHeading.propTypes = {
   mobile: PropTypes.bool,
@@ -178,7 +196,22 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = () => (
+const HomepageLayout = () => {
+
+  const {setUser, setAnimals} = useContext(MyContext)
+
+  function handleClick() {
+    fetch('/me')
+    .then(response => response.json())
+    .then(data => setUser(data))
+    
+    fetch('/animals')
+    .then(response => response.json())
+    .then(data => setAnimals(data))
+  }
+
+  return (
+
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
@@ -215,7 +248,13 @@ const HomepageLayout = () => (
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button size='huge' href="https://www.theguardian.com/environment/2022/jul/10/extinct-parrots-make-a-flying-comeback-in-brazil" >See More</Button>
+            <Button 
+              size='huge' 
+              href="https://www.theguardian.com/environment/2022/jul/10/extinct-parrots-make-a-flying-comeback-in-brazil" 
+              onClick={handleClick}
+              >
+                See More
+            </Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -323,7 +362,7 @@ const HomepageLayout = () => (
     </Segment>
    
   </ResponsiveContainer>
-
-)
+  )
+}
 
 export default HomepageLayout
