@@ -124,7 +124,7 @@ function SignUp() {
                 placeholder='Username*'
                 name="username"
                 onChange={handleChange}
-                autoComplete="username"
+                autoComplete="off"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />
               
@@ -162,7 +162,7 @@ function SignUp() {
                 placeholder='Email Address*'
                 id="email_address"
                 onChange={handleChange}
-                autoComplete="email_address"
+                autoComplete="off"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
               />       
               <Button
