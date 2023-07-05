@@ -41,9 +41,11 @@ const HomepageHeading = ({ mobile }) => {
 
   function handleClick() {
     fetch('/me')
-    .then(response => response.json())
-    .then(data => setUser(data))
-    
+    .then(response => {
+      if(response.ok){
+        response.json().then(data => setUser(data))
+      }
+    })
     fetch('/animals')
     .then(response => response.json())
     .then(data => setAnimals(data))
@@ -202,13 +204,16 @@ const HomepageLayout = () => {
 
   function handleClick() {
     fetch('/me')
-    .then(response => response.json())
-    .then(data => setUser(data))
-    
+    .then(response => {
+      if(response.ok){
+        response.json().then(data => setUser(data))
+      }
+    })
     fetch('/animals')
     .then(response => response.json())
     .then(data => setAnimals(data))
   }
+
 
   return (
 

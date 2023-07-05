@@ -34,8 +34,7 @@ const navItems = ['About','Species', 'Extinction Events'];
 export default function DrawerUserBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const isMediumScreen = useMediaQuery('(max-width: 960px)');
-
+  const isMediumScreen = useMediaQuery('(max-width: 990px)');
   const {setUser, user} = useContext(MyContext)
   const history = useHistory()
 
@@ -161,10 +160,8 @@ export default function DrawerUserBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Montserrat', fontSize: '2.4rem'} }}
           >
-
-  
-   
-           <div style={{display:'flex'}}>
+            
+           <div style={{display:'flex', alignItems: 'center'}}>
             Extinct Earth
           </div> 
           </Typography>
