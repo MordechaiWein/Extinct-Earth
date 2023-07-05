@@ -59,7 +59,8 @@ function BecomeAdmin() {
             style={{
                 fontSize: '1.8rem',
                 fontFamily: 'Nunito Sans', 
-                padding: '2rem'
+                padding: '2rem',
+                textAlign: isMobile ? 'center' : ''
                 }}
             >
           At Extinct Animals, users can become admins and contribute to sharing animal posts and
