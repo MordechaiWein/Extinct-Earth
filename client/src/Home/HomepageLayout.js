@@ -299,8 +299,13 @@ const HomepageLayout = () => {
           you to the awe-inspiring world of extinct animals, where their once 
           magnificent presence is revived through engaging stories and immersive experiences.
         </p>
-        <Button as='a' size='large'>
-          Read More
+        <Button 
+          as='a' 
+          size='large'   
+          href="https://youtu.be/eRL7xTp2Zbc" 
+          onClick={handleClick}
+          >
+          See More
         </Button>
         <br/>
         <br/>
