@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Extinct Earth (phase-5 portfolio project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📖 Introduction
 
-## Available Scripts
+Welcome to Extinct Earth, your gateway to the lost wonders of our planet! Explore the captivating world of extinct animals, from mighty dinosaurs to graceful marine creatures. Immerse yourself in our curated collection of captivating articles, illustrations, and fossils. Join us in preserving our present and future wildlife. Unearth the secrets of our shared heritage and celebrate the richness of life that once was. Welcome to Extinct Earth!
 
-In the project directory, you can run:
+## 🦕 Description 
 
-### `npm start`
+Extinct Earth is an innovative web application created by me as a school project. This application combines a React front-end with a robust Rails back-end to provide an immersive experience centered around the captivating world of extinct animals.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To ensure maximum security, I have integrated the bcrypt gem for robust authorization and protection. Strong params are utilized to add an extra layer of security, ensuring that only valid and sanitized data is accepted. Thorough validations have also been implemented to maintain a clean and reliable database.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+One notable feature of this application is the incorporation of a many-to-many relationship, allowing for comprehensive exploration and connections between various extinct animal species. Additionally, I have pushed the boundaries by incorporating Google Maps integration, a topic not typically covered in the Flatiron School curriculum, enhancing the user experience with a unique twist.
 
-### `npm test`
+Extinct Earth offers a user-friendly interface with multiple pages, providing a wealth of information and captivating content. Users can effortlessly navigate through an extensive collection of extinct animal profiles, and utilize filtering and sorting options to customize their browsing experience. This application provides a comprehensive understanding of our planet's prehistoric inhabitants.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+With full CRUD (Create, Read, Update, Delete) functionality, users have the power to contribute and interact with the platform, making it a truly dynamic and engaging experience. Whether you're a passionate paleontologist, an avid history enthusiast, or simply curious about the wonders of extinct animals, Extinct Earth is your ultimate destination.
 
-### `npm run build`
+Get ready to embark on a journey through time and explore the rich biodiversity that once flourished on our planet. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 👏 credit
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I would like to extend my heartfelt appreciation and give credit to the following sources and platforms for their valuable contributions to this project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Material-UI: I am grateful to Material-UI for their partial assistance in styling. Their comprehensive UI component library provided a solid foundation, enabling me to create an aesthetically pleasing and user-friendly interface.
 
-### `npm run eject`
+Wikipedia: I would like to acknowledge Wikipedia for their partial assistance in providing resource material. Their vast repository of information allowed me to gather valuable insights and knowledge about the extinct animals featured in this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I am truly thankful to these sources for their invaluable support, which played a significant role in the development and success of this project.
