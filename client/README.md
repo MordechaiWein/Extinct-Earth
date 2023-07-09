@@ -2,7 +2,7 @@
 
 ## 📖 Introduction
 
-Welcome to Extinct Earth, your gateway to the lost wonders of our planet! Explore the captivating world of extinct animals, from mighty dinosaurs to graceful marine creatures. Immerse yourself in our curated collection of captivating articles, illustrations, and fossils. Join us in preserving our present and future wildlife. Unearth the secrets of our shared heritage and celebrate the richness of life that once was. Welcome to Extinct Earth!
+Welcome to Extinct Earth, your gateway to the lost wonders of our planet! Explore the captivating world of extinct animals, from mighty dinosaurs to graceful marine creatures. Immerse yourself in this curated collection of captivating articles, illustrations, and fossils. Join our growing community in preserving our present and future wildlife. Unearth the secrets of our shared heritage and celebrate the richness of life that once was. Welcome to Extinct Earth!
 
 ## 🦕 Description 
 
@@ -27,3 +27,5 @@ Material-UI: I am grateful to Material-UI for their partial assistance in stylin
 Wikipedia: I would like to acknowledge Wikipedia for their partial assistance in providing resource material. Their vast repository of information allowed me to gather valuable insights and knowledge about the extinct animals featured in this project.
 
 I am truly thankful to these sources for their invaluable support, which played a significant role in the development and success of this project.
+
+
