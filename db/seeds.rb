@@ -1,8 +1,8 @@
 
-puts '🦖🦕💥 Meteorite destroying all comments and likes...'
+puts '🦖🦕💥 Meteorite destroying selected comments...'
 
-Comment.destroy_all
-Like.destroy_all
+User.find_by(username: 'moshe').comments.destroy_all
+User.find_by(username: 'chashadinedine').comments.destroy_all
 
 puts '✅ Done seeding!'
 
