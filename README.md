@@ -27,6 +27,3 @@ Material-UI: I am grateful to Material-UI for their partial assistance in stylin
 Wikipedia: I would like to acknowledge Wikipedia for their partial assistance in providing resource material. Their vast repository of information allowed me to gather valuable insights and knowledge about the extinct animals featured in this project.
 
 I am truly thankful to these sources for their invaluable support, which played a significant role in the development and success of this project.
-
-
-
