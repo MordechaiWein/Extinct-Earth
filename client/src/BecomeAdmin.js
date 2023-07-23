@@ -31,17 +31,17 @@ function BecomeAdmin() {
         <div
             style={{
                 backgroundImage: isMobile ? 'none' : 'url(https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png)',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                minHeight: '100vh'
+                backgroundSize: isMobile ? '' : 'cover',
+                backgroundRepeat: isMobile ? '' : 'no-repeat',
+                backgroundPosition: isMobile ? '' : 'center',
+                minHeight: isMobile ? '' : '100vh'
             }}
         >
-            <Container maxWidth=  "md"
+            <Container component="main" maxWidth=  "md"
                 style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
+                    display:  isMobile ? '' : 'flex',
+                    justifyContent: isMobile ? '' :  'center',
+                    alignItems: isMobile ? '' : 'center'
                 }}
             >
                 <div 
@@ -67,8 +67,10 @@ function BecomeAdmin() {
                         style={{
                             fontSize: '1.8rem',
                             fontFamily: 'Nunito Sans', 
-                            padding: '2rem',
                             paddingTop: '1rem',
+                            paddingBottom: '2rem',
+                            paddingLeft: isMobile ? '0rem' : '2rem',
+                            paddingRight: isMobile ? '0rem' : '2rem',
                             textAlign: isMobile ? 'center' : ''
                         }}
                     >
@@ -77,7 +79,15 @@ function BecomeAdmin() {
                         If you're interested, apply by leaving your email below. Our team will reach out with further details. 
                         Join our passionate community of admins and embark on this thrilling adventure with us!
                     </Typography>
-                    <Box  noValidate sx={{ mt: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',  margin: '0 2rem',  }}>
+                    <Box  noValidate 
+                        sx={{ 
+                            mt: 1, 
+                            display: isMobile ? '' : 'flex', 
+                            flexDirection: isMobile ? '' : 'column',
+                            alignItems: isMobile ? '' : 'center', 
+                            margin: isMobile ? '' : '0 2rem',  
+                        }}
+                    >
                         <TextField
                             margin="normal"
                             required
@@ -87,14 +97,22 @@ function BecomeAdmin() {
                             autoComplete="username"
                             onChange={handleChange}
                             value={data}
-                            sx={{width: '30rem'}}
+                            sx={{width: isMobile ? '26rem' : '30rem'}}
+                            
                         />
                         <Button
                             type="submit"
                             color='success'
                             variant="contained"
                             onClick={handleClick}
-                            sx={{ mt: 3, mb: 2, fontWeight: 'bold', height: '3rem', color: 'white', width: '30rem'}}
+                            sx={{ 
+                                mt: 3,
+                                mb: 2, 
+                                fontWeight: 'bold', 
+                                height: '3rem', 
+                                color: 'white', 
+                                width: isMobile ? '26rem' : '30rem'
+                            }}
                         >
                             Submit Request
                         </Button>
@@ -113,7 +131,7 @@ function BecomeAdmin() {
                                             <CloseIcon fontSize="inherit" />
                                         </IconButton>
                                     }
-                                    sx={{ mb: 2 }}
+                                    sx={{ mb: 2, textAlign: 'center' }}
                                 >
                                     {thanks}
                                 </Alert>
@@ -127,5 +145,4 @@ function BecomeAdmin() {
 }
 
 export default BecomeAdmin
-
 
