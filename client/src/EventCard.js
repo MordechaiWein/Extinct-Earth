@@ -76,7 +76,9 @@ function EventCard({ event }) {
             fontWeight: 'bold',
             fontStyle: 'italic',
             color: 'black',
-            fontSize: '1.3rem'
+            fontSize: '1.3rem',
+            backgroundColor: 'white',
+            borderRadius: '2rem'
           }}
         >
           ● Start date: <span style={{color: '#36454F'}}>{event.start_date}</span>
@@ -88,7 +90,10 @@ function EventCard({ event }) {
             fontWeight: 'bold',
             fontStyle: 'italic',
             color: 'black',
-            fontSize: '1.3rem'
+            fontSize: '1.3rem',
+            backgroundColor: 'white',
+            borderRadius: '2rem',
+            marginLeft: '0.4rem'
           }}
         >
           ● End date: <span style={{ color: '#36454F' }}>{event.end_date}</span>
@@ -100,7 +105,10 @@ function EventCard({ event }) {
             fontWeight: 'bold',
             fontStyle: 'italic',
             color: 'black',
-            fontSize: '1.3rem'
+            fontSize: '1.3rem',
+            backgroundColor: 'white',
+            borderRadius: '2rem',
+            marginLeft: '0.4rem'
           }}
         >
           ● Cause: <span style={{ color: '#36454F' }}>{event.cause}</span>
