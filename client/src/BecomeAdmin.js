@@ -88,34 +88,67 @@ function BecomeAdmin() {
                             margin: isMobile ? '' : '0 2rem',  
                         }}
                     >
-                        <TextField
-                            margin="normal"
-                            required
-                            id="username"
-                            placeholder='Email Address*'
-                            name="email"
-                            autoComplete="username"
-                            onChange={handleChange}
-                            value={data}
-                            sx={{width: isMobile ? '26rem' : '30rem'}}
-                            
-                        />
-                        <Button
-                            type="submit"
-                            color='success'
-                            variant="contained"
-                            onClick={handleClick}
-                            sx={{ 
-                                mt: 3,
-                                mb: 2, 
-                                fontWeight: 'bold', 
-                                height: '3rem', 
-                                color: 'white', 
-                                width: isMobile ? '26rem' : '30rem'
-                            }}
-                        >
-                            Submit Request
-                        </Button>
+                        {isMobile ? 
+                            ( <>
+                            <TextField
+                                margin="normal"
+                                required
+                                id="username"
+                                placeholder='Email Address*'
+                                name="email"
+                                autoComplete="username"
+                                onChange={handleChange}
+                                value={data}
+                                fullWidth
+                            />
+                            <Button
+                                type="submit"
+                                color='success'
+                                variant="contained"
+                                fullWidth
+                                onClick={handleClick}
+                                sx={{ 
+                                    mt: 3,
+                                    mb: 2, 
+                                    fontWeight: 'bold', 
+                                    height: '3rem', 
+                                    color: 'white', 
+                                }}
+                            >
+                                Submit Request
+                            </Button>
+                            </>
+                            ):(
+                            <>
+                            <TextField
+                                margin="normal"
+                                required
+                                id="username"
+                                placeholder='Email Address*'
+                                name="email"
+                                autoComplete="username"
+                                onChange={handleChange}
+                                value={data}
+                                sx={{width: '30rem'}}
+                            />
+                            <Button
+                                type="submit"
+                                color='success'
+                                variant="contained"
+                                onClick={handleClick}
+                                sx={{ 
+                                    mt: 3,
+                                    mb: 2, 
+                                    fontWeight: 'bold', 
+                                    height: '3rem', 
+                                    color: 'white', 
+                                    width: '30rem'
+                                }}
+                            >
+                                Submit Request
+                            </Button>
+                            </>)
+                        }
                         <Box sx={{width: isMobile ? '100%' : '52.9%'}}>
                             <Collapse in={open}>
                                 <Alert
