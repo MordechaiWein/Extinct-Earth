@@ -216,7 +216,7 @@ function AboutPage() {
 </Container>
       
       {/* Footer section */}
-      <footer style={{ backgroundColor: '#1b232E', padding: '1rem', marginTop: '2rem', color: 'white', textAlign: 'center' }}>
+      <footer style={{ backgroundColor: 'black', padding: '1rem', marginTop: '2rem', color: 'white', textAlign: 'center' }}>
         <Typography variant="body2" align="center">
           &copy; 2023 Extinct Animals. All rights reserved.
         </Typography>
