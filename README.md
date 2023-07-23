@@ -18,7 +18,7 @@ With full CRUD (Create, Read, Update, Delete) functionality, users have the powe
 
 Get ready to embark on a journey through time and explore the rich biodiversity that once flourished on our planet. 
 
-## 👏 credit
+## 👏 Credit
 
 I would like to extend my heartfelt appreciation and give credit to the following sources and platforms for their valuable contributions to this project:
 
