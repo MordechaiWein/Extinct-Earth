@@ -41,7 +41,7 @@ function FavoritesCard({ animal }) {
           <Typography variant="h5" style={{ fontFamily: 'Montserrat' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span>{animal.name.toUpperCase()}</span>
-              <FavoriteOutlinedIcon style={{ color: '#FE251B', fontSize: '2rem' }} />
+              <FavoriteOutlinedIcon style={{ color: '#FE251B', fontSize: '2rem'}} />
             </div>
           </Typography>
 
@@ -96,7 +96,7 @@ function FavoritesCard({ animal }) {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span>{animal.name.toUpperCase()}</span>
                 
-                <FavoriteOutlinedIcon style={{ color: '#FE251B', fontSize: '2rem' }} />
+                <FavoriteOutlinedIcon style={{ color: '#FE251B', fontSize: '2rem', marginBottom:'0.5rem' }} />
               </div>
             </Typography>
 
