@@ -35,14 +35,13 @@ function EventsContainer() {
                 fontSize: '1.1rem', 
                 margin: '0 2rem', 
                 fontFamily: 'Montserrat', 
-                fontStyle: 'italic', 
                 color: 'rgba(0, 0, 0, 0.87)', 
                 marginTop: '2rem', 
                 marginBottom: '4rem'
             }}
             >
             Throughout the history of our planet, multiple extinction events have shaped life on Earth. 
-            At Extinct Animals, we delve into these cataclysmic events, unraveling their causes and consequences.
+            At Extinct Earth&copy;, we delve into these cataclysmic events, unraveling their causes and consequences.
             Join us in exploring the mysteries of these global upheavals that have impacted the course of evolution.
        </Typography>
        </Container>

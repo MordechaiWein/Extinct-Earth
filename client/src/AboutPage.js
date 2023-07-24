@@ -43,7 +43,7 @@ function AboutPage() {
        <Container>
        <Typography 
             style={{textAlign: 'center', fontSize: '1.1rem', margin: '0 2rem', fontFamily: 'Montserrat', color: 'rgba(0, 0, 0, 0.87)'}}>
-            At Extinct Animals, our mission is to celebrate and remember the incredible creatures that once roamed our planet. 
+            At Extinct Earth&copy;, our mission is to celebrate and remember the incredible creatures that once roamed our planet. 
             Through storytelling and education, we bring their captivating stories back to life. Join us in exploring 
             the wonders of the past and discovering the rich diversity of extinct animals.
        </Typography>
@@ -171,7 +171,7 @@ function AboutPage() {
           <Typography variant="h4" sx={{ paddingBottom: '1rem', fontWeight: 'bold' }}>
              Discover, Learn, and Explore the World of Extinct Animals
           </Typography>
-          At Extinct Animals, we strive to provide an immersive and educational experience that sparks 
+          At Extinct Earth&copy;, we strive to provide an immersive and educational experience that sparks 
           curiosity and appreciation for the incredible creatures that have vanished from our world. 
           Delve into our extensive collection of articles, photographs, and interactive content to deepen 
           your knowledge and understanding of extinct animals. Whether you're a passionate enthusiast, 
@@ -200,7 +200,7 @@ function AboutPage() {
           <Typography variant="h4" sx={{ paddingBottom: '1rem', fontWeight: 'bold' }}>
              Discover, Learn, and Explore the World of Extinct Animals
           </Typography>
-          At Extinct Animals, we strive to provide an immersive and educational experience that sparks 
+          At Extinct Earth&copy;, we strive to provide an immersive and educational experience that sparks 
           curiosity and appreciation for the incredible creatures that have vanished from our world. 
           Delve into our extensive collection of articles, photographs, and interactive content to deepen 
           your knowledge and understanding of extinct animals. Whether you're a passionate enthusiast, 
