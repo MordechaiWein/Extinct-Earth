@@ -43,7 +43,7 @@ function AdminEditAnimals({ animal }) {
             if (response.ok) {
                 response.json().then(data => {
                     editAnimals(data)
-                    history.push(`${data.classification}`)
+                    history.push(`animals/${data.classification}`)
                 })
             } else {
                 response.json().then(data => setErrors(data.errors))

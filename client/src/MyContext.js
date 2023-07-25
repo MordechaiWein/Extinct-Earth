@@ -153,14 +153,6 @@ function MyProvider({children}) {
         })
         setEvents(updatedEvents)
     }
-
-
-
-   
-
-
-
-
     
     return (
         <MyContext.Provider 

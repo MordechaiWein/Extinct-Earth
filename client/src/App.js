@@ -40,7 +40,7 @@ function App() {
         <Route exact path="/favorites" >
           <Favorites />
         </Route>
-        <Route exact path="/:classification" >
+        <Route exact path="/animals/:classification" >
           <AnimalContainer />
         </Route>
         <Route exact path="/creature/:id" >

@@ -21,16 +21,10 @@ function CommentCard({ comment }) {
     user_id: comment.user_id,
   });
 
-
-  const [heart, setHeart] = useState()
-  const [yourLike, setYourLike] = useState({
-    comment_id: comment.id,
-    user_id: user.id
-  })
-
   const findUsersLike = comment.likes.filter(like => like.user_id === user.id)
 
   function likeComment() {
+    const yourLike = {comment_id: comment.id}
     if (findUsersLike.length === 0 ) {
       fetch('/likes', {
         method: 'POST',

@@ -52,19 +52,21 @@ const HomepageHeading = ({ mobile }) => {
   }
 
  return (
-  <Container text>
+<>
     <Header
       as='h1'
       content='Formosan Clouded Leopard'
       inverted
       style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
+        fontSize: mobile ? '2.3em' : '4.6em',
         marginBottom: 0,
-        marginTop: mobile ? '0em' : '1em',
-        marginLeft: mobile ? '0em' : '-9.5em',
+        marginTop: mobile ? '0em' : '0.9em',
+        marginLeft: mobile ? '0em' : '0em',
+        marginRight: mobile ? '0.2em' : '1em',
+        textAlign: mobile ? '' : 'left',
+        paddingLeft: mobile ? '0.4em' : '1.3em',
         fontFamily: 'Montserrat',
-        fontWeight: 'bold'
+        fontWeight: 'bold',  
       }}
     />
     <Header
@@ -72,25 +74,35 @@ const HomepageHeading = ({ mobile }) => {
       content='Declared extinct in 2013'
       inverted
       style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
+        fontSize: mobile ? '1.7em' : '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '7em' : '1.5em',
-        marginLeft: mobile ? '0em' : '-43.9em',
+        marginTop: mobile ? '6.7em' : '1.5em',
+        marginLeft: mobile ? '0em' : '0em',
+        marginRight: mobile ? '0.2em' : '0em',
+        textAlign: mobile ? '' : 'left',
+        paddingLeft: mobile ? '0.2rem' : '3.6em',
         fontFamily: 'Montserrat',
         fontWeight: 'bold'
       }}
     />
+    
     <Button 
       primary 
       size={mobile ? 'medium' : 'huge'}  
-      style={{marginLeft: mobile ? '0em' : '-67em'}} 
+      floated={mobile ? undefined : 'left'}
+      style={{ 
+        marginLeft: mobile ? '0em' : '4.2em',
+        marginRight: mobile ? '0em' : '0em',
+        
+      }} 
       href="https://en.wikipedia.org/wiki/Formosan_clouded_leopard" 
       onClick={handleClick}
     >
       Learn More
      <Icon name='right arrow' />
     </Button>
-  </Container>
+    
+    </>
  )
 }
 

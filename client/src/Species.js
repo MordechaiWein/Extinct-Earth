@@ -7,7 +7,7 @@ function Species() {
     const speciesList = species.map(s => 
         <Link 
             className="specieshover"
-            to={`${s.toLowerCase()}`}
+            to={`animals/${s.toLowerCase()}`}
             style={{
                 fontWeight: 'bold',
                 fontSize: '3.5rem',
@@ -39,7 +39,7 @@ function Species() {
             </h1>
             <Link 
                 className="specieshover"
-                to={'fish'}
+                to={'animals/fish'}
                 style={{
                     fontWeight: 'bold',
                     fontSize: '3.5rem',
