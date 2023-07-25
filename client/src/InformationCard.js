@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import SimpleMap from "./SimpleMap";
 import CircularProgress from '@mui/material/CircularProgress';
 import { Typography, Container, Box} from '@mui/material';
@@ -27,32 +27,11 @@ function InformationCard() {
         .then(response => response.json())
         .then(data => setAnimals(data))
     }
+
+
   
     return (
-        <>
-            {!being ? 
-                (
-                    <>
-                        <Box 
-                            sx={{
-                                width: '5rem',
-                                margin: 'auto',
-                                marginTop: '15rem'
-                            }}
-                        >
-                            <CircularProgress sx={{color: 'green'}}/>
-                        </Box>
-                            <h3 
-                                style={{
-                                    textAlign: 'center',
-                                    marginTop: '1rem',
-                                    marginRight: '1rem'
-                                }}
-                            >    Loading...
-                            </h3>
-                    </>
-                ):(
-                    <Container style={{marginTop: isMobile ? '0rem' : '2rem', maxWidth: isMobile ? '100%' : '90%'}}>
+        <Container style={{marginTop: isMobile ? '0rem' : '2rem', maxWidth: isMobile ? '100%' : '90%'}}>
                         {isMobile ? (
                             <div>
                                 <Typography 
@@ -102,60 +81,154 @@ function InformationCard() {
                                 </Typography>
                             </div>  
                             ) : (
-                            <Box style={{display: 'flex', height: '56.1rem'}}>
-                                <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
-                                <Typography style={{marginLeft: '2rem', width: '100%'}}>
-                                    <h1 
-                                        style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: ''}}>
-                                        {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
-                                    </h1>
-                                    <div style={{ display: 'flex', alignItems: 'baseline'}}>
-                                        <h4 style={{fontWeight: 'bold', color: ''}}>Classification:</h4> 
-                                        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {capitalizedWord}</h5>
-                                    </div>
-                                    <div style={{ display: 'flex', alignItems: 'baseline'}}>
-                                        <h4 style={{fontWeight: 'bold', color: ''}}>Other Name:</h4> 
-                                        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.scientific_name}</h5>
-                                    </div>
-                                    <div style={{ display: 'flex', alignItems: 'baseline'}}>
-                                        <h4 style={{fontWeight: 'bold', color: ''}}>Period:</h4> 
-                                        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.time_period}</h5>
-                                    </div>
-                                    <div style={{ display: 'flex', alignItems: 'baseline'}}>
-                                        <h4 style={{fontWeight: 'bold', color: '' }}>Diet:</h4> 
-                                        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.diet}</h5>
-                                    </div>
-                                    <div>
-                                        <h5 style={{fontWeight: 'bold', fontStyle: 'italic'}}>Fun Fact:</h5> 
-                                        <h5 style={{marginBottom: '2rem', fontStyle: 'italic'}}>{being.fun_fact}</h5>
-                                    </div>
-                                    <Typography style={{ fontFamily: '', fontSize: '100%'}}>
-                                        <div style={{height: '14rem', width: '100%'}}>
-                                            {being.history}
-                                        </div>
-                                    </Typography>
-                                    <div style={{ paddingTop: '0.5rem', paddingBottom: '0.44rem'}}>
-                                        <a style={{fontWeight: 'bold', textDecoration: 'none', color: '#0288d1'}}
-                                        href={being.link}
-                                        onClick={handleClick}
-                                        >
-                                        See More Information
-                                        </a>
-                                    </div>
-                                    <div style={{ marginTop: '0.5rem'}}>
-                                        {being.latitude && being.longitude ? 
-                                            <SimpleMap being={being}/>
-                                            : 
-                                            "Loading..."
-                                        }
-                                    </div>
-                                </Typography>
-                            </Box> )
-                        }
+
+
+
+
+
+                              
+
+
+
+
+                                <>
+                                {being.name && being.image && being.classification ? 
+
+<Box style={{display: 'flex', height: '56.1rem'}}>
+<img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
+<Typography style={{marginLeft: '2rem', width: '100%'}}>
+    <h1 
+        style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: ''}}>
+        {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
+    </h1>
+    <div style={{ display: 'flex', alignItems: 'baseline'}}>
+        <h4 style={{fontWeight: 'bold', color: ''}}>Classification:</h4> 
+        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {capitalizedWord}</h5>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'baseline'}}>
+        <h4 style={{fontWeight: 'bold', color: ''}}>Other Name:</h4> 
+        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.scientific_name}</h5>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'baseline'}}>
+        <h4 style={{fontWeight: 'bold', color: ''}}>Period:</h4> 
+        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.time_period}</h5>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'baseline'}}>
+        <h4 style={{fontWeight: 'bold', color: '' }}>Diet:</h4> 
+        <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.diet}</h5>
+    </div>
+    <div>
+        <h5 style={{fontWeight: 'bold', fontStyle: 'italic'}}>Fun Fact:</h5> 
+        <h5 style={{marginBottom: '2rem', fontStyle: 'italic'}}>{being.fun_fact}</h5>
+    </div>
+    <Typography style={{ fontFamily: '', fontSize: '100%'}}>
+        <div style={{height: '14rem', width: '100%'}}>
+            {being.history}
+        </div>
+    </Typography>
+    <div style={{ paddingTop: '0.5rem', paddingBottom: '0.44rem'}}>
+        <a style={{fontWeight: 'bold', textDecoration: 'none', color: '#0288d1'}}
+        href={being.link}
+        onClick={handleClick}
+        >
+        See More Information
+        </a>
+    </div>
+    <div style={{ marginTop: '0.5rem'}}>
+        {being.latitude && being.longitude ? 
+            <SimpleMap being={being}/>
+            : 
+            "Loading..."
+        }
+    </div>
+</Typography>
+</Box>
+
+                                   :(
+                                       
+                                    (
+                                        <>
+                                            <Box 
+                                                sx={{
+                                                    width: '5rem',
+                                                    margin: 'auto',
+                                                    marginTop: '15rem'
+                                                }}
+                                            >
+                                                <CircularProgress sx={{color: 'green'}}/>
+                                            </Box>
+                                                <h3 
+                                                    style={{
+                                                        textAlign: 'center',
+                                                        marginTop: '1rem',
+                                                        marginRight: '1rem'
+                                                    }}
+                                                >    Loading...
+                                                </h3>
+                                        </>
+                                    )
+    
+
+                                     
+
+                                    )
+                                }
+
+                          </>
+
+
+
+                            // <Box style={{display: 'flex', height: '56.1rem'}}>
+                            //     <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
+                            //     <Typography style={{marginLeft: '2rem', width: '100%'}}>
+                            //         <h1 
+                            //             style={{fontWeight: 'bold', marginBottom: '3rem',fontFamily: 'Montserrat', color: ''}}>
+                            //             {being.id === parseInt(params.id) ? being.name.toUpperCase() : ''}
+                            //         </h1>
+                            //         <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            //             <h4 style={{fontWeight: 'bold', color: ''}}>Classification:</h4> 
+                            //             <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {capitalizedWord}</h5>
+                            //         </div>
+                            //         <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            //             <h4 style={{fontWeight: 'bold', color: ''}}>Other Name:</h4> 
+                            //             <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.scientific_name}</h5>
+                            //         </div>
+                            //         <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            //             <h4 style={{fontWeight: 'bold', color: ''}}>Period:</h4> 
+                            //             <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.time_period}</h5>
+                            //         </div>
+                            //         <div style={{ display: 'flex', alignItems: 'baseline'}}>
+                            //             <h4 style={{fontWeight: 'bold', color: '' }}>Diet:</h4> 
+                            //             <h5 style={{marginBottom: '1rem', fontStyle: 'italic'}}>&nbsp; {being.diet}</h5>
+                            //         </div>
+                            //         <div>
+                            //             <h5 style={{fontWeight: 'bold', fontStyle: 'italic'}}>Fun Fact:</h5> 
+                            //             <h5 style={{marginBottom: '2rem', fontStyle: 'italic'}}>{being.fun_fact}</h5>
+                            //         </div>
+                            //         <Typography style={{ fontFamily: '', fontSize: '100%'}}>
+                            //             <div style={{height: '14rem', width: '100%'}}>
+                            //                 {being.history}
+                            //             </div>
+                            //         </Typography>
+                            //         <div style={{ paddingTop: '0.5rem', paddingBottom: '0.44rem'}}>
+                            //             <a style={{fontWeight: 'bold', textDecoration: 'none', color: '#0288d1'}}
+                            //             href={being.link}
+                            //             onClick={handleClick}
+                            //             >
+                            //             See More Information
+                            //             </a>
+                            //         </div>
+                            //         <div style={{ marginTop: '0.5rem'}}>
+                            //             {being.latitude && being.longitude ? 
+                            //                 <SimpleMap being={being}/>
+                            //                 : 
+                            //                 "Loading..."
+                            //             }
+                            //         </div>
+                            //     </Typography>
+                            // </Box> )
+                        )}
                     </Container>  
-                )
-            }
-        </>
     )
 }
 
