@@ -30,7 +30,7 @@ function InformationCard() {
   
     return (
         <>
-            {!being && !being.image ? 
+            {!being ? 
                 (
                     <>
                         <Box 
