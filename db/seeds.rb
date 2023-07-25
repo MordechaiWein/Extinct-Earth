@@ -1,6 +1,6 @@
 
 puts '🦖🦕💥 Meteorite destroying selected comments...'
-puts 'what a wonderfull day I dont see any meteorites! ⭐️'
+puts '🔨looks like the spinner functionality is up and running!'
 puts '✅ Done seeding!'
 
 
