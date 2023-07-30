@@ -9,6 +9,7 @@ const AnyReactComponent = ({ icon }) => <div>{icon}</div>;
 function SimpleMap({ being }) {
 
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px), (min-width: 1801px)');
   const defaultProps = {
     center: {
       lat: being.longitude ? parseFloat(being.latitude) : 0,
@@ -19,12 +20,20 @@ function SimpleMap({ being }) {
     zoom: 8
   };
  
+  let mapWidth = ''
+  if (isMobile) {
+    mapWidth = '100%'
+  } else if (isMediumScreen) {
+    mapWidth = '100%'
+  } else {
+    mapWidth = '50%'
+  }
   return (
     // Important! Always set the container height explicitly
     <div style={{
         marginTop: isMobile ? '1rem' : '0rem',
-        height: '16.9rem',
-        width: isMobile ? "100%" : '50%',
+        height: isMediumScreen ? '30rem' : '16.9rem',
+        width: mapWidth,
         paddingBottom: isMobile ? '2rem' : '0rem'
          }}
     >

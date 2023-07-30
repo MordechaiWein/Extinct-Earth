@@ -24,36 +24,36 @@ function AdminAnimals() {
     const [errors, setErrors] = useState([])
     const [historyLength, setHistoryLength] = useState(null)
     const [data, setData] = useState({
-        name: '',
-        image: '',
-        classification: '', 
-        history: '',
-        time_period: '', 
-        scientific_name: '',
-        diet: '',
-        longitude: '',
-        latitude: '',
-        fun_fact: '',
-        link: ''
+      name: '',
+      image: '',
+      classification: '', 
+      history: '',
+      time_period: '', 
+      scientific_name: '',
+      diet: '',
+      longitude: '',
+      latitude: '',
+      fun_fact: '',
+      link: ''
     })
 
     function handleSubmit(e) {
-        e.preventDefault()
-        fetch("/animals", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data)
-        })
-        .then((response) => {
-            if (response.ok) {
-                response.json().then(data => {
-                    setAnimals([...animals, data])
-                    history.push(`animals/${data.classification}`)
-                })
-            } else {
-                response.json().then(data => setErrors(data.errors))
-            }
-        })
+      e.preventDefault()
+      fetch("/animals", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+      })
+      .then((response) => {
+        if (response.ok) {
+          response.json().then(data => {
+            setAnimals([...animals, data])
+            history.push(`animals/${data.classification}`)
+          })
+        } else {
+          response.json().then(data => setErrors(data.errors))
+        }
+      })
     }
 
     function handleChange(event) {
@@ -73,7 +73,6 @@ function AdminAnimals() {
       setErrors([])   
   }
  
-   
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="md">
@@ -102,7 +101,7 @@ function AdminAnimals() {
               autoComplete="email"
               autoFocus
             />
-              <TextField
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -114,7 +113,6 @@ function AdminAnimals() {
               autoComplete="email"
               autoFocus
             />
-
             <TextField
               margin="normal"
               required
@@ -127,8 +125,7 @@ function AdminAnimals() {
               autoComplete="email"
               autoFocus
             />
-            
-              <TextField
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -142,20 +139,20 @@ function AdminAnimals() {
               autoComplete="email"
               autoFocus
             />
-              {!historyLength ? 
-                '' 
-                : 
-                <p 
-                  style={{
-                    color: 'red', 
-                    fontStyle: 'italic', 
-                    }}
-                >
-                  <ErrorOutlineIcon sx={{marginBottom: '0.2rem'}}/>
-                  {historyLength}
-                </p>
-              }
-              <TextField
+            {!historyLength ? 
+              '' 
+              : 
+              <p 
+                style={{
+                  color: 'red', 
+                  fontStyle: 'italic', 
+                }}
+              >
+                <ErrorOutlineIcon sx={{marginBottom: '0.2rem'}}/>
+                {historyLength}
+              </p>
+            }
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -179,7 +176,7 @@ function AdminAnimals() {
               id="password"
               autoComplete="email"
             />
-              <TextField
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -239,7 +236,6 @@ function AdminAnimals() {
               autoComplete="email"
               autoFocus
             />
-
            {/* <FormControl 
                 variant="standard" 
                 sx={{ marginBottom: '2rem', minWidth: 190, fontWeight: 'bold'}}
@@ -259,7 +255,6 @@ function AdminAnimals() {
                     <MenuItem value='amphibian'>amphibian</MenuItem>
                   </Select>
               </FormControl> */}
-
             <Button
               type="submit"
               fullWidth
@@ -269,16 +264,15 @@ function AdminAnimals() {
               Submit
             </Button>
             {errors.map(error => 
-                <Alert 
-                  severity="error"
-                  sx={{color: 'red', marginBottom: '1rem'}}
-                >
-                  {error}
-                </Alert>
-              )}
+              <Alert 
+                severity="error"
+                sx={{color: 'red', marginBottom: '1rem'}}
+              >
+                {error}
+              </Alert>
+            )}
           </Box>
         </Box>
-
       </Container>
     </ThemeProvider>
   );

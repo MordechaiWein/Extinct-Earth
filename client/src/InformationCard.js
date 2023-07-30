@@ -5,13 +5,14 @@ import { Typography, Container, Box} from '@mui/material';
 import { useParams } from "react-router-dom";
 import { useMediaQuery } from '@mui/material';
 import { MyContext } from "./MyContext";
-
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 function InformationCard() {
 
     const params = useParams()
     const {animals, setAnimals, setUser} = useContext(MyContext)
     const isMobile = useMediaQuery('(max-width: 600px)');
+    const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px), (min-width: 1801px)');
     const being =  animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
     const capitalizedWord = being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
     const imageStyleRight = isMobile
@@ -28,8 +29,72 @@ function InformationCard() {
         .then(data => setAnimals(data))
     }
 
+    if (isMediumScreen) {
+        return (
+            <Container maxWidth="md">
+                {being.name && being.image && being.classification ? 
+                    <>
+                        <img src={being.image} style={{width: '100%', height: 'auto'}}/>
+                        <Typography variant="h3"  sx={{ paddingBottom: '1.5rem', paddingTop: '1.5rem', fontWeight: 'bold'}}>
+                            {being.name}
+                        </Typography>
+                        <Typography variant="h5" sx={{paddingBottom: '0.5rem', fontWeight: 'bold'}}>
+                            Period: {being.time_period}
+                        </Typography>
+                        <Typography variant="h5" sx={{paddingBottom: '0.5rem', fontWeight: 'bold'}}>
+                            Diet: {being.diet}
+                        </Typography>
+                        <Typography variant="h5" sx={{paddingBottom: '0.5rem', fontWeight: 'bold'}}>
+                            Other Name: {being.scientific_name}
+                        </Typography>
+                        <Typography variant="h5" sx={{paddingBottom: '0.5rem', fontWeight: 'bold'}}>
+                            Classification: {capitalizedWord}
+                        </Typography>
+                        <Typography variant="h6" sx={{paddingTop: '1.5rem'}}>
+                            {being.history}
+                        </Typography>
+                        <div style={{ paddingTop: '0.5rem', paddingBottom: '1rem'}}>
+                            <a 
+                                style={{fontWeight: 'bold', textDecoration: 'none', color: '#2e7d32', fontSize: '1.5rem'}}
+                                href={being.link}
+                                onClick={handleClick}
+                            >
+                                See More Information
+                                <ArrowCircleRightIcon />
+                            </a>
+                        </div>
+                        { being.latitude && being.longitude ? 
+                            <SimpleMap being={being}/>
+                            : 
+                            "Loading..."
+                        } 
+                    </>
+                    : 
+                    <>
+                        <Box 
+                            sx={{
+                                width: '5rem',
+                                margin: 'auto',
+                                marginTop: '25rem'
+                            }}
+                        >
+                            <CircularProgress sx={{color: 'green'}}/>
+                        </Box>
+                        <h3 
+                            style={{
+                              textAlign: 'center',
+                              marginTop: '1rem',
+                              marginRight: '1rem'
+                            }}
+                        >    
+                            Loading...
+                        </h3>
+                    </>
+                }
+            </Container>
+        )
+    }
 
-  
     return (
         <Container style={{marginTop: isMobile ? '0rem' : '2rem', maxWidth: isMobile ? '100%' : '90%'}}>
             {isMobile ? (
