@@ -207,23 +207,18 @@ function InformationCard() {
                         </Box>
                         ):(
                         <>
-                            <Box 
-                                sx={{
-                                    width: '5rem',
-                                    margin: 'auto',
-                                    marginTop: '25rem'
-                                }}
-                            >
+                            <Box sx={{}}>
                                 <CircularProgress sx={{color: 'green'}}/>
                             </Box>
-                                <h3 
-                                    style={{
-                                        textAlign: 'center',
-                                        marginTop: '1rem',
-                                        marginRight: '1rem'
-                                    }}
-                                >    Loading...
-                                </h3>
+                            <h3 
+                                style={{
+                                    textAlign: 'center',
+                                    marginTop: '1rem',
+                                    marginLeft: '1.2rem',
+                                }}
+                            >    
+                                Loading...
+                            </h3>
                         </>)
                     }
 
