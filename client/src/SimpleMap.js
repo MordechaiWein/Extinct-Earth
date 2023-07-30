@@ -9,7 +9,7 @@ const AnyReactComponent = ({ icon }) => <div>{icon}</div>;
 function SimpleMap({ being }) {
 
   const isMobile = useMediaQuery('(max-width: 600px)');
-  const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px), (min-width: 1801px)');
+  const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px)');
   const defaultProps = {
     center: {
       lat: being.longitude ? parseFloat(being.latitude) : 0,

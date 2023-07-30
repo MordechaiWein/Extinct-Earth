@@ -12,7 +12,7 @@ function InformationCard() {
     const params = useParams()
     const {animals, setAnimals, setUser} = useContext(MyContext)
     const isMobile = useMediaQuery('(max-width: 600px)');
-    const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px), (min-width: 1801px)');
+    const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px)');
     const being =  animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
     const capitalizedWord = being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
     const imageStyleRight = isMobile
@@ -96,7 +96,7 @@ function InformationCard() {
     }
 
     return (
-        <Container style={{marginTop: isMobile ? '0rem' : '2rem', maxWidth: isMobile ? '100%' : '90%'}}>
+        <Container style={{marginTop: isMobile ? '0rem' : '2rem', maxWidth: isMobile ? '100%' : '100%'}}>
             {isMobile ? (
                 <div>
                     <Typography 
@@ -146,7 +146,7 @@ function InformationCard() {
                     </Typography>
                 </div>  
                 ) : (
-                <>
+                <Container maxWidth="xl">
                     {being.name && being.image && being.classification ? 
                         (<Box style={{display: 'flex', height: '56.1rem'}}>
                             <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
@@ -219,7 +219,7 @@ function InformationCard() {
                         </>)
                     }
 
-                </>
+                </Container>
             )}
         </Container>  
     )
