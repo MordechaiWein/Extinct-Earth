@@ -146,7 +146,15 @@ function InformationCard() {
                     </Typography>
                 </div>  
                 ) : (
-                <Container maxWidth="xl">
+                <Container maxWidth="xl"
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100vh",
+                    }}
+                >
                     {being.name && being.image && being.classification ? 
                         (<Box style={{display: 'flex', height: '56.1rem'}}>
                             <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
