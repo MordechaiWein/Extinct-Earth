@@ -13,6 +13,7 @@ function InformationCard() {
     const {animals, setAnimals, setUser} = useContext(MyContext)
     const isMobile = useMediaQuery('(max-width: 600px)');
     const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px)');
+    const isLargeScreen = useMediaQuery('(min-width: 1801px)');
     const being =  animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
     const capitalizedWord = being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
     const imageStyleRight = isMobile
@@ -153,6 +154,7 @@ function InformationCard() {
                         justifyContent: "center",
                         alignItems: "center",
                         height: "100vh",
+                        boxShadow: isLargeScreen ? '0 2px 4px rgba(0, 0, 0, 0.5)' : "", 
                     }}
                 >
                     {being.name && being.image && being.classification ? 
