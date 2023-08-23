@@ -8,19 +8,28 @@ function MyProvider({children}) {
     const [page, setPage] = useState('Home')
     const [events, setEvents] = useState([])
     const [animals, setAnimals] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
+
+    // useEffect(() => {
+    //     setIsLoading(true)
+    //     fetch('/me')
+    //     .then((response) => {
+    //         if (response.ok) {
+    //             response.json().then(data => {
+    //                 setUser(data)
+    //                 setIsLoading(false)
+    //             })
+                
+    //         } else {setIsLoading(false)}
+    //     })
+    // },[])
 
     useEffect(() => {
-        setIsLoading(true)
         fetch('/me')
         .then((response) => {
             if (response.ok) {
-                response.json().then(data => {
-                    setUser(data)
-                    setIsLoading(false)
-                })
-                
-            } else {setIsLoading(false)}
+                response.json().then(data => setUser(data))
+            } 
         })
     },[])
     
@@ -179,7 +188,7 @@ function MyProvider({children}) {
                  deleteAnimals,
                  addLikeToComment,
                  deleteLikeFromComment,
-                 isLoading
+                //  isLoading
                 }}
             >
             {children}                                                                                     
