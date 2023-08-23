@@ -8,13 +8,19 @@ function MyProvider({children}) {
     const [page, setPage] = useState('Home')
     const [events, setEvents] = useState([])
     const [animals, setAnimals] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+        setIsLoading(true)
         fetch('/me')
         .then((response) => {
             if (response.ok) {
-                response.json().then(data => setUser(data))
-            }
+                response.json().then(data => {
+                    setUser(data)
+                    setIsLoading(false)
+                })
+                
+            } else {setIsLoading(false)}
         })
     },[])
     
@@ -172,7 +178,8 @@ function MyProvider({children}) {
                  editEvents,
                  deleteAnimals,
                  addLikeToComment,
-                 deleteLikeFromComment
+                 deleteLikeFromComment,
+                 isLoading
                 }}
             >
             {children}                                                                                     

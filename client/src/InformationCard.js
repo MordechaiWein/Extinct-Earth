@@ -154,7 +154,7 @@ function InformationCard() {
                         justifyContent: "center",
                         alignItems: "center",
                         height: "100vh",
-                        boxShadow: isLargeScreen ? '0 2px 4px rgba(0, 0, 0, 0.5)' : "", 
+                        boxShadow: isLargeScreen ? '0 2px 4px rgba(0, 0, 0, 0.5)' : "" 
                     }}
                 >
                     {being.name && being.image && being.classification ? 

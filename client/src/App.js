@@ -14,7 +14,12 @@ import { MyContext } from "./MyContext";
 
 function App() {
 
-  const {user} = useContext(MyContext)
+  const {user, isLoading} = useContext(MyContext)
+
+  if (isLoading) {
+  
+    return <div></div>
+  }
 
   if (!user) return <Home/>
 
