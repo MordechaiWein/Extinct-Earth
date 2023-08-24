@@ -1,10 +1,10 @@
 puts '🦖🦕💥 Meteorite destroying selected comments...'
-puts 'Updates:'
-puts '🔨sorting comments in order...'
-puts 'sorting extinction events in order...'
-puts 'fixing medium screen extinction events page...'
-puts '✅ Done seeding!'
 
+user = User.find_by(username: 'Tooky')
+comment = user.comments.find_by(text: 'Weird pictures')
+comment.destroy
+
+puts '✅ Done seeding!'
 
 
 
