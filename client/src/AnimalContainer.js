@@ -134,7 +134,9 @@ function AnimalContainer() {
                             textAlign: 'center', 
                             fontFamily: 'montserrat', 
                             fontSize:' 2.5rem',
-                            paddingTop: '10rem'
+                            paddingTop: isMobile ? "5rem" : '10rem',
+                            paddingBottom: isMobile ? "5rem" : '',
+                            paddingRight: isMobile ? '1rem' : ''
                         }}
                     >
                        <SearchIcon sx={{ fontSize: 40, color: 'black', marginBottom: '0.5rem' }}/>
