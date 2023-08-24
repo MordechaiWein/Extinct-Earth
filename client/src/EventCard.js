@@ -1,14 +1,64 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Container, Box} from '@mui/material';
 import { useMediaQuery } from '@mui/material';
 
 function EventCard({ event }) {
 
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px)');
 
   const imageStyleRight = isMobile
   ? { width: '100%', height: 'auto', marginRight: '2rem' }
   : { width: '40%', height: '25rem', marginRight: '2rem' };
+
+  if (isMediumScreen) {
+    return (
+      <main
+        style={{
+          backgroundColor: '#f5f5f5',
+          padding: '3%',
+          marginBottom: '10px',
+          marginLeft: '2%',
+          marginRight: '2%'
+        }}
+      >
+        <Container maxWidth="md"> 
+          <Typography variant="h3"
+              style={{
+                fontWeight: 'bold',
+                paddingBottom: '2%',
+                fontFamily: 'Orbitron, sans-serif',
+                textTransform: 'uppercase',
+              }}
+          >
+            {event.name} EXTINCTION EVENT
+          </Typography>
+          <img
+            style={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+              paddingBottom: '1.5%',
+            }}
+            src={event.image}
+            alt="Event Image"
+          />
+          <li style= {{fontSize: '2vw',fontWeight: 'bold',fontFamily: 'Orbitron, sans-serif'}}>start date: {event.start_date}</li>
+          <li style= {{fontSize: '2vw',fontWeight: 'bold',fontFamily: 'Orbitron, sans-serif'}}>End date: {event.end_date}</li>
+          <li style= {{fontSize: '2vw',fontWeight: 'bold', fontFamily: 'Orbitron, sans-serif'}}>Cause: {event.cause}</li>
+          <Typography variant="h4"
+            sx={{
+              paddingTop: '2.5rem',
+              fontFamily: 'Noto Serif serif',
+              color: '#36454F'
+            }}
+          >
+            {event.description}
+          </Typography>
+        </Container>
+      </main>
+    )
+  }
 
   return (
     <>

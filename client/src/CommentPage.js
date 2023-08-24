@@ -26,7 +26,9 @@ function CommentPage() {
         animal_id: parseInt(params.id)
     })
 
-    const replies = being && animals.length > 0 ? being.comments.map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
+    const replies = being && animals.length > 0 ? being.comments
+    .sort((a, b) => a.created_at.localeCompare(b.created_at))
+    .map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
 
     function handleChange(event) {
         setErrors([])

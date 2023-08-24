@@ -1,5 +1,8 @@
 puts '🦖🦕💥 Meteorite destroying selected comments...'
-puts '🔨looks like the catch route is up and running!!!!'
+puts 'Updates:'
+puts '🔨sorting comments in order...'
+puts 'sorting extinction events in order...'
+puts 'fixing medium screen extinction events page...'
 puts '✅ Done seeding!'
 
 

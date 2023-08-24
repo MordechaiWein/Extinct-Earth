@@ -7,7 +7,9 @@ function EventsContainer() {
 
     const {events} = useContext(MyContext)
     const isMobile = window.innerWidth <= 600;
-    const eventList = events.map(event => <EventCard key={event.id} event={event}/>)
+    const eventList = events
+    .sort((a, b) => a.created_at.localeCompare(b.created_at))
+    .map(event => <EventCard key={event.id} event={event}/>)
 
     return (
         <div>
