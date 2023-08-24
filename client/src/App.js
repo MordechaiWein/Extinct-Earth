@@ -9,6 +9,7 @@ import CommentPage from './CommentPage';
 import AnimalContainer from './AnimalContainer';
 import EventsContainer from './EventsContainer';
 import DrawerUserBar from './Home/DrawerUserBar';
+import ErrorPage from './ErrorPage';
 import { Route, Switch } from 'react-router-dom';
 import { MyContext } from "./MyContext";
 
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route exact path="/comment/:id" >
           <CommentPage />
+        </Route>
+        <Route path= "*" >
+          <ErrorPage />
         </Route>
       </Switch>
     </div>

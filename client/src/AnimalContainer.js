@@ -18,7 +18,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import ErrorPage from "./ErrorPage";
 
 function AnimalContainer() {
 
@@ -29,8 +29,9 @@ function AnimalContainer() {
 
     const [name, setName] = useState('')
     const classification = animals.filter(animal => animal.classification === params.classification)
-
-
+    const allowedList = ['fish', 'bird', 'reptile', 'mammal', 'insect', 'amphibian']
+    const acceptedList = allowedList.filter(name => name === params.classification)
+    
     const sortedAnimals = classification.sort((a, b) => {
 		if (dropdown === "none") {return true}
 		if (dropdown === "a-z") {return a.name.localeCompare(b.name)}
@@ -71,6 +72,8 @@ function AnimalContainer() {
         animalType = `${params.classification}s`.toUpperCase()
     }
 
+
+    if (acceptedList.length !== 1) return <ErrorPage/>
 
     return (
             <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>

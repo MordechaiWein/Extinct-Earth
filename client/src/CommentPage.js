@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import CommentCard from "./CommentCard";
 import Alert from '@mui/material/Alert';
 import { useMediaQuery } from '@mui/material';
-
+import ErrorPage from "./ErrorPage";
 
 
 function CommentPage() {
@@ -26,7 +26,7 @@ function CommentPage() {
         animal_id: parseInt(params.id)
     })
 
-    const replies = animals.length > 0 ? being.comments.map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
+    const replies = being && animals.length > 0 ? being.comments.map(comment => <CommentCard key={comment.id} letter={letter} comment={comment}/>) : ''
 
     function handleChange(event) {
         setErrors([])
@@ -83,7 +83,7 @@ function CommentPage() {
         return colors[index];
       }
 
-    
+    if (!being) return <ErrorPage/>
 
     return (
         <Container>

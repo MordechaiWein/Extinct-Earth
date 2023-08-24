@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useMediaQuery } from '@mui/material';
 import { MyContext } from "./MyContext";
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ErrorPage from "./ErrorPage";
 
 function InformationCard() {
 
@@ -14,8 +15,8 @@ function InformationCard() {
     const isMobile = useMediaQuery('(max-width: 600px)');
     const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 1700px)');
     const isLargeScreen = useMediaQuery('(min-width: 1801px)');
-    const being =  animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
-    const capitalizedWord = being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
+    const being = animals.length > 0 ? animals.find(animal => animal.id === parseInt(params.id)) : []
+    const capitalizedWord = being && being.id === parseInt(params.id) ? being.classification.charAt(0).toUpperCase() + being.classification.slice(1) : ''
     const imageStyleRight = isMobile
     ? { width: '100%', height: 'auto', marginRight: '2rem' }
     : { width: '40%', height: '25rem', marginRight: '2rem' };
@@ -29,14 +30,16 @@ function InformationCard() {
         .then(response => response.json())
         .then(data => setAnimals(data))
     }
-
+    
+    if (!being) return <ErrorPage/>
+    
     if (isMediumScreen) {
         return (
             <Container maxWidth="md">
-                {being.name && being.image && being.classification ? 
+                {being && being.name && being.image && being.classification ? 
                     <>
                         <img src={being.image} style={{width: '100%', height: 'auto'}}/>
-                        <Typography variant="h3"  sx={{ paddingBottom: '1.5rem', paddingTop: '1.5rem', fontWeight: 'bold'}}>
+                        <Typography variant="h3" sx={{ paddingBottom: '1.5rem', paddingTop: '1.5rem', fontWeight: 'bold'}}>
                             {being.name}
                         </Typography>
                         <Typography variant="h5" sx={{paddingBottom: '0.5rem', fontWeight: 'bold'}}>
@@ -157,7 +160,7 @@ function InformationCard() {
                         boxShadow: isLargeScreen ? '0 2px 4px rgba(0, 0, 0, 0.5)' : "" 
                     }}
                 >
-                    {being.name && being.image && being.classification ? 
+                    {being && being.name && being.image && being.classification ? 
                         (<Box style={{display: 'flex', height: '56.1rem'}}>
                             <img style={{width: "40rem", height: '', objectFit: 'cover'}} src={being.image}/>
                             <Typography style={{marginLeft: '2rem', width: '100%'}}>
