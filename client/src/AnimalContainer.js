@@ -76,26 +76,25 @@ function AnimalContainer() {
     if (acceptedList.length !== 1) return <ErrorPage/>
 
     return (
-            <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>
-                <Box  mr={isMobile ? 1 : 3}>
-            <Typography 
-        sx={{
-            textAlign: 'center', 
-            padding: isMobile ? '6rem' : '6rem',
-            marginLeft: isMobile ? '0rem' : '0rem',
-            marginRight: isMobile ? '0rem' : '0rem',
-            backgroundImage: `url(${image})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: isMobile ? '1.8rem' : '4.9vw'
-            }}
-        >
-        
-        {animalType}
-        </Typography>
+        <Box ml={isMobile ? 1 : 11} mr={ isMobile? 1 : 8}>
+            <Box  mr={isMobile ? 1 : 3}>
+                <Typography 
+                    sx={{
+                        textAlign: 'center', 
+                        padding: isMobile ? '6rem' : '6rem',
+                        marginLeft: isMobile ? '0rem' : '0rem',
+                        marginRight: isMobile ? '0rem' : '0rem',
+                        backgroundImage: `url(${image})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        color: 'white',
+                        fontWeight: 'bold',
+                        fontSize: isMobile ? '1.8rem' : '4.9vw'
+                        }}
+                    >
+                        {animalType}
+                </Typography>
                 <TextField
                     required
                     fullWidth
@@ -117,24 +116,40 @@ function AnimalContainer() {
                         </InputAdornment>
                     )}}
                 />
-                </Box>
-                <Box ml={isMobile ? 0 : 0} mr={ isMobile ? -1.4 : 0}>
-                    <FormControl variant="standard" sx={{ marginBottom: '2rem', marginTop: "-2rem", minWidth: 90, float: 'right', marginRight: "2.2rem"}}>
-                        <InputLabel shrink={false} >SORT BY</InputLabel>
-                        <Select>
-                        <MenuItem value="">
-                          <em onClick={() => setDropdown('none')}>None</em>
-                        </MenuItem>
-                            <MenuItem onClick={() => setDropdown("a-z")}>Name (A to Z)</MenuItem>
-                            <MenuItem onClick={() => setDropdown("z-a")}>Name (Z to A)</MenuItem>
-                        </Select>
-                    </FormControl>
-                <Grid container>
-                   {animalList}
-                </Grid>
-                </Box>
-             
             </Box>
+            <Box ml={isMobile ? 0 : 0} mr={ isMobile ? -1.4 : 0}>
+                <FormControl variant="standard" sx={{ marginBottom: '2rem', marginTop: "-2rem", minWidth: 90, float: 'right', marginRight: "2.2rem"}}>
+                    <InputLabel shrink={false} >SORT BY</InputLabel>
+                    <Select>
+                        <MenuItem value="">
+                            <em onClick={() => setDropdown('none')}>None</em>
+                        </MenuItem>
+                        <MenuItem onClick={() => setDropdown("a-z")}>Name (A to Z)</MenuItem>
+                        <MenuItem onClick={() => setDropdown("z-a")}>Name (Z to A)</MenuItem>
+                    </Select>
+                </FormControl>
+                {animalList.length === 0  && classification.length > 0 ? (
+                    <Typography 
+                        style={{
+                            textAlign: 'center', 
+                            fontFamily: 'montserrat', 
+                            fontSize:' 2.5rem',
+                            paddingTop: '10rem'
+                        }}
+                    >
+                       <SearchIcon sx={{ fontSize: 40, color: 'black', marginBottom: '0.5rem' }}/>
+                       {isMobile ? <div></div> : ''}
+                        &nbsp;
+                        Sorry, we couldn't find any results for that search. Please search again!
+                    </Typography>
+                    ) : (
+                    <Grid container>
+                        {animalList}
+                    </Grid>
+                )}
+            </Box>
+             
+        </Box>
      
     )
 }
