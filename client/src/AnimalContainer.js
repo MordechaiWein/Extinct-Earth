@@ -132,15 +132,16 @@ function AnimalContainer() {
                     <Typography 
                         style={{
                             textAlign: 'center', 
-                            fontFamily: isMobile ? "" : 'montserrat', 
+                            fontFamily: 'montserrat', 
                             fontSize: isMobile ? "" : '2.5rem',
                             paddingTop: isMobile ? "4rem" : '10rem',
                             marginRight: isMobile ? "2rem" : ""
                         }}
                     >
-                       <SearchIcon sx={{ fontSize: isMobile ? 20 : 40, color: 'black', marginBottom: isMobile ? "0.3rem" : '0.5rem' }}/>
+                       <SearchIcon sx={{ fontSize: isMobile ? 25 : 40, color: 'black', marginBottom: isMobile ? "0.3rem" : '0.5rem' }}/>
                         &nbsp;
-                        Sorry, we couldn't find any results for "{name}". Please search again!
+                        {isMobile ? <div></div> : "" }
+                        Sorry, we couldn't find any results for that search. Kindly try again.
                     </Typography>
                     ) : (
                     <Grid container>
