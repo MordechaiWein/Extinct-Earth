@@ -22,15 +22,16 @@ function BecomeAdmin() {
         setOpen(true)
         setData('')
     }
-
+    
     function handleChange(event) {
         setData(event.target.value) 
     }
     
+    // https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png
     return (
         <div
             style={{
-                backgroundImage: isMobile ? 'none' : 'url(https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png)',
+                backgroundImage: isMobile ? 'none' : 'url(https://extinct-bucket.s3.amazonaws.com/FSC_BATS_A7RII_0105_0.png)',
                 backgroundSize: isMobile ? '' : 'cover',
                 backgroundRepeat: isMobile ? '' : 'no-repeat',
                 backgroundPosition: isMobile ? '' : 'center',
