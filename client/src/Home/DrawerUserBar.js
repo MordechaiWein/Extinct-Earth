@@ -35,7 +35,7 @@ export default function DrawerUserBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isMediumScreen = useMediaQuery('(max-width: 990px)');
-  const {setUser, user} = useContext(MyContext)
+  const {setUser, user, setMessage} = useContext(MyContext)
   const history = useHistory()
 
   const handleDrawerToggle = () => {
@@ -48,6 +48,9 @@ export default function DrawerUserBar(props: Props) {
     })
     .then(setUser(null), history.push('/'))
     alert('Goodbye')
+    fetch('/me')
+    .then(response => response.json())
+    .then(data => setMessage(data.error))
   }
 
   const drawer = (

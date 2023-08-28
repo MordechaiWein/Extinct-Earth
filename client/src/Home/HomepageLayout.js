@@ -3,7 +3,7 @@
 
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
-import React, { Component, useContext } from 'react'
+import React, { Component, useContext, useState } from 'react'
 import { InView } from 'react-intersection-observer'
 import 'semantic-ui-css/semantic.min.css';
 import UncontrolledExample from './ UncontrolledExample';
@@ -101,7 +101,6 @@ const HomepageHeading = ({ mobile }) => {
       Learn More
      <Icon name='right arrow' />
     </Button>
-    
     </>
  )
 }

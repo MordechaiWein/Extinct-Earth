@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/cookie', to: 'users#cookie'
   resources :animals, only: [:index, :create, :update, :destroy]
   resources :events, only: [:index, :create, :update, :destroy]
   resources :comments, only: [:create, :update, :destroy]

@@ -16,6 +16,8 @@ import Button from '@mui/material/Button';
 import { useContext } from 'react';
 import { MyContext } from "../MyContext";
 
+import CloseIcon from '@mui/icons-material/Close';
+
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -30,7 +32,15 @@ const navItems = ['Home', 'Sign In', 'Sign Up'];
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {setPage} = useContext(MyContext)
+  const {setPage, message, setMessage} = useContext(MyContext)
+
+
+  function handleClick() {
+    setMessage('')
+    fetch('/cookie')
+    .then(response => response.json())
+    .then(data => console.log(data.cookie_value))
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -58,6 +68,7 @@ export default function DrawerAppBar(props: Props) {
 
 
   return (
+    <div>
     <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <AppBar component="nav" style={{color: '#fff',backgroundColor: 'black', boxShadow: 'none', padding: '1rem'}}>
@@ -111,9 +122,35 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{p: message === 'Not authorized' ? 1.7 : 3 }}>
         <Toolbar />
       </Box>
     </Box>
+    {message ===  "Not authorized" ? (
+       <div>
+       <Typography 
+         style={{
+           display: 'flex',
+           color: 'white', 
+           backgroundColor: '#1b5e20',
+           padding: '0.5rem'
+         }}
+       >
+         <div style={{ flex: 1, fontSize: '1.5rem', textAlign: 'center' }}>
+            Welcome, don't forget to sign up to access all the features and pages on the website! 
+         </div>
+           <CloseIcon fontSize='medium' sx={{marginLeft: '1.5rem'}} onClick={handleClick} />
+       </Typography>
+     </div>
+      
+      ) : (
+
+        ""
+
+    )}
+   
+  </div>
   );
 }
+
+

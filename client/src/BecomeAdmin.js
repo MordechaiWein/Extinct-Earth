@@ -27,7 +27,6 @@ function BecomeAdmin() {
         setData(event.target.value) 
     }
     
-    // https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png
     return (
         <div
             style={{
@@ -53,16 +52,19 @@ function BecomeAdmin() {
                         marginTop: isMobile ? "" : '10rem'
                     }}
                 >
-                    <Typography
+                    
+                    <Typography 
+                    // variant = "h5"
                         style={{
                             fontSize: '1.8rem',
                             fontFamily: 'Nunito Sans', 
                             paddingTop: '2rem',
                             fontWeight: 'bold',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            wordWrap: 'break-word',
                         }}
                     >
-                        {user.username.toUpperCase()}! 🎉
+                       {user.username.toUpperCase()}! 🎉 
                     </Typography>
                     <Typography 
                         style={{
@@ -179,4 +181,6 @@ function BecomeAdmin() {
 }
 
 export default BecomeAdmin
+
+// https://fsc.org/sites/default/files/2022-08/FSC_BATS_A7RII_0105_0.png
 
