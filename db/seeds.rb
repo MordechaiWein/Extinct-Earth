@@ -1,6 +1,6 @@
 
 puts '🦖🦕💥 Meteorite destroying selected comments...'
-puts "🔦 New animal search placeholder feature...!"
+puts "🍪 New cookies feature...!"
 puts '✅ Done seeding!'
 
 

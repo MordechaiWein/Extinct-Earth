@@ -26,7 +26,11 @@ class UsersController < ApplicationController
     end
 
     def cookie
-        cookies[:reminder] = 'reminder'
+        cookies[:reminder] = {
+            value: 'reminder',
+            expires: 1.day.from_now,
+            path: '/'
+        }
         render json: {cookie_value: cookies[:reminder]}
     end
 
