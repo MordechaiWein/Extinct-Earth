@@ -40,13 +40,17 @@ const HomepageHeading = ({ mobile }) => {
   const {setUser, setAnimals} = useContext(MyContext)
 
   function handleClick() {
-    fetch('/me')
+    fetch('/me', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => {
       if(response.ok){
         response.json().then(data => setUser(data))
       }
     })
-    fetch('/animals')
+    fetch('/animals', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => response.json())
     .then(data => setAnimals(data))
   }
@@ -214,13 +218,17 @@ const HomepageLayout = () => {
   const {setUser, setAnimals} = useContext(MyContext)
 
   function handleClick() {
-    fetch('/me')
+    fetch('/me', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => {
       if(response.ok){
         response.json().then(data => setUser(data))
       }
     })
-    fetch('/animals')
+    fetch('/animals', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => response.json())
     .then(data => setAnimals(data))
   }

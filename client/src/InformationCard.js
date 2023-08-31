@@ -22,11 +22,15 @@ function InformationCard() {
     : { width: '40%', height: '25rem', marginRight: '2rem' };
 
     function handleClick() {
-        fetch('/me')
+        fetch('/me', {
+            headers: {'Accept': 'application/json'}
+        })
         .then(response => response.json())
         .then(data => setUser(data))
 
-        fetch('/animals')
+        fetch('/animals', {
+            headers: {'Accept': 'application/json'}
+        })
         .then(response => response.json())
         .then(data => setAnimals(data))
     }
