@@ -387,3 +387,9 @@ const HomepageLayout = () => {
 }
 
 export default HomepageLayout
+
+
+
+//!!!IMPORTANT!!!:
+//BACK-UP HOME PAGE IMAGE! IN CASE ORGINAL IS ERASED BY THE WEBSITE HOSTING IT!
+//https://extinct-bucket.s3.amazonaws.com/clouded-leopard-thumbnail.jpg

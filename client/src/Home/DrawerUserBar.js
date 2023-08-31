@@ -48,7 +48,9 @@ export default function DrawerUserBar(props: Props) {
     })
     .then(setUser(null), history.push('/'))
     alert('Goodbye')
-    fetch('/me')
+    fetch('/me', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => response.json())
     .then(data => setMessage(data.error))
   }

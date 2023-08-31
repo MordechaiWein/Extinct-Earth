@@ -2,7 +2,11 @@ class EventsController < ApplicationController
     skip_before_action :authorize, only: [:index]
     
     def index
-        render json: Event.all
+        if request.headers['HTTP_ACCEPT'] == 'application/json'
+            render json: Event.all
+        else
+            redirect_to 'https://extinct-earth.onrender.com/'
+        end
     end
 
     def create

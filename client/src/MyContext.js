@@ -13,7 +13,9 @@ function MyProvider({children}) {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch('/me')
+        fetch('/me', {
+            headers: {'Accept': 'application/json'}
+        })
         .then((response) => {
             if (response.ok) {
                 response.json().then(data => {
@@ -31,13 +33,17 @@ function MyProvider({children}) {
     },[])
  
     useEffect(() => {
-        fetch('/events')
+        fetch('/events', {
+            headers: {'Accept': 'application/json'}
+        })
         .then(response => response.json())
         .then(data => setEvents(data))
     },[])
 
     useEffect(() => {
-        fetch('/animals')
+        fetch('/animals', {
+            headers: {'Accept': 'application/json'}
+        })
         .then(response => response.json())
         .then(data => setAnimals(data))
     },[])

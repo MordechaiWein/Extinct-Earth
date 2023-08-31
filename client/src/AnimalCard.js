@@ -15,55 +15,56 @@ function AnimalCard({ animal }) {
   const isMobile = useMediaQuery('(max-width: 600px)');
 
   return (
-
-<div>
-    <Card sx={{ maxWidth: 600, marginRight: '20px', marginBottom: '20px' }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        image={animal.image}
-        style={{
-          height: isMobile ? '20rem' : '25rem', 
-          width: isMobile ? '35rem' : '26.4rem',
-          maxWidth: '100%'
-        }}
-      />
-      <CardContent>
-        <Typography 
+    <div>
+      <Card sx={{maxWidth: 600, marginRight: '20px', marginBottom: '20px'}}>
+        <CardMedia
+          className='media'
+          component="img" 
+          alt="Extinct Earth Image" 
+          image={animal.image}
+          style={{
+            height: isMobile ? '20rem' : '25rem', 
+            width: isMobile ? '35rem' : '26.4rem',
+            maxWidth: '100%',
+          }}
+        />
+        <CardContent>
+          <Typography 
             gutterBottom 
             variant="h5" 
             component="div"
             sx={{fontWeight: 'bold'}}
+          >
+            {animal.name}
+          </Typography>
+        </CardContent>
+        <CardActions
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start'
+          }}
         >
-        {animal.name}
-        </Typography>
-      </CardContent>
-      <CardActions 
-       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-      }}
-      >
-     
-        <Link 
-          to={`/creature/${animal.id}`}
-          style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
-         &nbsp; <MenuIcon/>
-        &nbsp; LEARN MORE
-        </Link>
-        <Link 
-         to={`/comment/${animal.id}`}
-        style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}> 
-        <NotesIcon/>
-        &nbsp; COMMENT
-        </Link>
-      
-      </CardActions>
-    </Card>
+          <Link
+            to={`/creature/${animal.id}`}
+            style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}
+          >
+            &nbsp; <MenuIcon/>
+            &nbsp; LEARN MORE
+          </Link>
+          <Link
+            to={`/comment/${animal.id}`}
+            style={{color: 'black', textDecoration: 'none', fontWeight: 'bold', paddingBottom: '1rem'}}
+          >
+            <NotesIcon/>
+            &nbsp; COMMENT
+          </Link>
+        </CardActions>
+      </Card>
     </div>
-
-  );
+  )
 }
 
 export default AnimalCard
+
+

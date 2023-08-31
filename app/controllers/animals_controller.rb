@@ -2,8 +2,12 @@ class AnimalsController < ApplicationController
     skip_before_action :authorize, only: [:index]
 
     def index
-        animals = Animal.all
-        render json: animals, include: ['comments', 'comments.user']
+        if request.headers['HTTP_ACCEPT'] == 'application/json'
+            animals = Animal.all
+            render json: animals, include: ['comments', 'comments.user']
+        else
+            redirect_to 'https://extinct-earth.onrender.com/'
+        end
     end
 
     def create

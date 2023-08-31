@@ -99,7 +99,6 @@ function AdminAnimals() {
               value={data.name}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -111,7 +110,6 @@ function AdminAnimals() {
               value={data.image}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -123,7 +121,6 @@ function AdminAnimals() {
               value={data.classification}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -137,7 +134,6 @@ function AdminAnimals() {
               value={data.history}
               onChange={handleHistoryChange}
               autoComplete="email"
-              autoFocus
             />
             {!historyLength ? 
               '' 
@@ -162,7 +158,6 @@ function AdminAnimals() {
               value={data.time_period}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -186,7 +181,6 @@ function AdminAnimals() {
               value={data.diet}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -198,7 +192,6 @@ function AdminAnimals() {
               value={data.longitude}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -210,7 +203,6 @@ function AdminAnimals() {
               value={data.latitude}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -222,7 +214,6 @@ function AdminAnimals() {
               value={data.fun_fact}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -234,7 +225,6 @@ function AdminAnimals() {
               value={data.link}
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
            {/* <FormControl 
                 variant="standard" 

@@ -98,7 +98,7 @@ function AnimalContainer() {
                 <TextField
                     required
                     fullWidth
-                    name="password"
+                    name="animal-search"
                     placeholder='Search animal by name...'
                     type="text"
                     id="password"

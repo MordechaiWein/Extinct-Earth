@@ -75,7 +75,6 @@ function AdminEvents() {
               name="name"
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
               <TextField
               margin="normal"
@@ -86,7 +85,6 @@ function AdminEvents() {
               name="image"
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
               <TextField
               margin="normal"
@@ -99,7 +97,6 @@ function AdminEvents() {
               name="description"
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
               <TextField
               margin="normal"
@@ -110,7 +107,6 @@ function AdminEvents() {
               name="start_date"
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -132,7 +128,6 @@ function AdminEvents() {
               name="cause"
               onChange={handleChange}
               autoComplete="email"
-              autoFocus
             />
             <Button
               type="submit"

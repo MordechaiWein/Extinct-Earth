@@ -13,25 +13,33 @@ class UsersController < ApplicationController
     # end
 
     def show
-        user = User.find_by(id: session[:user_id])
-        if user
-            render json: user, status: :created
-        else
-            if cookies[:reminder]
-                render json: {error: "Not authorized, cookie exists" }, status: :unauthorized
+        if request.headers['HTTP_ACCEPT'] == 'application/json'
+            user = User.find_by(id: session[:user_id])
+            if user
+                render json: user, status: :created
             else
-                render json: {error: "Not authorized" }, status: :unauthorized
+                if cookies[:reminder]
+                    render json: {error: "Not authorized, cookie exists" }, status: :unauthorized
+                else
+                    render json: {error: "Not authorized" }, status: :unauthorized
+                end
             end
+        else
+            redirect_to 'https://extinct-earth.onrender.com/'
         end
     end
 
     def cookie
-        cookies[:reminder] = {
-            value: 'reminder',
-            expires: 1.day.from_now,
-            path: '/'
-        }
-        render json: {cookie_value: cookies[:reminder]}
+        if request.headers['HTTP_ACCEPT'] == 'application/json'
+            cookies[:reminder] = {
+                value: 'reminder',
+                expires: 1.day.from_now,
+                path: '/'
+            }
+            render json: {cookie_value: cookies[:reminder]}
+        else
+            redirect_to 'https://extinct-earth.onrender.com/'
+        end
     end
 
     private

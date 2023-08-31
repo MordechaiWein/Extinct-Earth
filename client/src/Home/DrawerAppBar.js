@@ -37,7 +37,9 @@ export default function DrawerAppBar(props: Props) {
 
   function handleClick() {
     setMessage('')
-    fetch('/cookie')
+    fetch('/cookie', {
+      headers: {'Accept': 'application/json'}
+    })
     .then(response => response.json())
     .then(data => console.log(data.cookie_value))
   }
