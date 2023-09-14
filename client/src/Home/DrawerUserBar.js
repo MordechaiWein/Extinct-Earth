@@ -42,17 +42,37 @@ export default function DrawerUserBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
+  // function handleClick() {
+  //   fetch('/logout', {
+  //     method: 'DELETE'
+  //   })
+  //   .then(setUser(null), history.push('/'))
+  //   alert('Goodbye')
+  //   // fetch('/me', {
+  //   //   headers: {'Accept': 'application/json'}
+  //   // })
+  //   // .then(response => response.json())
+  //   // .then(data => setMessage(data.error))
+  // }
+
   function handleClick() {
     fetch('/logout', {
       method: 'DELETE'
     })
-    .then(setUser(null), history.push('/'))
-    alert('Goodbye')
-    // fetch('/me', {
-    //   headers: {'Accept': 'application/json'}
-    // })
-    // .then(response => response.json())
-    // .then(data => setMessage(data.error))
+    .then(response => {
+      if (response.ok) {
+        setUser(null)
+        history.push('/')
+        alert('Goodbye')
+        fetch('/me', {
+          headers: {'Accept': 'application/json'}
+        })
+        .then(response => response.json())
+        .then(data => setMessage(data.error))
+      } else {
+        console.log("error: you are not logged in to be able to log out")
+      }
+    })
   }
 
   const drawer = (
