@@ -38,7 +38,8 @@ function SimpleMap({ being }) {
          }}
     >
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDKPuvYfP7KIZzdMTGMfIj2ZiKD5HKAS-Y" }}
+        // bootstrapURLKeys={{ key: "AIzaSyDKPuvYfP7KIZzdMTGMfIj2ZiKD5HKAS-Y" }}
+        bootstrapURLKeys={{ key: "AIzaSyDx-Oq0Uo7ZPjxqvm4JgSlK_ccdzlGFlhk" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
