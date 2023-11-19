@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :cookie, :show]
+    skip_before_action :authorize, only: [:create, :cookie, :show, :people]
     
     def create
         user = User.create!(user_params)
@@ -13,8 +13,12 @@ class UsersController < ApplicationController
     # end
 
     def people
-        users = User.all
-        render json: users
+        if request.headers['HTTP_ACCEPT'] == 'application/json'
+            users = User.all
+            render json: users
+        else
+            redirect_to 'https://extinct-earth.onrender.com/'
+        end
     end
 
     def show
