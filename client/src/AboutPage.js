@@ -6,9 +6,9 @@ import IrishElk from './images/irish-elk.png'
 
 function AboutPage() {
 
-    const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
-    const imageStyle = isMobile
+  const imageStyle = isMobile
   ? { width: '100%', height: 'auto', marginLeft: '2rem' }
   : { width: '40%', height: '25rem', marginLeft: '2rem' };
 

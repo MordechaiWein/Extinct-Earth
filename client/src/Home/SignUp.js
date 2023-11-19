@@ -8,6 +8,10 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { MyContext } from "../MyContext";
@@ -42,6 +46,7 @@ const defaultTheme = createTheme({
 function SignUp() {
 
   const {setUser, setPage} = useContext(MyContext)
+  const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState([])
   const [data, setData] = useState({
     username: '',
@@ -49,6 +54,15 @@ function SignUp() {
     password_confirmation: '',
     email_address: ''
   })
+
+  function handleClickShowPassword() {
+    setShowPassword(!showPassword)
+  } 
+
+  function handleMouseDownPassword(event) {
+    event.preventDefault()
+  }
+  
 
   function handleChange(event) {
     setErrors([])
@@ -134,11 +148,25 @@ function SignUp() {
                 fullWidth
                 name="password"
                 placeholder='Password*'
-                type="password"
                 id="password"
                 onChange={handleChange}
                 autoComplete="current-password"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
               />
               <br/>
               <TextField
@@ -147,11 +175,25 @@ function SignUp() {
                 fullWidth
                 name="password_confirmation"
                 placeholder='Password Confirmation*'
-                type="password"
                 id="password_confirmation"
                 onChange={handleChange}
                 autoComplete="current-password"
                 sx={{backgroundColor: 'white', borderRadius: '0.3rem'}}
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
               /> 
              
               <TextField
