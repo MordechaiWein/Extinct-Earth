@@ -1,27 +1,27 @@
 import React, {  } from 'react'
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { useMediaQuery } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
+import PersonIcon from '@mui/icons-material/Person';
 
 function PersonCard({ person }) {
 
-    const isMobile = useMediaQuery('(max-width: 600px)');
-
     return (
         <main style={{marginBottom: '2rem'}}>
-            <div style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-                <section>
+            <div style={{ padding: '1rem'}}>
+                <section style={{display: 'flex', alignItems: 'center'}}>
+                   <PersonIcon sx={{fontSize: '1.6rem'}}/>
                     <Typography
-                        variant= {isMobile ? "h6" : "h5"}
-                        sx={{  color: 'black', marginLeft: '1.5rem' }}
+                        sx={{  color: 'black', fontSize: '1.6rem'}}
                     >
-                        + {person.username}
+                       {person.username}
                     </Typography>
                 </section>
-                <section>
+                <section style={{display: 'flex', alignItems: 'center'}}>
+                    <EmailIcon sx={{marginRight: '0.2rem', color: 'gray'}}/>
                     <Typography
-                        variant= {isMobile ? "h6" : "h5"}
-                        sx={{ color: 'black', textAlign: 'right', marginRight: '1.5rem'}}
+                        variant= "h6" 
+                        sx={{ color: 'gray'}}
                     >
                         {person.email_address}
                     </Typography>
