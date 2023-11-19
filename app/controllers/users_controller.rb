@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     #     render json: user, status: :created
     # end
 
+    def people
+        users = User.all
+        render json: users
+    end
+
     def show
         if request.headers['HTTP_ACCEPT'] == 'application/json'
             user = User.find_by(id: session[:user_id])

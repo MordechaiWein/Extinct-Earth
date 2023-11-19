@@ -42,19 +42,6 @@ export default function DrawerUserBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // function handleClick() {
-  //   fetch('/logout', {
-  //     method: 'DELETE'
-  //   })
-  //   .then(setUser(null), history.push('/'))
-  //   alert('Goodbye')
-  //   // fetch('/me', {
-  //   //   headers: {'Accept': 'application/json'}
-  //   // })
-  //   // .then(response => response.json())
-  //   // .then(data => setMessage(data.error))
-  // }
-
   function handleClick() {
     fetch('/logout', {
       method: 'DELETE'

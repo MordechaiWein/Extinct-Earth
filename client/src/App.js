@@ -9,9 +9,11 @@ import CommentPage from './CommentPage';
 import AnimalContainer from './AnimalContainer';
 import EventsContainer from './EventsContainer';
 import DrawerUserBar from './Home/DrawerUserBar';
+import SiteMap from './SiteMap';
 import ErrorPage from './ErrorPage';
 import { Route, Switch } from 'react-router-dom';
 import { MyContext } from "./MyContext";
+
 
 function App() {
 
@@ -29,6 +31,9 @@ function App() {
       <Switch>
         <Route exact path="/" >
           <Home />
+        </Route>
+        <Route exacct path="/sitemap">
+          <SiteMap/>
         </Route>
         <Route exact path="/about" >
           <AboutPage />

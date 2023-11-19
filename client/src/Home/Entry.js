@@ -10,6 +10,7 @@ function Entry() {
     
     if (page === "Home") return (<HomepageLayout/>)
     else if (page === "Sign In") return (<SignIn/>)
+    
     else return (<SignUp/>)
 }
 

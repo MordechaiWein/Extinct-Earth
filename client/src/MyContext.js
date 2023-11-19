@@ -5,6 +5,7 @@ const MyContext =  React.createContext()
 function MyProvider({children}) {
     
     const [user, setUser] = useState(null)
+    const [people, setPeople] = useState([])
     const [page, setPage] = useState('Home')
     const [events, setEvents] = useState([])
     const [animals, setAnimals] = useState([])
@@ -31,7 +32,15 @@ function MyProvider({children}) {
             }
         })
     },[])
- 
+
+    useEffect(() => {
+        fetch('/people',  {
+            headers: {'Accept': 'application/json'}
+        })
+        .then(response => response.json())
+        .then(data => setPeople(data))
+    },[])
+
     useEffect(() => {
         fetch('/events', {
             headers: {'Accept': 'application/json'}
@@ -193,7 +202,8 @@ function MyProvider({children}) {
                  deleteLikeFromComment,
                  isLoading,
                  message,
-                 setMessage
+                 setMessage,
+                 people
                 }}
             >
             {children}                                                                                     

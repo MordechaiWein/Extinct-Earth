@@ -8,6 +8,7 @@ import { InView } from 'react-intersection-observer'
 import 'semantic-ui-css/semantic.min.css';
 import UncontrolledExample from './ UncontrolledExample';
 import { MyContext } from "../MyContext";
+import { Link } from 'react-router-dom';
 import {
   Button,
   Container,
@@ -215,7 +216,7 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => {
 
-  const {setUser, setAnimals} = useContext(MyContext)
+  const {setUser, setAnimals, user} = useContext(MyContext)
 
   function handleClick() {
     fetch('/me', {
@@ -362,7 +363,11 @@ const HomepageLayout = () => {
             <Grid.Column width={3}>
               <Header inverted as='h4' content='About' />
               <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
+                <Link 
+                  style={{textDecoration: 'none'}}
+                  to={user ? '/sitemap' : '/'}>
+                  <List.Item as='a'>Sitemap</List.Item>
+                </Link>
                 <List.Item as='a'>Contact Us</List.Item>
                 <List.Item as='a'>Explore</List.Item>
                 <List.Item as='a'>Discover</List.Item>
