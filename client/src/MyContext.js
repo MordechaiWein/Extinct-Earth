@@ -203,7 +203,8 @@ function MyProvider({children}) {
                  isLoading,
                  message,
                  setMessage,
-                 people
+                 people,
+                 setPeople
                 }}
             >
             {children}                                                                                     

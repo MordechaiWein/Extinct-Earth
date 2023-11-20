@@ -45,7 +45,7 @@ const defaultTheme = createTheme({
 
 function SignUp() {
 
-  const {setUser, setPage} = useContext(MyContext)
+  const {setUser, setPage, setPeople, people} = useContext(MyContext)
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState([])
   const [data, setData] = useState({
@@ -82,6 +82,7 @@ function SignUp() {
           setUser(data)
           setPage("Home")
           alert('🦖 Welcome!')
+          setPeople([...people, data])
         })
       } else {
         response.json().then(data => setErrors(data.errors))

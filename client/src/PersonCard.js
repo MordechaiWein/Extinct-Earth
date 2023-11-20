@@ -12,11 +12,11 @@ function PersonCard({ person }) {
     return (
         <main style={{marginBottom: '2rem'}}>
             <div style={{ display: isMobile ? '' : 'flex', justifyContent: isMobile ? '' : 'space-between', padding: '1rem'}}>
-                <section style={{marginLeft: isMobile ? "" : "0.5rem", display: 'flex', alignItems: 'center'}}>
+                <section style={{marginLeft: isMobile ? "" : "1rem", display: 'flex', alignItems: 'center'}}>
                    <PersonIcon sx={{fontSize: '1.6rem'}}/>
                     <Typography sx={{  color: 'black', fontSize: '1.6rem'}}>{person.username}</Typography>
                 </section>
-                <section style={{marginRight: isMobile ? "" : "0.5rem", display: 'flex', alignItems: 'center', color: isMobile ? 'gray' : 'black'}}>
+                <section style={{marginRight: isMobile ? "" : "1rem", display: 'flex', alignItems: 'center', color: isMobile ? 'gray' : 'black'}}>
                     <EmailIcon sx={{marginRight: '0.2rem'}}/>
                     <Typography variant= {isMobile ? "h6" : "" }
                         sx={{fontSize: isMobile ? '1.25rem' : '1.6rem'}}
