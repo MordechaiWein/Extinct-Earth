@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/cookie', to: 'users#cookie'
+
+  post '/webhook', to: "webhook#broadcast"
   resources :animals, only: [:index, :create, :update, :destroy]
   resources :events, only: [:index, :create, :update, :destroy]
   resources :comments, only: [:create, :update, :destroy]
