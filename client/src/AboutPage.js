@@ -1,10 +1,19 @@
-import React from 'react';
-import { Typography, Container, Box } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
+import React, { useEffect } from 'react'
+import { Typography, Container, Box } from '@mui/material'
+import { useMediaQuery } from '@mui/material'
 import IrishElk from './images/irish-elk.png'
+import { createConsumer } from "@rails/actioncable"
 
+const cable = createConsumer("wss://extinct-earth.onrender.com/cable")
 
 function AboutPage() {
+
+  useEffect(() => {
+    const subscription = cable.subscriptions.create("ChatChannel", {
+        received: (data) => console.log(data)
+    })
+    return () => subscription.unsubscribe()
+}, [])
 
   const isMobile = useMediaQuery('(max-width: 600px)');
 
